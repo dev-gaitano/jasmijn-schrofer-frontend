@@ -13,6 +13,9 @@ export default defineConfig(({ mode }) => ({
     Boolean
   ),
   base: mode === "development" ? "/" : "/jasmijn-schrofer/",
+  build: {
+    outDir: "dist",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
