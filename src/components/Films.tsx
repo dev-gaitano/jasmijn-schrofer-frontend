@@ -17,7 +17,7 @@ const films: FilmProject[] = [
     title: "Birth of Light",
     year: "2023",
     category: "Short Film",
-    thumbnail: "src/components/assets/Birth of Light - poster.png",
+    thumbnail: "/birth-of-light-poster.png",
     description:
       "A haunting exploration of memory and loss through the eyes of a young artist.",
     awards: ["Best Short Film - Amsterdam Film Festival 2023"],
@@ -27,7 +27,7 @@ const films: FilmProject[] = [
     title: "Tarikat",
     year: "2022",
     category: "Short Film",
-    thumbnail: "src/components/assets/tarikat-poster.jpg",
+    thumbnail: "/tarikat-poster.jpg",
     description:
       "A poetic journey into the rituals of a mystical order, blending reality and surrealism.",
     awards: ["Special Jury Prize - Rotterdam International Film Festival 2022"],
@@ -37,7 +37,7 @@ const films: FilmProject[] = [
     title: "Unfold",
     year: "2021",
     category: "Short Film",
-    thumbnail: "src/components/assets/posterUNFOLD300.jpeg",
+    thumbnail: "/unfold-poster.jpeg",
     description:
       "An intimate portrayal of transformation and self-discovery through movement and light.",
     awards: ["Best Experimental Film - Berlin Short Film Awards 2021"],

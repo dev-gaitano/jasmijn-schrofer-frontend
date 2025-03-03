@@ -17,11 +17,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="mb-4 text-2xl font-playfair font-bold text-gradient flex items-center">
-              <img
-                src="src/components/assets/jasmijn Schrofer1_JAS logo.png"
-                alt="JAS Logo"
-                className="h-10"
-              />
+              <img src="/logo.png" alt="JAS Logo" className="h-10" />
               <p className="w-28 ml-1 text-base text-primary">
                 Jasmijn Schroffer
               </p>

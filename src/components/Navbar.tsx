@@ -26,11 +26,7 @@ const Navbar = () => {
             href="/"
             className="text-2xl font-playfair font-bold text-gradient flex items-center"
           >
-            <img
-              src="src/components/assets/jasmijn Schrofer1_JAS logo.png"
-              alt="JAS Logo"
-              className="h-10 ml-4"
-            />
+            <img src="/logo.png" alt="JAS Logo" className="h-10 ml-4" />
             {isScrolled ? null : (
               <p className="w-28 ml-1 text-base text-primary">
                 Jasmijn Schroffer

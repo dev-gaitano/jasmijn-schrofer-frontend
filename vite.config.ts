@@ -9,10 +9,10 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(
+  plugins: [react(), mode === "development" ? componentTagger() : null].filter(
     Boolean
   ),
-  base: mode === "development" ? "/" : "/jasmijn-schrofer/",
+  base: "./",
   build: {
     outDir: "dist",
   },

@@ -65,8 +65,8 @@ const FeaturedFilm = () => {
           <div className="relative">
             <div className="aspect-video rounded-lg overflow-hidden glass-panel">
               <img
-                src="src/components/assets/Birth of Light_main still.png"
-                alt="Death of Darkness film"
+                src="/birth-of-light-still.png"
+                alt="Latest Project"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center">
