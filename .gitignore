@@ -1,3 +1,19 @@
+# Editor directories and files
+.vscode/*
+.vscode/
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+*.swn
+*.bak
+
 # Logs
 logs
 *.log
@@ -7,18 +23,42 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables and virtual environment
+.env
+*.env
+venv/
+.venv/
+
+# Static and compiled assets
+/static/
+*.sass-cache/
+*.scss-cache/
+*.css.map
+*.js.map
+
+# Dependency files
+node_modules/
+# package-lock.json
+yarn.lock
+npm-debug.log
+pip-log.txt
+
+# Generated files
+dist/
+build/
+coverage/
+*.pid
+*.seed
+*.out
+*.err
 dist-ssr
 *.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Secret keys and credentials
+config/settings_local.py
+secrets.json
