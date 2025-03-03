@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="/readme-banner.png" alt="banner_img">
+    <img src="./readme-banner.png" alt="banner_img">
 </div>
 
 ## How can I edit this code?
