@@ -104,7 +104,10 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-white/40 text-sm">
-          <p>© {currentYear} Jasmijn Schrofer. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Jasmijn Schrofer. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>
