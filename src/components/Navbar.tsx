@@ -1,4 +1,3 @@
-import { Film, Play, User, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
