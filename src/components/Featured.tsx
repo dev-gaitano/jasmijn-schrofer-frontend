@@ -65,7 +65,7 @@ const FeaturedFilm = () => {
           <div className="relative">
             <div className="aspect-video rounded-lg overflow-hidden glass-panel">
               <img
-                src="/birth-of-light-still.png"
+                src="/birth-of-light-still-comp.jpg"
                 alt="Latest Project"
                 className="w-full h-full object-cover"
               />

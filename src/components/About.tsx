@@ -22,7 +22,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-[3/4] rounded-lg overflow-hidden">
               <img
-                src="/jasmijn-potraight.jpg"
+                src="/jasmijn-potrait-comp.jpg"
                 alt="Jasmijn Schrofer"
                 className="w-full h-full object-cover"
               />

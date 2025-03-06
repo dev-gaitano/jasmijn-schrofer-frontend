@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background */}
       <div className="absolute inset-0 w-full h-full">
         <img
-          src="/jasmijn-hero.png"
+          src="/jasmijn-hero-comp.jpg"
           alt="hero-image"
           className="absolute top-0 left-0 h-full object-cover max-md:object-[-22rem] object-top"
         />
