@@ -13,19 +13,19 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-50 transition-all duration-300 ${
+      className={`fixed max-w-7xl top-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white bg-opacity-10 backdrop-blur shadow-lg w-3/4 top-2 rounded-[3rem]"
           : "w-3/4"
       }`}
     >
       <div className="container px-2 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between px-4">
           <a
             href="/"
             className="text-2xl font-playfair font-bold text-gradient flex items-center"
           >
-            <img src="/logo.png" alt="JAS Logo" className="h-10 ml-4" />
+            <img src="/logo.png" alt="JAS Logo" className="h-10" />
             {isScrolled ? null : (
               <p className="w-28 ml-1 text-base text-primary">
                 Jasmijn Schroffer
