@@ -1,13 +1,8 @@
-import React from "react";
 import { ArrowRight } from "lucide-react";
 
 const CallToAction = () => {
   return (
     <section id="contact" className="w-full relative py-24">
-      {/* Background gradients */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-background via-background to-black/50 pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent pointer-events-none"></div>
-
       <div className="container px-4 mx-auto relative z-10">
         <div className="max-w-3xl mx-auto border-[0.5px] border-gray-200 p-12 rounded-lg">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-white, mb-4">

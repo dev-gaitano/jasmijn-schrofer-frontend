@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed max-w-7xl top-0 z-50 transition-all duration-300 ${
+      className={`fixed max-w-7xl max-h-[82px] top-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white bg-opacity-10 backdrop-blur shadow-lg w-3/4 top-2 rounded-[3rem]"
           : "w-3/4"
