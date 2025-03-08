@@ -17,7 +17,7 @@ const CallToAction = () => {
           <div className="flex justify-center gap-4">
             <a
               href="#"
-              className="inline-flex items-center justify-center px-8 py-3 bg-primary/10 hover:bg-primary/20 border hover:backdrop-blur border-primary/50 rounded-[24px] text-primary transition-all duration-400 animate-fadeIn"
+              className="inline-block button-primary animate-fadeIn"
               style={{ animationDelay: "0.6s" }}
             >
               Contact

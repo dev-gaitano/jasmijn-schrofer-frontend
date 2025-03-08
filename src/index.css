@@ -60,6 +60,12 @@
   .text-gradient {
     @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
+  .button-primary {
+    @apply relative px-8 py-3 bg-primary/10 hover:bg-primary/20 bottom-0 hover:bottom-1
+    border hover:backdrop-blur border-primary/50 rounded-[24px] text-primary transition-all duration-500
+    before:absolute before:inset-0 before:bg-[radial-gradient(circle,_rgba(255,100,0,0.5)_10%,_transparent_80%)]
+    before:opacity-0 hover:before:opacity-100;
+  }
 }
 
 .hero-overlay {

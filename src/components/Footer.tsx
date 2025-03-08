@@ -5,6 +5,7 @@ import {
   Mail,
   MapPin,
   Linkedin,
+  Facebook,
 } from "lucide-react";
 
 const Footer = () => {
@@ -28,28 +29,40 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-4">
               <a
-                href="#"
-                className="text-white/60 hover:text-secondary transition-colors"
+                href="https://www.instagram.com/jasmijnschrofer/"
+                className="text-white/60 hover:text-secondary transition-colors duration-500"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
+                href="https://www.facebook.com/jasmijn.schrofer/"
+                className="text-white/60 hover:text-secondary transition-colors duration-500"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
                 href="#"
-                className="text-white/60 hover:text-secondary transition-colors"
+                className="text-white/60 hover:text-secondary transition-colors duration-500"
               >
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="#"
-                className="text-white/60 hover:text-secondary transition-colors"
+                href="https://www.youtube.com/user/jasmijn12"
+                className="text-white/60 hover:text-secondary transition-colors duration-500"
               >
                 <Youtube className="w-5 h-5" />
               </a>
               <a
-                href="#"
-                className="text-white/60 hover:text-secondary transition-colors"
+                href="https://www.linkedin.com/in/jasmijn-schrofer-2b186a78/?originalSubdomain=nl"
+                className="text-white/60 hover:text-secondary transition-colors duration-500"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.imdb.com/name/nm7353940/"
+                className="opacity-60 hover:text-secondary transition-colors duration-500"
+              >
+                <img className="h-8" src="/imdb-icon.png" />
               </a>
             </div>
           </div>
@@ -60,25 +73,25 @@ const Footer = () => {
             <nav className="space-y-2">
               <a
                 href="#"
-                className="block text-white/60 hover:text-secondary transition-colors"
+                className="block text-white/60 hover:text-secondary transition-colors duration-500"
               >
                 Home
               </a>
               <a
                 href="#films"
-                className="block text-white/60 hover:text-secondary transition-colors"
+                className="block text-white/60 hover:text-secondary transition-colors duration-500"
               >
                 Films
               </a>
               <a
                 href="#about"
-                className="block text-white/60 hover:text-secondary transition-colors"
+                className="block text-white/60 hover:text-secondary transition-colors duration-500"
               >
                 About
               </a>
               <a
                 href="#contact"
-                className="block text-white/60 hover:text-secondary transition-colors"
+                className="block text-white/60 hover:text-secondary transition-colors duration-500"
               >
                 Contact
               </a>
@@ -96,7 +109,7 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5" />
                 <span className="text-white/60">
-                  Amsterdam, The Netherlands
+                  Amsterdam, The Netherlands | Nairobi, Kenya
                 </span>
               </div>
             </div>

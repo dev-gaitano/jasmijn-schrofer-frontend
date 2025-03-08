@@ -33,16 +33,28 @@ const Navbar = () => {
             )}
           </a>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#hero" className="nav-link">
+            <a
+              href="#hero"
+              className="nav-link relative bottom-0 transition-all duration-300 hover:relative hover:bottom-1"
+            >
               Home
             </a>
-            <a href="#films" className="nav-link">
+            <a
+              href="#films"
+              className="nav-link relative bottom-0 transition-all duration-300 hover:relative hover:bottom-1"
+            >
               Films
             </a>
-            <a href="#showreel" className="nav-link">
+            <a
+              href="#showreel"
+              className="nav-link relative bottom-0 transition-all duration-300 hover:relative hover:bottom-1"
+            >
               News
             </a>
-            <a href="#about" className="nav-link">
+            <a
+              href="#about"
+              className="nav-link relative bottom-0 transition-all duration-300 hover:relative hover:bottom-1"
+            >
               About
             </a>
             {isScrolled ? (
