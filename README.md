@@ -2,6 +2,8 @@
     <img src="./public/readme-banner.png" alt="banner_img">
 </div>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/31ceee18-26e7-4364-8efe-f3b02478a3ae/deploy-status)](https://app.netlify.com/sites/jasmijnschrofer/deploys)
+
 ## How can I edit this code?
 
 **Use your preferred IDE**
