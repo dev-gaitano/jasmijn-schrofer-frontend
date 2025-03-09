@@ -66,18 +66,18 @@ const Films = () => {
           {films.map((film) => (
             <div
               key={film.id}
-              className="relative group"
+              className="relative group transition-all duration-700 hover-lift"
               onMouseEnter={() => setHoveredFilm(film.id)}
               onMouseLeave={() => setHoveredFilm(null)}
             >
-              <div className="relative aspect-[2/3] overflow-hidden rounded-lg">
+              <div className="relative aspect-[2/3] overflow-hidden rounded-lg glass-panel">
                 <img
                   src={film.thumbnail}
                   alt={film.title}
                   className="w-full h-full object-cover"
                 />
                 {hoveredFilm === film.id && (
-                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm transition-all duration-500">
+                  <div className="absolute inset-0 bg-black/50 backdrop-blur-lg animate-fadeIn duration-500">
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
                       <h3 className="text-xl font-playfair font-bold mb-2">
                         {film.title}

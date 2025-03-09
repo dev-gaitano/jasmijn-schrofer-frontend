@@ -20,7 +20,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Image */}
           <div className="relative">
-            <div className="aspect-[3/4] rounded-lg overflow-hidden">
+            <div className="aspect-[3/4] rounded-lg overflow-hidden glass-panel">
               <img
                 src="/jasmijn-potrait-comp.jpg"
                 alt="Jasmijn Schrofer"
@@ -64,18 +64,15 @@ const About = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-              <div className="glass-panel p-6 text-center">
-                <Film className="w-6 h-6 text-gold mx-auto mb-2" />
+              <div className="glass-panel hover-lift hover:shadow-lg transition-all ease-in-out duration-500 p-6 text-center">
                 <div className="text-2xl font-bold mb-1">15+</div>
                 <div className="text-sm text-white/60">Films Directed</div>
               </div>
-              <div className="glass-panel p-6 text-center">
-                <Award className="w-6 h-6 text-gold mx-auto mb-2" />
+              <div className="glass-panel hover-lift hover:shadow-lg transition-all ease-in-out duration-500 p-6 text-center">
                 <div className="text-2xl font-bold mb-1">8</div>
                 <div className="text-sm text-white/60">Awards Won</div>
               </div>
-              <div className="glass-panel p-6 text-center">
-                <User className="w-6 h-6 text-gold mx-auto mb-2" />
+              <div className="glass-panel hover-lift hover:shadow-lg transition-all ease-in-out duration-500 p-6 text-center">
                 <div className="text-2xl font-bold mb-1">15+</div>
                 <div className="text-sm text-white/60">Years Experience</div>
               </div>

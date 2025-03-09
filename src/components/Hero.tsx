@@ -32,10 +32,7 @@ const Hero = () => {
         <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fadeIn text-white">
           Jasmijn Schrofer
         </h1>
-        <p
-          className="text-xl md:text-2xl text-white/80 mb-4 md:mb-8 animate-fadeIn"
-          style={{ animationDelay: "0.3s" }}
-        >
+        <p className="text-xl md:text-2xl text-white/80 mb-4 md:mb-8 animate-fadeIn">
           Film Director
         </p>
         <p
