@@ -77,7 +77,7 @@ const Films = () => {
                   className="w-full h-full object-cover"
                 />
                 {hoveredFilm === film.id && (
-                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm transition-all duration-300">
+                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm transition-all duration-500">
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
                       <h3 className="text-xl font-playfair font-bold mb-2">
                         {film.title}
@@ -87,11 +87,10 @@ const Films = () => {
                       </p>
                       {film.awards && (
                         <div className="flex items-center gap-2 text-gold">
-                          {/* <Award className="w-4 h-4" /> */}
                           <span className="text-sm">{film.awards[0]}</span>
                         </div>
                       )}
-                      <button className="mt-4 px-6 py-2 bg-primary/20 hover:bg-primary/30 border border-primary/50 rounded-full flex items-center gap-2 transition-colors duration-300">
+                      <button className="mt-4 px-6 py-2 bg-primary/20 hover:bg-primary/30 border border-primary/50 rounded-full flex items-center gap-2 transition-colors duration-500">
                         <Play className="w-4 h-4" />
                         Watch Trailer
                       </button>

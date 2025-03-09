@@ -45,18 +45,17 @@ const FeaturedFilm = () => {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#"
-                className="inline-flex items-center justify-center button-primary"
-                style={{ animationDelay: "0.6s" }}
+                className="inline-flex items-center justify-center button-primary hover-lift"
               >
                 <Play className="w-4 h-4 mr-2" />
                 Watch Now
               </a>
               <a
                 href="#"
-                className="px-6 py-3 text-white hover-lift inline-flex items-center gap-2 group hover:text-secondary"
+                className="group button-secondary transition-all duration-500"
               >
                 Learn More
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 group-hover:text-secondary transition-transform duration-500" />
               </a>
             </div>
           </div>

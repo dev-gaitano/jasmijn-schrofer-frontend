@@ -24,10 +24,10 @@ const CallToAction = () => {
             </a>
             <a
               href="#"
-              className="px-6 py-3 text-white hover-lift inline-flex items-center gap-2 group hover:text-secondary"
+              className="group button-secondary transition-all duration-500"
             >
               View
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 group-hover:text-secondary transition-transform duration-500" />
             </a>
           </div>
         </div>

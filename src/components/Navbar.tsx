@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed max-w-7xl max-h-[82px] top-0 z-50 transition-all duration-300 ${
+      className={`fixed max-w-7xl max-h-[82px] top-0 z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-white bg-opacity-10 backdrop-blur shadow-lg w-3/4 top-2 rounded-[3rem]"
           : "w-3/4"
@@ -35,32 +35,32 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <a
               href="#hero"
-              className="nav-link relative bottom-0 transition-all duration-300 hover:relative hover:bottom-1"
+              className="nav-link hover-lift transition-all duration-500"
             >
               Home
             </a>
             <a
               href="#films"
-              className="nav-link relative bottom-0 transition-all duration-300 hover:relative hover:bottom-1"
+              className="nav-link hover-lift transition-all duration-500"
             >
               Films
             </a>
             <a
               href="#showreel"
-              className="nav-link relative bottom-0 transition-all duration-300 hover:relative hover:bottom-1"
+              className="nav-link hover-lift transition-all duration-500"
             >
               News
             </a>
             <a
               href="#about"
-              className="nav-link relative bottom-0 transition-all duration-300 hover:relative hover:bottom-1"
+              className="nav-link hover-lift transition-all duration-500"
             >
               About
             </a>
             {isScrolled ? (
               <a
                 href="#contact"
-                className="inline-block px-8 py-3 bg-primary/10 hover:bg-primary/20 border hover:backdrop-blur border-primary/50 rounded-[24px] text-primary transition-all duration-400 animate-fadeIn"
+                className="hover-lift inline-block px-8 py-3 bg-primary/10 border hover:backdrop-blur border-primary/50 rounded-[24px] text-primary transition-all duration-500 animate-fadeIn"
                 style={{ animationDelay: "0.6s" }}
               >
                 Contact
