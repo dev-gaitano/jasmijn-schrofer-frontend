@@ -20,7 +20,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Image */}
           <div className="relative">
-            <div className="aspect-[3/4] rounded-lg overflow-hidden glass-panel">
+            <div className="aspect-[3/4] rounded-lg overflow-hidden">
               <img
                 src="/jasmijn-potrait-comp.jpg"
                 alt="Jasmijn Schrofer"

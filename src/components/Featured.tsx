@@ -62,7 +62,7 @@ const FeaturedFilm = () => {
 
           {/* Image */}
           <div className="relative">
-            <div className="aspect-video rounded-lg overflow-hidden glass-panel">
+            <div className="aspect-video rounded-lg overflow-hidden">
               <img
                 src="/birth-of-light-still-comp.jpg"
                 alt="Latest Project"

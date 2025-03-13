@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Film as FilmIcon, Play, Award } from "lucide-react";
+import { Play } from "lucide-react";
 
 interface FilmProject {
   id: number;
   title: string;
   year: string;
   category: string;
+  runtime: string;
   thumbnail: string;
   description: string;
   awards?: string[];
@@ -17,6 +18,7 @@ const films: FilmProject[] = [
     title: "Birth of Light",
     year: "2023",
     category: "Short Film",
+    runtime: "23mins",
     thumbnail: "/birth-of-light-poster-comp.jpg",
     description:
       "A haunting exploration of memory and loss through the eyes of a young artist.",
@@ -27,6 +29,7 @@ const films: FilmProject[] = [
     title: "Tarikat",
     year: "2022",
     category: "Short Film",
+    runtime: "17mins",
     thumbnail: "/tarikat-poster-comp.jpg",
     description:
       "A poetic journey into the rituals of a mystical order, blending reality and surrealism.",
@@ -37,6 +40,7 @@ const films: FilmProject[] = [
     title: "Unfold",
     year: "2021",
     category: "Short Film",
+    runtime: "7mins",
     thumbnail: "/unfold-poster-comp.jpg",
     description:
       "An intimate portrayal of transformation and self-discovery through movement and light.",
@@ -70,7 +74,7 @@ const Films = () => {
               onMouseEnter={() => setHoveredFilm(film.id)}
               onMouseLeave={() => setHoveredFilm(null)}
             >
-              <div className="relative aspect-[2/3] overflow-hidden rounded-lg glass-panel">
+              <div className="relative aspect-[2/3] overflow-hidden rounded-lg">
                 <img
                   src={film.thumbnail}
                   alt={film.title}
@@ -79,6 +83,10 @@ const Films = () => {
                 {hoveredFilm === film.id && (
                   <div className="absolute inset-0 bg-black/50 backdrop-blur-lg animate-fadeIn duration-500">
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                      <button className="mb-4 px-6 py-2 bg-white bg-opacity-5 hover:bg-opacity-10 backdrop-blur shadow-lg rounded-full glass-panel hover-lift flex items-center gap-2 transition-all duration-500">
+                        <Play className="w-4 h-4" />
+                        Watch Trailer
+                      </button>
                       <h3 className="text-xl font-playfair font-bold mb-2">
                         {film.title}
                       </h3>
@@ -90,10 +98,6 @@ const Films = () => {
                           <span className="text-sm">{film.awards[0]}</span>
                         </div>
                       )}
-                      <button className="mt-4 px-6 py-2 bg-primary/20 hover:bg-primary/30 border border-primary/50 rounded-full flex items-center gap-2 transition-colors duration-500">
-                        <Play className="w-4 h-4" />
-                        Watch Trailer
-                      </button>
                     </div>
                   </div>
                 )}
@@ -105,7 +109,7 @@ const Films = () => {
                 <div className="flex items-center justify-center md:justify-start gap-2 text-sm text-white/60">
                   <span>{film.year}</span>
                   <span>•</span>
-                  <span>{film.category}</span>
+                  <span>{film.runtime}</span>
                 </div>
               </div>
             </div>
