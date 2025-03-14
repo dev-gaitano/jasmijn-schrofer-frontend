@@ -1,11 +1,9 @@
-import { User, Award, Film } from "lucide-react";
-import { parse } from "path";
+import aboutImage from "/jasmijn-masterclass.jpg";
 
 const About = () => {
   return (
     <section id="about" className="relative py-24 w-full">
       {/* Background gradients */}
-      {/* <div className="absolute inset-0 bg-gradient-to-bl from-background via-background to-black/50 pointer-events-none"></div> */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-accent/40 via-transparent via-50% to-transparent pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/30 via-transparent via-20% to-transparent pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary/40 via-transparent via-50% to-transparent pointer-events-none"></div>
@@ -22,7 +20,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-[3/4] rounded-lg overflow-hidden">
               <img
-                src="/jasmijn-masterclass.jpg"
+                src={aboutImage}
                 alt="Jasmijn Schrofer"
                 className="w-full h-full object-cover"
               />
