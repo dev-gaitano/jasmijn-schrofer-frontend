@@ -28,7 +28,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#008083]/40 via-transparent to-transparent via-50% pointer-events-none"></div>
 
       {/* Content */}
-      <div className="absolute max-md:bottom-8 z-10 w-full px-12 text-center md:text-right flex flex-col items-center md:items-end md:px-36">
+      <div className="max-md:bottom-8 z-10 w-full px-12 text-center md:text-right flex flex-col items-center md:items-end md:px-36">
         <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fadeIn text-white">
           Jasmijn Schrofer
         </h1>

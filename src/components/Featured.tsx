@@ -2,12 +2,8 @@ import { Play, ArrowRight } from "lucide-react";
 
 const FeaturedFilm = () => {
   return (
-    <section className="w-full py-24 bg-background relative">
-      {/* Background gradients */}
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 pointer-events-none"></div> */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/15 via-transparent to-transparent pointer-events-none"></div>
-
-      <div className="container px-4 mx-auto z-50">
+    <section className="w-full h-screen bg-[url(/birth-of-light-still.png)] bg-center bg-cover flex items-center relative">
+      <div className="container pl-36 z-50 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div>
@@ -57,22 +53,6 @@ const FeaturedFilm = () => {
                 Learn More
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 group-hover:text-secondary transition-transform duration-500" />
               </a>
-            </div>
-          </div>
-
-          {/* Image */}
-          <div className="relative">
-            <div className="aspect-video rounded-lg overflow-hidden">
-              <img
-                src="/birth-of-light-still-comp.jpg"
-                alt="Latest Project"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button className="w-16 h-16 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-primary border border-primary/30 hover:bg-black/70 transition-colors">
-                  <Play className="w-6 h-6" />
-                </button>
-              </div>
             </div>
           </div>
         </div>
