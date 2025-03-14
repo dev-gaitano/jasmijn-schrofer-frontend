@@ -1,11 +1,8 @@
 import { Play, ArrowRight } from "lucide-react";
-import bgImage from "/birth-of-light-still-comp.jpg";
 
 const FeaturedFilm = () => {
   return (
-    <section
-      className={`w-full h-screen bg-[url(${bgImage})] bg-center bg-cover flex items-center relative`}
-    >
+    <section className="w-full h-screen bg-[url(/birth-of-light-still-comp.jpg)] bg-center bg-cover flex items-center relative">
       <div className="container pl-36 z-50 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
