@@ -16,7 +16,7 @@ const FeaturedFilm = () => {
             </span>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-6 leading-tight">
-              Discover My Latest Project: Death of Darkness
+              Discover My Latest Project: Birth of Light
             </h2>
 
             <p className="text-white/80 mb-8 text-lg">

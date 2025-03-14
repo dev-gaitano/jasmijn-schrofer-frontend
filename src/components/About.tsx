@@ -22,12 +22,11 @@ const About = () => {
           <div className="relative">
             <div className="aspect-[3/4] rounded-lg overflow-hidden">
               <img
-                src="/jasmijn-potrait-comp.jpg"
+                src="/jasmijn-masterclass.jpg"
                 alt="Jasmijn Schrofer"
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* <div className="absolute -bottom-6 -right-6 -z-10 w-full h-full border-2 border-primary/30 rounded-lg"></div> */}
           </div>
 
           {/* Content */}

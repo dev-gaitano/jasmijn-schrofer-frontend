@@ -34,32 +34,32 @@ const Navbar = () => {
           </a>
           <div className="hidden md:flex items-center space-x-8">
             <a
-              href="#hero"
+              href="/"
               className="nav-link hover-lift transition-all duration-500"
             >
               Home
             </a>
             <a
-              href="#films"
+              href="/work"
               className="nav-link hover-lift transition-all duration-500"
             >
-              Films
+              Work
             </a>
             <a
-              href="#showreel"
+              href="/news"
               className="nav-link hover-lift transition-all duration-500"
             >
               News
             </a>
             <a
-              href="#about"
+              href="/about"
               className="nav-link hover-lift transition-all duration-500"
             >
               About
             </a>
             {isScrolled ? (
               <a
-                href="#contact"
+                href="/contact"
                 className="hover-lift inline-block px-8 py-3 bg-primary/10 border hover:backdrop-blur border-primary/50 rounded-[24px] text-primary transition-all duration-500 animate-fadeIn"
                 style={{ animationDelay: "0.6s" }}
               >
