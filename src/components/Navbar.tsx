@@ -13,10 +13,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed max-w-7xl max-h-[82px] top-0 z-[999] transition-all duration-500 ${
-        isScrolled
-          ? "bg-white bg-opacity-10 backdrop-blur shadow-lg w-3/4 top-2 rounded-full"
-          : "w-3/4"
+      className={`fixed max-w-7xl max-h-[82px] top-0 z-[999] w-3/4 transition-all duration-500 ${
+        isScrolled ? "top-2 rounded-full glass-panel" : ""
       }`}
     >
       <div className="container px-2 py-4">
