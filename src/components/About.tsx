@@ -61,7 +61,7 @@ const About = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-              <div className="glass-panel hover-lift hover:shadow-lg transition-all ease-in-out duration-500 p-6 text-center">
+              <div className="glass-panel hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500 p-6 text-center">
                 <div className="text-2xl font-bold mb-1">15+</div>
                 <div className="text-sm text-white/60">Films Directed</div>
               </div>
