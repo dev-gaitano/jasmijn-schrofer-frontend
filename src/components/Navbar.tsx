@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <a
             href="/"
-            className="text-2xl font-playfair font-bold text-gradient flex items-center"
+            className="text-2xl font-playfair font-bold text-gradient flex items-center ml-2"
           >
             <img src="/logo.png" alt="JAS Logo" className="h-10" />
             {isScrolled ? null : (
