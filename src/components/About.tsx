@@ -37,7 +37,7 @@ const About = () => {
                 television, and the creative arts—is a journey through visual
                 poetry, cultural metamorphosis, and immersive storytelling.
               </p>
-              <p className="text-lg text-white/80 leading-relaxed">
+              <p className="text-lg text-white/80 leading-relaxed max-md:hidden">
                 Among my creations,{" "}
                 <span className="italic font-bold">Birth of Light</span> shines
                 brightly, honored at the Golden Calf Competition and the Forum
@@ -48,7 +48,7 @@ const About = () => {
                 festivals—a testament to my dedication to stories that linger in
                 the heart long after the screen fades to black.
               </p>
-              <p className="text-lg text-white/80 leading-relaxed">
+              <p className="text-lg text-white/80 leading-relaxed max-md:hidden">
                 With over 50 commissioned projects for visionaries like VPRO,
                 Manchester City, El País, and Holland Festival. From intimate
                 documentaries to bold visual experiments, every project is a new
