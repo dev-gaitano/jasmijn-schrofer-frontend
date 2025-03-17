@@ -45,6 +45,14 @@
 }
 
 @layer components {
+  .off-screen {
+    @apply opacity-0 blur-lg translate-x-full transition-all duration-300
+  }
+
+  .on-screen {
+    @apply opacity-100 blur-0 translate-x-0 transition-all duration-700
+  }
+
   .nav-link {
     @apply relative inline-block py-2 px-4 text-foreground/80 hover:text-primary transition-colors duration-500 
     after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] 

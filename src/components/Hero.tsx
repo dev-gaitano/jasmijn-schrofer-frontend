@@ -1,4 +1,31 @@
+import { useEffect, useRef, useState } from "react";
+
 const Hero = () => {
+  const useIsOnScreen = (threshold = 0.2) => {
+    const [isOnScreen, setIsOnScreen] = useState(false);
+
+    useEffect(() => {
+      const observedElements = document.querySelectorAll(".observed");
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setIsOnScreen(entry.isIntersecting);
+        },
+        { threshold },
+      );
+
+      observedElements.forEach((observedElement) => {
+        observer.observe(observedElement);
+      });
+
+      return () => observer.disconnect();
+    }, [threshold]);
+
+    return { isOnScreen };
+  };
+
+  const { isOnScreen } = useIsOnScreen();
+
   return (
     <section
       id="hero"
@@ -14,7 +41,6 @@ const Hero = () => {
         <div className="fixed top-0 right-0 h-screen w-[60vw] bg-gradient-to-l from-background/100 to-transparent"></div>
       </div>
 
-      {/* Overlay with enhanced gradient */}
       {/* Desktop Gradients */}
       <div className="fixed top-0 right-0 h-screen w-[60vw] bg-gradient-to-l from-background/100 to-transparent"></div>
       <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-background to-transparent"></div>
@@ -29,15 +55,18 @@ const Hero = () => {
 
       {/* Content */}
       <div className="max-md:bottom-8 z-10 w-full px-12 text-center md:text-right flex flex-col items-center md:items-end md:px-36">
-        <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fadeIn text-white">
+        <h1
+          className={`font-playfair text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white observed ${isOnScreen ? "on-screen" : "off-screen"}`}
+        >
           Jasmijn Schrofer
         </h1>
-        <p className="text-xl md:text-2xl text-white/80 mb-4 md:mb-8 animate-fadeIn">
+        <p
+          className={`text-xl md:text-2xl text-white/80 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen"} delay-300`}
+        >
           Film Director
         </p>
         <p
-          className="max-w-2xl text-lg text-white/70 mb-4 md:mb-8 animate-fadeIn"
-          style={{ animationDelay: "0.45s" }}
+          className={`max-w-2xl text-lg text-white/70 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen"} delay-500`}
         >
           A Dutch/Chinese American documentary filmmaker based in Amsterdam,
           renowned for visually poetic storytelling and exploration of profound
@@ -47,7 +76,7 @@ const Hero = () => {
         <a
           href="#films"
           className="inline-block button-primary animate-fadeIn"
-          style={{ animationDelay: "0.6s" }}
+          style={{ animationDelay: "1.4s" }}
         >
           Explore My Work
         </a>
