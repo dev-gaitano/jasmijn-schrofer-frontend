@@ -1,6 +1,9 @@
 import { Play, ArrowRight } from "lucide-react";
+import { useIsOnScreen } from "@/hooks/useIsOnScreen";
 
 const FeaturedFilm = () => {
+  const { isOnScreen } = useIsOnScreen();
+
   return (
     <section className="w-full h-screen bg-[url(/birth-of-light-still-comp.jpg)] bg-center bg-cover flex items-center relative">
       <div className="container">
@@ -11,11 +14,15 @@ const FeaturedFilm = () => {
               FILM
             </span>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-6 leading-tight">
+            <h2
+              className={`text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-6 leading-tight observed ${isOnScreen ? "on-screen" : "off-screen"} delay-300`}
+            >
               Discover My Latest Project: Birth of Light
             </h2>
 
-            <p className="text-white/80 mb-8 text-lg">
+            <p
+              className={`text-white/80 mb-8 text-lg observed ${isOnScreen ? "on-screen" : "off-screen"} delay-500`}
+            >
               So far, the sun and moon dictated the rhythm of the Samburu,
               herdsmen in northern Kenya. Now, they are connected to the power
               network. Poetic impression of life at a point of big changes.
@@ -23,7 +30,9 @@ const FeaturedFilm = () => {
           </div>
 
           <div className="flex w-full gap-4 mb-8">
-            <div className="w-1/2">
+            <div
+              className={`w-1/2 observed ${isOnScreen ? "on-screen" : "off-screen"} delay-600`}
+            >
               <h3 className="font-bold text-xl mb-3">Latest Project</h3>
               <p className="text-white/70">
                 Delves into the complex themes of modernization's effects on
@@ -31,7 +40,9 @@ const FeaturedFilm = () => {
               </p>
             </div>
 
-            <div className="w-1/2">
+            <div
+              className={`w-1/2 observed ${isOnScreen ? "on-screen" : "off-screen"} delay-650`}
+            >
               <h3 className="font-bold text-xl mb-3">Watch Now</h3>
               <p className="text-white/70">
                 Join us in celebrating the artistry of Jasmijn Schrofer.
