@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 
 interface FilmProject {
@@ -50,6 +50,48 @@ const films: FilmProject[] = [
 
 const Films = () => {
   const [hoveredFilm, setHoveredFilm] = useState<number | null>(null);
+  const useIsOnScreen = (threshold = 0.2) => {
+    const [isOnScreen, setIsOnScreen] = useState<Set<number>>(new Set());
+    const observedElements = useRef<(HTMLDivElement | null)[]>([]);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const target = entry.target as HTMLDivElement;
+            const index = observedElements.current.indexOf(target);
+
+            if (index !== -1) {
+              if (entry.isIntersecting) {
+                setIsOnScreen((prev) => new Set(prev.add(index))); // Add to the set when visible
+              } else {
+                setIsOnScreen((prev) => {
+                  const newSet = new Set(prev);
+                  newSet.delete(index); // Remove from the set when not visible
+                  return newSet;
+                });
+              }
+            }
+          });
+        },
+        { threshold },
+      );
+
+      observedElements.current.forEach((el) => {
+        if (el) observer.observe(el);
+      });
+
+      return () => {
+        observedElements.current.forEach((el) => {
+          if (el) observer.unobserve(el);
+        });
+      };
+    }, [threshold]);
+
+    return { isOnScreen, observedElements };
+  };
+
+  const { isOnScreen, observedElements } = useIsOnScreen();
 
   return (
     <section id="films" className="relative py-24 bg-background w-full">
@@ -67,19 +109,22 @@ const Films = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {films.map((film) => (
+          {films.map((film, index) => (
             <div
-              key={film.id}
-              className="relative group transition-all duration-700 hover-lift"
+              key={index}
+              ref={(el) => (observedElements.current[index] = el)}
+              className={`relative group transition-all duration-700 hover-lift ${isOnScreen.has(index) ? "on-screen" : "off-screen"}`}
               onMouseEnter={() => setHoveredFilm(film.id)}
               onMouseLeave={() => setHoveredFilm(null)}
             >
+              {" "}
               <div className="relative aspect-[2/3] overflow-hidden rounded-lg">
+                {" "}
                 <img
                   src={film.thumbnail}
                   alt={film.title}
                   className="w-full h-full object-cover"
-                />
+                />{" "}
                 {hoveredFilm === film.id && (
                   <div className="absolute inset-0 bg-black/50 backdrop-blur-lg animate-fadeIn duration-500">
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
