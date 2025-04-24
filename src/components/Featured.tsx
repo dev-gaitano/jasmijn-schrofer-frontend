@@ -15,13 +15,13 @@ const FeaturedFilm = () => {
             </span>
 
             <h2
-              className={`text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-6 leading-tight observed ${isOnScreen ? "on-screen" : "off-screen"} delay-300`}
+              className={`text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-6 leading-tight observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-300`}
             >
               Discover My Latest Project: Birth of Light
             </h2>
 
             <p
-              className={`text-white/80 mb-8 text-lg observed ${isOnScreen ? "on-screen" : "off-screen"} delay-500`}
+              className={`text-white/80 mb-8 text-lg observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-500`}
             >
               So far, the sun and moon dictated the rhythm of the Samburu,
               herdsmen in northern Kenya. Now, they are connected to the power
@@ -31,7 +31,7 @@ const FeaturedFilm = () => {
 
           <div className="flex w-full gap-4 mb-8">
             <div
-              className={`w-1/2 observed ${isOnScreen ? "on-screen" : "off-screen"} delay-600`}
+              className={`w-1/2 observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-600`}
             >
               <h3 className="font-bold text-xl mb-3">Latest Project</h3>
               <p className="text-white/70">
@@ -41,7 +41,7 @@ const FeaturedFilm = () => {
             </div>
 
             <div
-              className={`w-1/2 observed ${isOnScreen ? "on-screen" : "off-screen"} delay-650`}
+              className={`w-1/2 observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-650`}
             >
               <h3 className="font-bold text-xl mb-3">Watch Now</h3>
               <p className="text-white/70">

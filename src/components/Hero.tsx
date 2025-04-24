@@ -33,17 +33,17 @@ const Hero = () => {
       {/* Content */}
       <div className="max-md:bottom-8 z-10 w-full px-12 text-center md:text-right flex flex-col items-center md:items-end md:px-36">
         <h1
-          className={`font-playfair text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white observed ${isOnScreen ? "on-screen" : "off-screen"}`}
+          className={`font-playfair text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white observed ${isOnScreen ? "on-screen" : "off-screen-right"}`}
         >
           Jasmijn Schrofer
         </h1>
         <p
-          className={`text-xl md:text-2xl text-white/80 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen"} delay-300`}
+          className={`text-xl md:text-2xl text-white/80 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
         >
           Film Director
         </p>
         <p
-          className={`max-w-2xl text-lg text-white/70 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen"} delay-500`}
+          className={`max-w-2xl text-lg text-white/70 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
         >
           A Dutch/Chinese American documentary filmmaker based in Amsterdam,
           renowned for visually poetic storytelling and exploration of profound

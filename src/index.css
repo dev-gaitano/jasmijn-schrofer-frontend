@@ -45,8 +45,12 @@
 }
 
 @layer components {
-  .off-screen {
+  .off-screen-right {
     @apply opacity-0 blur-lg translate-x-full transition-all duration-300
+  }
+
+  .off-screen-left {
+    @apply opacity-0 blur-lg -translate-x-full transition-all duration-300
   }
 
   .on-screen {

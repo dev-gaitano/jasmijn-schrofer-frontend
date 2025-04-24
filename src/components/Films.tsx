@@ -113,7 +113,7 @@ const Films = () => {
             <div
               key={index}
               ref={(el) => (observedElements.current[index] = el)}
-              className={`relative group transition-all duration-700 hover-lift ${isOnScreen.has(index) ? "on-screen" : "off-screen"}`}
+              className={`relative group transition-all duration-700 hover-lift ${isOnScreen.has(index) ? "on-screen" : "off-screen-right"}`}
               style={{ animationDelay: `${index * 200}ms` }}
               onMouseEnter={() => setHoveredFilm(film.id)}
               onMouseLeave={() => setHoveredFilm(null)}
