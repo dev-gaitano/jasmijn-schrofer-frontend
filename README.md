@@ -19,7 +19,7 @@ Follow these steps:
 git clone git@github.com:dev-gaitano/jasmijn-schrofer-frontend.git
 
 # Step 2: Navigate to the project directory.
-cd jasmijn-schrofer-portfolio
+cd jasmijn-schrofer-frontend
 
 # Step 3: Install the necessary dependencies.
 npm i
@@ -35,5 +35,4 @@ This project is built with .
 - Vite
 - TypeScript
 - React
-- shadcn-ui
 - Tailwind CSS
