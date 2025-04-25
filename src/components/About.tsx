@@ -1,6 +1,10 @@
 import aboutImage from "/jasmijn-masterclass.jpg";
+import { useIsOnScreen } from "@/hooks/useIsOnScreen";
+import CountUp from "./CountUp.tsx";
 
 const About = () => {
+  const { isOnScreen } = useIsOnScreen();
+
   return (
     <section id="about" className="relative py-24 w-full">
       {/* Background gradients */}
@@ -62,15 +66,42 @@ const About = () => {
             {/* Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
               <div className="glass-panel hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500 p-6 text-center">
-                <div className="text-2xl font-bold mb-1">15+</div>
+                <div className="text-2xl font-bold mb-1">
+                  <CountUp
+                    from={0}
+                    to={7}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                  />
+                </div>
                 <div className="text-sm text-white/60">Films Directed</div>
               </div>
               <div className="glass-panel hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500 p-6 text-center">
-                <div className="text-2xl font-bold mb-1">8</div>
+                <div className="text-2xl font-bold mb-1">
+                  <CountUp
+                    from={0}
+                    to={8}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                  />
+                </div>
                 <div className="text-sm text-white/60">Awards Won</div>
               </div>
               <div className="glass-panel hover-lift hover:shadow-lg t rounded-lg ransition-all ease-in-out duration-500 p-6 text-center">
-                <div className="text-2xl font-bold mb-1">15+</div>
+                <div className="text-2xl font-bold mb-1">
+                  <CountUp
+                    from={0}
+                    to={15}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                  />
+                </div>
                 <div className="text-sm text-white/60">Years Experience</div>
               </div>
             </div>
