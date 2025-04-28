@@ -1,4 +1,5 @@
 import { useIsOnScreen } from "@/hooks/useIsOnScreen";
+import BlurText from "@/components/BlurText";
 
 const Hero = () => {
   const { isOnScreen } = useIsOnScreen();
@@ -32,10 +33,14 @@ const Hero = () => {
 
       {/* Content */}
       <div className="max-md:bottom-8 z-10 w-full px-12 text-center md:text-right flex flex-col items-center md:items-end md:px-36">
-        <h1
-          className={`font-playfair text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white observed ${isOnScreen ? "on-screen" : "off-screen-right"}`}
-        >
-          Jasmijn Schrofer
+        <h1>
+          <BlurText
+            text="Jasmijn Schrofer"
+            delay={300}
+            animateBy="words"
+            direction="top"
+            className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white "
+          />
         </h1>
         <p
           className={`text-xl md:text-2xl text-white/80 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
