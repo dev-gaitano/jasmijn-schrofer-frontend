@@ -21,18 +21,14 @@ const Hero = () => {
 
       {/* Desktop Gradients */}
       <div className="fixed top-0 right-0 h-screen w-[60vw] bg-gradient-to-l from-background/100 to-transparent"></div>
-      <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-background to-transparent"></div>
-
-      {/* Mobile Gradients */}
-      <div className="md:hidden absolute inset-0 bg-gradient-to-t from-transparent via-100% to-background/100 pointer-events-none"></div>
-      <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent via-[20px] to-background/100 pointer-events-none"></div>
+      <div className="absolute inset-y-0 left-0 w-28 md:bg-gradient-to-r from-background to-transparent"></div>
 
       {/* All Gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] md:bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/70 via-transparent to-transparent via-30% md:via-40% pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#008083]/40 via-transparent to-transparent via-50% pointer-events-none"></div>
+      <div className="absolute inset-0 md:bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/70 via-transparent to-transparent via-30% md:via-40% pointer-events-none"></div>
+      <div className="absolute inset-0 md:bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#008083]/40 via-transparent to-transparent via-50% pointer-events-none"></div>
 
       {/* Content */}
-      <div className="max-md:bottom-8 z-10 w-full px-12 text-center md:text-right flex flex-col items-center md:items-end md:px-36">
+      <div className="z-10 w-full px-12 text-center md:text-right flex flex-col items-center md:items-end md:px-36">
         <h1>
           <BlurText
             text="Jasmijn Schrofer"

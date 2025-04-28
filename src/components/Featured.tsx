@@ -21,7 +21,7 @@ const FeaturedFilm = () => {
             </h2>
 
             <p
-              className={`text-white/80 mb-8 text-lg observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-500`}
+              className={`text-white/80 mb-8 max-md:text-sm md:text-lg observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-500`}
             >
               So far, the sun and moon dictated the rhythm of the Samburu,
               herdsmen in northern Kenya. Now, they are connected to the power
@@ -29,7 +29,7 @@ const FeaturedFilm = () => {
             </p>
           </div>
 
-          <div className="flex w-full gap-4 mb-8">
+          <div className="max-md:hidden flex w-full gap-4 mb-8">
             <div
               className={`w-1/2 observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-600`}
             >
@@ -53,14 +53,14 @@ const FeaturedFilm = () => {
           <div className="flex flex-wrap gap-4">
             <a
               href="#"
-              className="inline-flex items-center justify-center button-primary hover-lift"
+              className="inline-flex items-center justify-center max-md:text-sm button-primary max-md:h-12 hover-lift"
             >
-              <Play className="w-4 h-4 mr-2" />
+              <Play className="max-md:w-3 md:w-4 md:h-4 mr-2" />
               Watch Now
             </a>
             <a
               href="#"
-              className="group button-secondary transition-all duration-500"
+              className="group button-secondary max-md:text-sm transition-all duration-500"
             >
               Learn More
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 group-hover:text-secondary transition-transform duration-500" />
