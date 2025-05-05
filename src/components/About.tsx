@@ -14,9 +14,7 @@ const About = () => {
 
       <div className="container px-4 mx-auto relative z-10">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-playfair font-bold">
-            About Me
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold">About Me</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -43,14 +41,17 @@ const About = () => {
               </p>
               <p className="text-lg text-white/80 leading-relaxed max-md:hidden">
                 Among my creations,{" "}
-                <span className="italic font-bold">Birth of Light</span> shines
-                brightly, honored at the Golden Calf Competition and the Forum
-                van de Regisseurs at the Netherlands Film Festival, and crowned
-                with the Blue Planet Grant Award in Korea. My graduation film,
-                <span className="italic font-bold">Tarikat</span>, has echoed
-                across screens worldwide, collecting accolades at international
-                festivals—a testament to my dedication to stories that linger in
-                the heart long after the screen fades to black.
+                <span className="font-serif italic font-bold">
+                  Birth of Light
+                </span>{" "}
+                shines brightly, honored at the Golden Calf Competition and the
+                Forum van de Regisseurs at the Netherlands Film Festival, and
+                crowned with the Blue Planet Grant Award in Korea. My graduation
+                film,
+                <span className="font-serif italic font-bold"> Tarikat</span>,
+                has echoed across screens worldwide, collecting accolades at
+                international festivals—a testament to my dedication to stories
+                that linger in the heart long after the screen fades to black.
               </p>
               <p className="text-lg text-white/80 leading-relaxed max-md:hidden">
                 With over 50 commissioned projects for visionaries like VPRO,
@@ -108,7 +109,7 @@ const About = () => {
 
             {/* Expertise */}
             <div className="space-y-4">
-              <h3 className="text-xl font-playfair font-bold">Expertise</h3>
+              <h3 className="text-xl">Expertise</h3>
               <div className="flex flex-wrap gap-3">
                 {[
                   "Documentary",

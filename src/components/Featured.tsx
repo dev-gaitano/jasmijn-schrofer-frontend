@@ -10,12 +10,12 @@ const FeaturedFilm = () => {
         {/* Content */}
         <div className="flex flex-col w-1/2">
           <div>
-            <span className="text-accent text-sm font-medium tracking-wider uppercase mb-4 block">
-              FILM
+            <span className="text-accent text-sm font-serif italic font-medium tracking-wider mb-4 block">
+              Film
             </span>
 
             <h2
-              className={`text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-6 leading-tight observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-300`}
+              className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-300`}
             >
               Discover My Latest Project: Birth of Light
             </h2>
@@ -33,7 +33,9 @@ const FeaturedFilm = () => {
             <div
               className={`w-1/2 observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-600`}
             >
-              <h3 className="font-bold text-xl mb-3">Latest Project</h3>
+              <h3 className="font-serif italic font-bold text-xl mb-3">
+                Latest Project
+              </h3>
               <p className="text-white/70">
                 Delves into the complex themes of modernization's effects on
                 their traditional way of life
@@ -43,7 +45,9 @@ const FeaturedFilm = () => {
             <div
               className={`w-1/2 observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-650`}
             >
-              <h3 className="font-bold text-xl mb-3">Watch Now</h3>
+              <h3 className="font-serif italic font-bold text-xl mb-3">
+                Watch Now
+              </h3>
               <p className="text-white/70">
                 Join us in celebrating the artistry of Jasmijn Schrofer.
               </p>

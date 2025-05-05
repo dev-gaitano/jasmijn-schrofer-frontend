@@ -56,7 +56,8 @@ export default {
         crimson: "#800020",
       },
       fontFamily: {
-        playfair: ["Playfair Display", "serif"],
+        sans: ["Bebas Neue", "sans-serif"], // for Bebas
+        serif: ["Playfair Display", "serif"], // for Playfair
         inter: ["Inter", "sans-serif"],
       },
       borderRadius: {

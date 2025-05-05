@@ -35,11 +35,11 @@ const Hero = () => {
             delay={300}
             animateBy="words"
             direction="top"
-            className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white "
+            className="font-playfair text-4xl md:text-7xl lg:text-7xl font-bold mb-6 text-white "
           />
         </h1>
         <p
-          className={`text-xl md:text-2xl text-white/80 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
+          className={`font-serif italic text-xl md:text-2xl text-white/80 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
         >
           Film Director
         </p>
