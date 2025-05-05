@@ -114,15 +114,19 @@ const Footer = () => {
                   Amsterdam, The Netherlands | Nairobi, Kenya
                 </span>
               </div>
-              {/*
-              <div className="flex gap-3">
-                <input
-                  className="mt-0.5 bg-black border-[0.5px] border-foreground/60 rounded-lg"
-                  placeholder="Email"
-                />
-                <button>Subscribe</button>
+              <div>
+                <h5 className="text-lg mb-2 mt-5">
+                  Subscribe to my Newsletter
+                </h5>
+                <div className="flex gap-3">
+                  <input
+                    className="w-80 mt-0.5 pl-2 bg-black border-[0.5px] border-foreground/60 rounded-lg placeholder-foreground/30"
+                    placeholder="Email"
+                    type="email"
+                  />
+                  <button>Subscribe</button>
+                </div>
               </div>
-              */}
             </div>
           </div>
         </div>
