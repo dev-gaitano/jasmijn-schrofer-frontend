@@ -35,16 +35,16 @@ const Hero = () => {
             delay={300}
             animateBy="words"
             direction="top"
-            className="font-playfair text-4xl md:text-7xl lg:text-7xl font-bold mb-6 text-white "
+            className="font-playfair text-4xl md:text-7xl lg:text-7xl font-bold mb-6 text-foreground "
           />
         </h1>
         <p
-          className={`font-serif italic text-xl md:text-2xl text-white/80 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
+          className={`font-serif italic text-xl md:text-2xl text-foreground/80 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
         >
           Film Director
         </p>
         <p
-          className={`max-w-2xl text-lg text-white/70 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
+          className={`max-w-2xl text-lg text-foreground/70 mb-4 md:mb-8 observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
         >
           A Dutch/Chinese American documentary filmmaker based in Amsterdam,
           renowned for visually poetic storytelling and exploration of profound
@@ -63,7 +63,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <div className="absolute w-full bottom-8 px-36 transform -translate-x-1/2 animate-bounce justify-center md:justify-end hidden md:flex">
         <svg
-          className="w-6 h-6 text-white/50"
+          className="w-6 h-6 text-foreground/50"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"

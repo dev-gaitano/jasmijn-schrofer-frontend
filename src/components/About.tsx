@@ -31,7 +31,9 @@ const About = () => {
 
           {/* Content */}
           <div className="space-y-8">
-            <div className="prose prose-invert flex flex-col gap-2">
+            <div
+              className={`prose prose-invert flex flex-col gap-2 ${isOnScreen ? "off-screen-left" : "on-screen"}`}
+            >
               <p className="text-lg text-white/80 leading-relaxed">
                 For over 15 years, I have painted with light and motion,
                 crafting cinematic tapestries that transcend borders and speak
