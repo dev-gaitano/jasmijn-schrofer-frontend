@@ -73,58 +73,46 @@ A dynamic and visually engaging portfolio website built using React, specificall
 jasmijn-schrofer-frontend/
 ├── .git/                   # Git repository data
 ├── public/                 # Static files
-├── src/                    # Firebase Hosting static files
-│   ├── components/         # Stylesheets
-│   │   ├── assets/         # Main stylesheet 
-│   │   ├── ui/             # Main stylesheet 
-│   │   ├── About.tsx       # Main stylesheet 
-│   │   ├── BlurText.tsx    # Main stylesheet 
-│   │   ├── CallToAction.tsx # Main stylesheet 
-│   │   ├── ContactForm.tsx # Main stylesheet 
-│   │   ├── CountUp.tsx     # Main stylesheet 
-│   │   ├── Featured.tsx    # Main stylesheet 
-│   │   ├── Films.tsx       # Main stylesheet 
-│   │   ├── Footer.tsx      # Main stylesheet 
-│   │   ├── Hero.tsx        # Main stylesheet 
-│   │   ├── ImageSlider.tsx # Main stylesheet 
-│   │   ├── NavBar.tsx      # Main stylesheet 
-│   │   ├── News.tsx        # Main stylesheet 
-│   │   └── WorkHero.tsx    # Home page stylesheet
-│   ├── hooks/              # Stylesheets
-│   │   ├── use-mobile.tsx  # Main stylesheet 
-│   │   ├── use-toast.ts    # Main stylesheet 
-│   │   └── useIsOnScreen.tsx # Home page stylesheet
-│   ├── lib/                # Stylesheets
-│   │   └── utils.ts        # Home page stylesheet
-│   ├── pages/              # Stylesheets
-│   │   ├── About.tsx       # Main stylesheet 
-│   │   ├── Contact.tsx     # Main stylesheet 
-│   │   ├── InDevelopment.tsx # Main stylesheet 
-│   │   ├── Index.tsx       # Main stylesheet 
-│   │   ├── News.tsx        # Main stylesheet 
-│   │   ├── NotFound.tsx    # Main stylesheet 
-│   │   └── Work.tsx        # Home page stylesheet
-│   ├── types/              # Stylesheets
+├── src/                    # Source code
+│   ├── components/         # Reusable components
+│   │   ├── assets/         # Assets like images and icons
+│   │   ├── ui/             # UI components 
+│   │   └── ...             # Other components 
+│   ├── hooks/              # Custom hooks
+│   │   ├── use-mobile.tsx  # Hook for mobile detection 
+│   │   ├── use-toast.ts    # Hook for toast notifications
+│   │   └── useIsOnScreen.tsx # Hook to check if an element is on screen
+│   ├── lib/                # Library files
+│   │   └── utils.ts        # Utility functions
+│   ├── pages/              # Page components
+│   │   ├── About.tsx       # About page 
+│   │   ├── Contact.tsx     # Contact page 
+│   │   ├── InDevelopment.tsx # In Development page 
+│   │   ├── Index.tsx       # Home page 
+│   │   ├── News.tsx        # News page 
+│   │   ├── NotFound.tsx    # 404 Not Found page 
+│   │   └── Work.tsx        # Work page
+│   ├── types/              # Type definitions
 │   │   └── CountUp.ts      # Home page stylesheet
-│   ├── App.css             # Stylesheets
-│   ├── App.tsx             # Stylesheets
-│   ├── index.css           # Stylesheets
-│   ├── main.tsx            # Stylesheets
-│   └── vite-env.d.ts       # Main HTML file
+│   ├── App.css             # Main stylesheet
+│   ├── App.tsx             # Main application component
+│   ├── index.css           # Global styles
+│   ├── main.tsx            # Entry point for the application
+│   └── vite-env.d.ts       # TypeScript environment definitions
 ├── .gitignore              # Git ignore rules
-├── components.json         # Realtime Database security rules
-├── eslint.config.js        # Firebase project configuration
-├── index.html              # Firestore index definitions
-├── package-lock.json       # Root dependency lock file
-├── package.json            # Root package configuration
-├── postcss.config.js       # Firestore security rules
+├── components.json         # Vite components configuration
+├── eslint.config.js        # ESLint configuration
+├── index.html              # Main HTML file
+├── package-lock.json       # Dependency lock file
+├── package.json            # Package configuration
+├── postcss.config.js       # PostCSS configuration
 ├── README.md               # Project documentation
 ├── LICENSE                 # Project license
-├── tailwind.config.ts      # Remote Config template
-├── tsconfig.app.json       # Project license
-├── tsconfig.json           # Project license
-├── tsconfig.node.json      # Project license
-└── vite.config.ts          # Cloud Storage security rules
+├── tailwind.config.ts      # Tailwind CSS configuration
+├── tsconfig.app.json       # TypeScript application configuration
+├── tsconfig.json           # TypeScript configuration
+├── tsconfig.node.json      # TypeScript Node configuration
+└── vite.config.ts          # Vite configuration
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
