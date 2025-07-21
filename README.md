@@ -4,15 +4,7 @@
 
 <a id="readme-top"></a>
 
-<!-- PROJECT LOGO -->
 <br />
-<div align="center">
-    <a href="https://github.com/dev-gaitano/firebase-notes-I /issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    &middot;
-    <a href="https://github.com/dev-gaitano/firebase-notes-I/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-  </p>
-</div>
-
 <!-- PROJECT SHIELDS -->
 <div align="center">
 
@@ -196,9 +188,16 @@ Distributed under the MIT license. See `LICENSE` for more information.
 Eugene Gaitano - dev.gaitano@gmail.com
 
 Project Link:
-[Ascend.up](https://ascendup.netlify.app/)
+[Jasmijn Schrofer Portfolio](https://jasmijnschrofer.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<div align="center">
+    <a href="https://github.com/dev-gaitano/firebase-notes-I /issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    &middot;
+    <a href="https://github.com/dev-gaitano/firebase-notes-I/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/dev-gaitano/firebase-notes-I.svg?style=for-the-badge
