@@ -2,23 +2,11 @@
     <img src="./public/readme-banner.png" alt="banner_img">
 </div>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/31ceee18-26e7-4364-8efe-f3b02478a3ae/deploy-status)](https://app.netlify.com/sites/jasmijnschrofer/deploys)
-
 <a id="readme-top"></a>
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/dev-gaitano/firebase-notes-I">
-    <img src="./public/media/ascend-logo-48x48.png" alt="Logo" width="48" height="48">
-  </a>
-
-  <h3 align="center">Ascend.up</h3>
-
-  <p align="center">
-    A clean, minimal notes app built for focus and flow.
-    <br />
-    <br />
     <a href="https://github.com/dev-gaitano/firebase-notes-I /issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
     <a href="https://github.com/dev-gaitano/firebase-notes-I/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
