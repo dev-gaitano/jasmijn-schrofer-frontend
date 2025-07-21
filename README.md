@@ -10,20 +10,20 @@
 <!-- PROJECT SHIELDS -->
 <div align="center">
 
-  <a href="https://github.com/dev-gaitano/firebase-notes-I/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/dev-gaitano/firebase-notes-I.svg?style=for-the-badge" alt="Contributors">
+  <a href="https://github.com/dev-gaitano/jasmijn-schrofer-frontend/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge" alt="Contributors">
   </a>
-  <a href="https://github.com/dev-gaitano/firebase-notes-I/network/members">
-    <img src="https://img.shields.io/github/forks/dev-gaitano/firebase-notes-I.svg?style=for-the-badge" alt="Forks">
+  <a href="https://github.com/dev-gaitano/jasmijn-schrofer-frontend/network/members">
+    <img src="https://img.shields.io/github/forks/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge" alt="Forks">
   </a>
-  <a href="https://github.com/dev-gaitano/firebase-notes-I/stargazers">
-    <img src="https://img.shields.io/github/stars/dev-gaitano/firebase-notes-I.svg?style=for-the-badge" alt="Stars">
+  <a href="https://github.com/dev-gaitano/jasmijn-schrofer-frontend/stargazers">
+    <img src="https://img.shields.io/github/stars/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge" alt="Stars">
   </a>
-  <a href="https://github.com/dev-gaitano/firebase-notes-I/issues">
-    <img src="https://img.shields.io/github/issues/dev-gaitano/firebase-notes-I.svg?style=for-the-badge" alt="Issues">
+  <a href="https://github.com/dev-gaitano/jasmijn-schrofer-frontend/issues">
+    <img src="https://img.shields.io/github/issues/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge" alt="Issues">
   </a>
-  <a href="https://github.com/dev-gaitano/firebase-notes-I/LICENSE">
-    <img src="https://img.shields.io/github/license/dev-gaitano/firebase-notes-I.svg?style=for-the-badge" alt="License">
+  <a href="https://github.com/dev-gaitano/jasmijn-schrofer-frontend/LICENSE">
+    <img src="https://img.shields.io/github/license/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge" alt="License">
   </a>
 
 </div>
@@ -196,21 +196,21 @@ Project Link:
 <br />
 
 <div align="center">
-    <a href="https://github.com/dev-gaitano/firebase-notes-I /issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/dev-gaitano/jasmijn-schrofer-frontend/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
-    <a href="https://github.com/dev-gaitano/firebase-notes-I/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/dev-gaitano/jasmijn-schrofer-frontend/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
     &middot;
     <a href="#readme-top">back to top</a>
 </div>
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/dev-gaitano/firebase-notes-I.svg?style=for-the-badge
-[contributors-url]: https://github.com/dev-gaitano/firebase-notes-I/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/dev-gaitano/firebase-notes-I.svg?style=for-the-badge
-[forks-url]: https://github.com/dev-gaitano/firebase-notes-I/network/members
-[stars-shield]: https://img.shields.io/github/stars/dev-gaitano/firebase-notes-I.svg?style=for-the-badge
-[stars-url]: https://github.com/dev-gaitano/firebase-notes-I/stargazers
-[issues-shield]: https://img.shields.io/github/issues/dev-gaitano/firebase-notes-I.svg?style=for-the-badge
-[issues-url]: https://github.com/dev-gaitano/firebase-notes-I/issues
-[license-shield]: https://img.shields.io/github/license/dev-gaitano/firebase-notes-I.svg?style=for-the-badge
-[license-url]: https://github.com/dev-gaitano/firebase-notes-I/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge
+[contributors-url]: https://github.com/dev-gaitano/jasmijn-schrofer-frontend/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge
+[forks-url]: https://github.com/dev-gaitano/jasmijn-schrofer-frontend/network/members
+[stars-shield]: https://img.shields.io/github/stars/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge
+[stars-url]: https://github.com/dev-gaitano/jasmijn-schrofer-frontend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge
+[issues-url]: https://github.com/dev-gaitano/jasmijn-schrofer-frontend/issues
+[license-shield]: https://img.shields.io/github/license/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge
+[license-url]: https://github.com/dev-gaitano/jasmijn-schrofer-frontend/blob/master/LICENSE
