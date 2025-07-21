@@ -5,6 +5,8 @@
 <a id="readme-top"></a>
 
 <br />
+<br />
+
 <!-- PROJECT SHIELDS -->
 <div align="center">
 
@@ -191,6 +193,9 @@ Project Link:
 [Jasmijn Schrofer Portfolio](https://jasmijnschrofer.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<br />
+<br />
 
 <div align="center">
     <a href="https://github.com/dev-gaitano/firebase-notes-I /issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
