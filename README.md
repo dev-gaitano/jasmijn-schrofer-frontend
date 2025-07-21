@@ -192,8 +192,6 @@ Eugene Gaitano - dev.gaitano@gmail.com
 Project Link:
 [Jasmijn Schrofer Portfolio](https://jasmijnschrofer.netlify.app/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <br />
 <br />
 
@@ -201,7 +199,8 @@ Project Link:
     <a href="https://github.com/dev-gaitano/firebase-notes-I /issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
     <a href="https://github.com/dev-gaitano/firebase-notes-I/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-  </p>
+    &middot;
+    <a href="#readme-top">back to top</a>
 </div>
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
