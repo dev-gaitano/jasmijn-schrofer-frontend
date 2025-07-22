@@ -26,7 +26,6 @@ const Footer = () => {
           <p className="max-w-md">
             Crafting visual narratives that challenge perspectives. Explore my portfolio and discover the stories
             waiting to be told through film.
-
           </p>
 
           <div>
@@ -50,31 +49,31 @@ const Footer = () => {
           <nav className="text-[var(--text-muted)] space-y-4">
             <a
               href="#"
-              className="block text-foreground/60 hover:text-secondary transition-colors duration-500"
+              className="block text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors duration-500"
             >
               Home
             </a>
             <a
               href="#work"
-              className="block text-foreground/60 hover:text-secondary transition-colors duration-500"
+              className="block text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors duration-500"
             >
               Work
             </a>
             <a
               href="#news"
-              className="block text-foreground/60 hover:text-secondary transition-colors duration-500"
+              className="block text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors duration-500"
             >
               News
             </a>
             <a
               href="#about"
-              className="block text-foreground/60 hover:text-secondary transition-colors duration-500"
+              className="block text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors duration-500"
             >
               About
             </a>
             <a
               href="#contact"
-              className="block text-foreground/60 hover:text-secondary transition-colors duration-500"
+              className="block text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors duration-500"
             >
               Contact
             </a>
