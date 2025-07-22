@@ -10,10 +10,6 @@ const FeaturedFilm = () => {
         {/* Content */}
         <div className="flex flex-col w-1/2">
           <div>
-            <span className="text-accent text-sm font-serif italic font-medium tracking-wider mb-4 block">
-              Film
-            </span>
-
             <h2
               className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-300`}
             >
@@ -21,7 +17,7 @@ const FeaturedFilm = () => {
             </h2>
 
             <p
-              className={`text-white/80 mb-8 max-md:text-sm md:text-lg observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-500`}
+              className={`text-[var(--text-muted)] mb-8 max-md:text-sm md:text-lg observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-500`}
             >
               So far, the sun and moon dictated the rhythm of the Samburu,
               herdsmen in northern Kenya. Now, they are connected to the power
@@ -36,7 +32,7 @@ const FeaturedFilm = () => {
               <h3 className="font-serif italic font-bold text-xl mb-3">
                 Latest Project
               </h3>
-              <p className="text-white/70">
+              <p className="text-[var(--text-muted)]">
                 Delves into the complex themes of modernization's effects on
                 their traditional way of life
               </p>
@@ -48,7 +44,7 @@ const FeaturedFilm = () => {
               <h3 className="font-serif italic font-bold text-xl mb-3">
                 Watch Now
               </h3>
-              <p className="text-white/70">
+              <p className="text-[var(--text-muted)]">
                 Join us in celebrating the artistry of Jasmijn Schrofer.
               </p>
             </div>
@@ -64,10 +60,11 @@ const FeaturedFilm = () => {
             </a>
             <a
               href="#"
-              className="group button-secondary max-md:text-sm transition-all duration-500"
+              className="group button-secondary max-md:text-sm"
+              data-text="Learn More"
             >
               Learn More
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 group-hover:text-secondary transition-transform duration-500" />
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 group-hover:text-[var(--secondary)] transition-transform duration-500" />
             </a>
           </div>
         </div>

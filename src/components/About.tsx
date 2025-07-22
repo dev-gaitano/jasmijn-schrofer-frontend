@@ -7,10 +7,10 @@ const About = () => {
 
   return (
     <section id="about" className="relative py-24 w-full">
+
       {/* Background gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-accent/40 via-transparent via-50% to-transparent pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/30 via-transparent via-20% to-transparent pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary/40 via-transparent via-50% to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[var(--primary-more-muted)] via-transparent via-50% to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[var(--accent-more-muted)] via-transparent via-20% to-transparent pointer-events-none"></div>
 
       <div className="container px-4 mx-auto relative z-10">
         <div className="flex items-center gap-4 mb-12">
@@ -32,16 +32,16 @@ const About = () => {
           {/* Content */}
           <div className="space-y-8">
             <div
-              className={`prose prose-invert flex flex-col gap-2 ${isOnScreen ? "off-screen-left" : "on-screen"}`}
+              className={`prose prose-invert flex flex-col gap-2 ${isOnScreen ? "off-screen-left -translate-x-0" : "on-screen"}`}
             >
-              <p className="text-lg text-white/80 leading-relaxed">
+              <p className="text-lg text-[var(--text-muted)] leading-relaxed">
                 For over 15 years, I have painted with light and motion,
                 crafting cinematic tapestries that transcend borders and speak
                 the universal language of emotion. My work—spanning film,
                 television, and the creative arts—is a journey through visual
                 poetry, cultural metamorphosis, and immersive storytelling.
               </p>
-              <p className="text-lg text-white/80 leading-relaxed max-md:hidden">
+              <p className="text-lg text-[var(--text-muted)] leading-relaxed max-md:hidden">
                 Among my creations,{" "}
                 <span className="font-serif italic font-bold">
                   Birth of Light
@@ -55,7 +55,7 @@ const About = () => {
                 international festivals—a testament to my dedication to stories
                 that linger in the heart long after the screen fades to black.
               </p>
-              <p className="text-lg text-white/80 leading-relaxed max-md:hidden">
+              <p className="text-lg text-[var(--text-muted)] leading-relaxed max-md:hidden">
                 With over 50 commissioned projects for visionaries like VPRO,
                 Manchester City, El País, and Holland Festival. From intimate
                 documentaries to bold visual experiments, every project is a new
@@ -79,7 +79,7 @@ const About = () => {
                     className="count-up-text"
                   />
                 </div>
-                <div className="text-sm text-white/60">Films Directed</div>
+                <div className="text-sm text-[var(--text-more-muted)]">Films Directed</div>
               </div>
               <div className="glass-panel hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500 p-6 text-center">
                 <div className="text-2xl font-bold mb-1">
@@ -92,10 +92,10 @@ const About = () => {
                     className="count-up-text"
                   />
                 </div>
-                <div className="text-sm text-white/60">Awards Won</div>
+                <div className="text-sm text-[var(--text-more-muted)]">Awards Won</div>
               </div>
-              <div className="glass-panel hover-lift hover:shadow-lg t rounded-lg ransition-all ease-in-out duration-500 p-6 text-center">
-                <div className="text-2xl font-bold mb-1">
+              <div className="glass-panel hover-lift hover:shadow-lg t rounded-lg transition-all ease-in-out duration-500 p-6 text-center">
+                <div className="text-2xl font-bold mb-1 flex items-center justify-center gap-1">
                   <CountUp
                     from={0}
                     to={15}
@@ -104,8 +104,9 @@ const About = () => {
                     duration={1}
                     className="count-up-text"
                   />
+                  <p>+</p>
                 </div>
-                <div className="text-sm text-white/60">Years Experience</div>
+                <div className="text-sm text-[var(--text-more-muted)]">Years Experience</div>
               </div>
             </div>
 
@@ -114,14 +115,14 @@ const About = () => {
               <h3 className="text-xl">Expertise</h3>
               <div className="flex flex-wrap gap-3">
                 {[
-                  "Documentary",
+                  "Documentaries",
                   "Narrative Film",
-                  "Short Films",
+                  "Short & Feature Films",
                   "Experimental",
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-sm text-secondary"
+                    className="px-4 py-2 rounded-full glass-panel, border border-[var(--secondary)] text-[var(--secondary)]"
                   >
                     {skill}
                   </span>

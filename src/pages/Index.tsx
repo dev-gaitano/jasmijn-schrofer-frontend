@@ -17,7 +17,6 @@ const Index = () => {
       <Featured />
       {/* <News /> */}
       <About />
-      <CallToAction />
       {/* <ContactForm /> */}
       <Footer />
     </main>
