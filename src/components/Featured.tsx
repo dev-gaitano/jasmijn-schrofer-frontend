@@ -1,5 +1,5 @@
 import { Play, ArrowRight } from "lucide-react";
-import { useIsOnScreen } from "@/hooks/useIsOnScreen";
+import { useIsOnScreen } from "@/hooks/useOnScreen";
 
 const FeaturedFilm = () => {
   const { isOnScreen } = useIsOnScreen();

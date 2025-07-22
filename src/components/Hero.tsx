@@ -1,4 +1,4 @@
-import { useIsOnScreen } from "@/hooks/useIsOnScreen";
+import { useIsOnScreen } from "@/hooks/useOnScreen";
 import BlurText from "@/components/BlurText";
 
 const Hero = () => {

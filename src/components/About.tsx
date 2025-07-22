@@ -1,5 +1,5 @@
 import aboutImage from "/jasmijn-masterclass.jpg";
-import { useIsOnScreen } from "@/hooks/useIsOnScreen";
+import { useIsOnScreen } from "@/hooks/useOnScreen";
 import CountUp from "./CountUp.tsx";
 
 const About = () => {
