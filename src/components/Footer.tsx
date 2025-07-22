@@ -24,14 +24,12 @@ const Footer = () => {
           </div>
 
           <p className="max-w-md">
-            Crafting visual narratives that challenge perspectives. Explore my portfolio and discover the stories
-            waiting to be told through film.
+            Crafting visual narratives that challenge perspectives. Explore my
+            portfolio and discover the stories waiting to be told through film.
           </p>
 
           <div>
-            <h5 className="text-lg mb-2">
-              Subscribe to my Newsletter
-            </h5>
+            <h5 className="text-lg mb-2">Subscribe to my Newsletter</h5>
             <div className="flex items-end gap-4">
               <input
                 className="w-80 mt-0.5 pl-2 bg-[var(--background)] border-b-[0.5px] border-[var(--foreground-muted)] placeholder-[var(--text-more-muted)]"
@@ -89,16 +87,12 @@ const Footer = () => {
           <div className="space-y-4 text-[var(--text-muted)]">
             <div className="flex items-start gap-4">
               <Mail className="w-5 h-5 mt-0.5" />
-              <span>
-                info@jasmijnschrofer.com
-              </span>
+              <span>info@jasmijnschrofer.com</span>
             </div>
 
             <div className="flex items-start gap-4">
               <MapPin className="w-5 h-5 mt-0.5" />
-              <span>
-                Amsterdam, The Netherlands | Nairobi, Kenya
-              </span>
+              <span>Amsterdam, The Netherlands | Nairobi, Kenya</span>
             </div>
           </div>
 

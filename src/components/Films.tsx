@@ -95,7 +95,6 @@ const Films = () => {
 
   return (
     <section id="films" className="relative py-24 bg-background w-full">
-
       {/* Background gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[var(--secondary-muted)] via-transparent via-45% to-transparent pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[var(--primary-muted)] via-transparent via-55% to-transparent pointer-events-none"></div>
@@ -116,19 +115,17 @@ const Films = () => {
               onMouseEnter={() => setHoveredFilm(film.id)}
               onMouseLeave={() => setHoveredFilm(null)}
             >
-              {" "}
               <div className="relative aspect-[2/3] overflow-hidden rounded-lg">
-                {" "}
                 <img
                   src={film.thumbnail}
                   alt={film.title}
                   className="w-full h-full object-cover"
-                />{" "}
+                />
                 {hoveredFilm === film.id && (
                   <div className="absolute inset-0 bg-[var(--background-more-muted)] backdrop-blur-lg animate-fadeIn duration-500">
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
                       <button className="mb-4 px-6 py-2 hover:bg-opacity-10 rounded-full glass-panel hover-lift flex items-center gap-2 transition-all duration-500">
-                        <Play className="w-4 h-4"/>
+                        <Play className="w-4 h-4" />
                         Watch Trailer
                       </button>
                       <h3 className="text-xl mb-2">{film.title}</h3>

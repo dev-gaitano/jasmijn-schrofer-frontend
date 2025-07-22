@@ -7,7 +7,6 @@ const About = () => {
 
   return (
     <section id="about" className="relative py-24 w-full">
-
       {/* Background gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[var(--primary-more-muted)] via-transparent via-50% to-transparent pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[var(--accent-more-muted)] via-transparent via-20% to-transparent pointer-events-none"></div>
@@ -79,7 +78,9 @@ const About = () => {
                     className="count-up-text"
                   />
                 </div>
-                <div className="text-sm text-[var(--text-more-muted)]">Films Directed</div>
+                <div className="text-sm text-[var(--text-more-muted)]">
+                  Films Directed
+                </div>
               </div>
               <div className="glass-panel hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500 p-6 text-center">
                 <div className="text-2xl font-bold mb-1">
@@ -92,7 +93,9 @@ const About = () => {
                     className="count-up-text"
                   />
                 </div>
-                <div className="text-sm text-[var(--text-more-muted)]">Awards Won</div>
+                <div className="text-sm text-[var(--text-more-muted)]">
+                  Awards Won
+                </div>
               </div>
               <div className="glass-panel hover-lift hover:shadow-lg t rounded-lg transition-all ease-in-out duration-500 p-6 text-center">
                 <div className="text-2xl font-bold mb-1 flex items-center justify-center gap-1">
@@ -106,7 +109,9 @@ const About = () => {
                   />
                   <p>+</p>
                 </div>
-                <div className="text-sm text-[var(--text-more-muted)]">Years Experience</div>
+                <div className="text-sm text-[var(--text-more-muted)]">
+                  Years Experience
+                </div>
               </div>
             </div>
 

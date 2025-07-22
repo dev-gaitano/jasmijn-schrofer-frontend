@@ -13,8 +13,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed max-w-7xl max-h-[82px] top-0 z-[999] md:w-[1262px] flex items-center transition-all duration-500 ${isScrolled ? "top-2 rounded-full glass-panel" : ""
-        }`}
+      className={`fixed max-w-7xl max-h-[82px] top-0 z-[999] md:w-[1262px] flex items-center transition-all duration-500 ${
+        isScrolled ? "top-2 rounded-full glass-panel" : ""
+      }`}
     >
       <div className="container px-4 py-4">
         <div className="flex items-center justify-between">
