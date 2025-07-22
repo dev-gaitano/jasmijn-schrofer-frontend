@@ -4,36 +4,41 @@
 
 @layer base {
   :root {
-    --background: 0 0% 3%;
-    --foreground: 0 0% 98%;
-    --card: 228 15% 13%;
-    --card-foreground: 0 0% 98%;
-    --popover: 228 15% 13%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 22 99% 50%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 181 100% 26%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 222 15% 19%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 330 100% 18%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 222 15% 19%;
-    --input: 222 15% 19%;
-    --ring: 47 65% 52%;
+    --background: hsla(180, 30%, 5%, 1);
+    --background-muted: hsla(180, 30%, 5%, 0.7);
+    --background-more-muted: hsla(180, 30%, 5%, 0.5);
+    --foreground: hsla(47, 53%, 81%, 1);
+    --foreground-muted: hsla(47, 53%, 81%, 0.7);
+    --foreground-more-muted: hsla(47, 53%, 81%, 0.5);
+    --text: hsla(47, 53%, 81%, 1);
+    --text-muted: hsla(47, 53%, 81%, 0.7);
+    --text-more-muted: hsla(47, 53%, 81%, 0.6);
+    --primary: hsla(22, 99%, 50%, 1);
+    --primary-muted: hsla(22, 99%, 50%, 0.7);
+    --primary-more-muted: hsla(22, 99%, 50%, 0.5);
+    --secondary: hsla(181, 100%, 26%, 1);
+    --secondary-muted: hsla(181, 100%, 26%, 0.7);
+    --secondary-more-muted: hsla(181, 100%, 26%, 0.5);
+    --accent: hsla(350, 63%, 20%, 1);
+    --accent-muted: hsla(350, 63%, 20%, 0.7);
+    --accent-more-muted: hsla(350, 63%, 20%, 0.5);
+    --bg-glass: hsla(47, 53%, 81%, 0.05);
+    --border-glass: hsla(47, 53%, 81%, 0.1);
+    --b-radius-full: 9999px;
     --radius: 0.5rem;
   }
-}
 
-@layer base {
   * {
-    @apply border-border;
+    margin: 0;
+    padding: 0;
   }
+
   body {
-    @apply bg-background text-foreground font-inter;
+    background: var(--background);
+    color: var(--foreground);
+    @apply font-inter;
   }
+
   h1,
   h2,
   h3,
@@ -46,53 +51,86 @@
 
 @layer components {
   .off-screen-right {
-    @apply opacity-0 blur-lg translate-x-full transition-all duration-300
+    @apply opacity-0 blur-lg translate-x-full;
+    transition: all 0.3s ease-in-out;
   }
 
   .off-screen-left {
-    @apply opacity-0 blur-lg -translate-x-full transition-all duration-300
+    @apply opacity-0 blur-lg -translate-x-full;
+    transition: all 0.3s ease-in-out;
   }
 
   .on-screen {
-    @apply opacity-100 blur-0 translate-x-0 transition-all duration-700
-  }
-
-  .nav-link {
-    @apply relative inline-block py-2 px-4 text-foreground/80 hover:text-primary transition-colors duration-500 
-    after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[1px] 
-    after:bg-gradient-to-r after:from-transparent after:via-primary after:to-transparent 
-    after:-translate-x-1/2 after:transition-all after:duration-500 after:ease-in-out 
-    hover:after:w-full hover:after:left-0 hover:after:translate-x-0;
+    @apply opacity-100 blur-0 translate-x-0;
+    transition: all 0.7s ease-in-out;
   }
 
   .glass-panel {
-    @apply bg-white/5 backdrop-blur border border-white/10 shadow-lg;
+    @apply backdrop-blur shadow-lg;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
   }
 
-  .hover-lift { 
+  .hover-lift {
     @apply relative bottom-0 hover:bottom-1
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  .nav-link {
+    @apply relative inline-block py-2 px-4;
+    color: var(--text);
+    transition: colors 0.5s ease-in-out;
+  }
+
+  .nav-link:hover {
+    color: var(--primary);
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute bottom-0 left-1/2 w-0 h-[1px] -translate-x-1/2;
+    background: linear-gradient(to right, transparent, var(--primary), transparent);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full left-0 translate-x-0;
   }
 
   .button-primary {
-    @apply relative max-md:px-4 md:px-8 py-3 bg-primary/10 hover:bg-primary/20 bottom-0 hover:bottom-1
-    border hover:backdrop-blur border-primary/50 rounded-[24px] text-primary transition-all duration-500
-    before:absolute before:inset-0 before:bg-[radial-gradient(circle,_rgba(255,100,0,0.5)_10%,_transparent_80%)]
-    before:opacity-0 hover:before:opacity-100;
+    @apply max-md:px-4 md:px-8 py-3 glass-panel;
+    border: 1px solid var(--primary);
+    border-radius: var(--b-radius-full);
+    color: var(--primary);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .button-primary:hover {
+    color: var(--primary);
+    border: 1px solid var(--border-glass);
+    transform: scale(1.02);
+  }
+
+  .button-primary::before {
+    content: "";
+    @apply absolute inset-0 opacity-0 transition-all duration-500;
+    background: radial-gradient(circle, var(--primary-more-muted), transparent 80%);
+  }
+
+  /*I'm going to make the button glow from where it's being hovered.*/
+  .button-primary:hover::before {
+    @apply opacity-70;
   }
 
   .button-secondary {
-    @apply px-6 py-3 text-white inline-flex items-center gap-2 hover:text-gradient
+    @apply px-6 py-3 inline-flex items-center gap-2;
+    color: var(--text);
+    transition: all 0.5s ease-in-out;
   }
-}
 
-.hero-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 31, 44, 0.3),
-    rgba(26, 31, 44, 0.95)
-  );
+  .button-secondary:hover {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent
+  }
 }

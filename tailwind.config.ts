@@ -19,45 +19,36 @@ export default {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: {
+          DEFAULT: "var(--background)",
+          muted: "var(--background-muted)",
+          "more-muted": "var(--background-more-muted)",
+        },
+        foreground: {
+          DEFAULT: "var(--foreground)",
+          muted: "var(--foreground-muted)",
+          "more-muted": "var(--foreground-more-muted)",
+        },
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "var(--primary)",
+          muted: "var(--primary-muted)",
+          "more-muted": "var(--primary-more-muted)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "var(--secondary)",
+          muted: "var(--secondary-muted)",
+          "more-muted": "var(--secondary-foreground)",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "var(--accent)",
+          muted: "var(--accent-muted))",
+          "more-muted": "var(--accent-more-muted)",
         },
         gold: "#D4AF37",
-        crimson: "#800020",
       },
       fontFamily: {
-        sans: ["Bebas Neue", "sans-serif"], // for Bebas
-        serif: ["Playfair Display", "serif"], // for Playfair
+        sans: ["Bebas Neue", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
         inter: ["Inter", "sans-serif"],
       },
       borderRadius: {
