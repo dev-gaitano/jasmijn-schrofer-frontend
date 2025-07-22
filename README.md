@@ -94,7 +94,6 @@ jasmijn-schrofer-frontend/
 │   │   └── Work.tsx        # Work page
 │   ├── types/              # Type definitions
 │   │   └── CountUp.ts      # Home page stylesheet
-│   ├── App.css             # Main stylesheet
 │   ├── App.tsx             # Main application component
 │   ├── index.css           # Global styles
 │   ├── main.tsx            # Entry point for the application
