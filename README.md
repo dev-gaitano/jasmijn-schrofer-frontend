@@ -79,8 +79,8 @@ jasmijn-schrofer-frontend/
 │   │   ├── ui/             # UI components 
 │   │   └── ...             # Other components 
 │   ├── hooks/              # Custom hooks
+│   │   ├── use-toast.ts    # Hook for toast notifications
 │   │   ├── useMobile.ts    # Hook for mobile detection 
-│   │   ├── useToast.ts     # Hook for toast notifications
 │   │   └── useOnScreen.ts  # Hook to check if an element is on screen
 │   ├── lib/                # Library files
 │   │   └── utils.ts        # Utility functions
