@@ -9,8 +9,6 @@ import {
 } from "lucide-react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="container w-full backdrop-blur-sm">
       <div className="mt-12 py-12 flex gap-24 justify-center">
@@ -126,12 +124,6 @@ const Footer = () => {
               className="text-[var(--text-more-muted)] hover:text-[var(--primary)] transition-colors duration-500"
             >
               <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.imdb.com/name/nm7353940/"
-              className="text-[var(--text-more-muted)] hover:text-[var(--primary)] transition-colors duration-500"
-            >
-              <img className="h-8" src="/imdb-icon.png" />
             </a>
           </div>
         </div>
