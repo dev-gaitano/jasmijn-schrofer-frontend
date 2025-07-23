@@ -22,20 +22,20 @@ const WorkHero: React.FC<WorkHeroProps> = ({
         style={{
           backgroundImage: `url(${imagePath})`,
         }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-portfolio-dark/90 to-portfolio-dark/40"></div>
-      </div>
+      ></div>
+      <div className="absolute inset-0 md:bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[var(--secondary-more-muted)] via-transparent to-transparent via-50% pointer-events-none"></div>
+      <div className="absolute inset-0 md:bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[var(--background-more-muted)] via-transparent to-transparent via-50% pointer-events-none"></div>
 
       {/* Project Content */}
       <div className="relative h-screen flex flex-col justify-end px-8 md:px-20 pb-24">
         <div className="max-w-2xl animate-fade-in">
-          <h1 className="text-4xl md:text-7xl lg:text-7xl font-bold mb-6 text-white">
+          <h1 className="text-4xl md:text-7xl lg:text-7xl font-bold mb-6 text-[var(--text)]">
             {title}
           </h1>
-          <div className="font-serif italic text-xl md:text-2xl text-white/80 mb-4 md:mb-8">
+          <div className="font-serif italic text-xl md:text-2xl text-[var(--text-muted)] mb-4 md:mb-8">
             {category}
           </div>
-          <p className="max-w-2xl text-lg text-white/70 mb-4 md:mb-8">
+          <p className="max-w-2xl text-lg text-[var(--text-more-muted)] mb-4 md:mb-8">
             {description}
           </p>
           <Link
@@ -49,12 +49,12 @@ const WorkHero: React.FC<WorkHeroProps> = ({
 
       {/* Navigation Arrows */}
       <div className="absolute bottom-1/2 left-4 transform -translate-y-1/2">
-        <button className="p-2 text-portfolio-gray hover:text-portfolio-light transition-colors">
+        <button className="p-2 text-[var(--foreground-more-muted)] hover:text-[var(--foreground)] transition-colors duration-300">
           <ChevronLeft size={36} />
         </button>
       </div>
       <div className="absolute bottom-1/2 right-4 transform -translate-y-1/2">
-        <button className="p-2 text-portfolio-gray hover:text-portfolio-light transition-colors">
+        <button className="p-2 text-[var(--foreground-more-muted)] hover:text-[var(--foreground)] transition-colors duration-300">
           <ChevronRight size={36} />
         </button>
       </div>
