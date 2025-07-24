@@ -1,12 +1,8 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
-interface WorkHeroProps {
-  title: string;
-  category: string;
-  description: string;
-  imagePath: string;
-}
+import { WorkHeroProps } from "@/types/WorkHero";
+import BlurText from "@/components/BlurText";
+import { useIsOnScreen } from "@/hooks/useOnScreen";
 
 const WorkHero: React.FC<WorkHeroProps> = ({
   title,
