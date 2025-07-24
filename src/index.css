@@ -24,6 +24,10 @@
     --accent-more-muted: hsla(350, 63%, 20%, 0.5);
     --bg-glass: hsla(47, 53%, 81%, 0.05);
     --border-glass: hsla(47, 53%, 81%, 0.1);
+    --danger: hsla(8 68% 66%, 1);
+    --warning: hsla(52 59% 44%, 1);
+    --success: hsla(152 45% 49%, 1);
+    --info: hsla(217 80% 68%, 1);
     --b-radius-full: 9999px;
     --radius: 0.5rem;
   }
