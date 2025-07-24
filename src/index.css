@@ -76,7 +76,7 @@
   }
 
   .hover-lift {
-    @apply relative bottom-0 hover:bottom-1
+    @apply relative bottom-0 hover:bottom-1;
   }
 
   .nav-link {
@@ -92,7 +92,12 @@
   .nav-link::after {
     content: "";
     @apply absolute bottom-0 left-1/2 w-0 h-[1px] -translate-x-1/2;
-    background: linear-gradient(to right, transparent, var(--primary), transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--primary),
+      transparent
+    );
     transition: all 0.5s ease-in-out;
   }
 
@@ -117,7 +122,11 @@
   .button-primary::before {
     content: "";
     @apply absolute inset-0 opacity-0 transition-all duration-500;
-    background: radial-gradient(circle, var(--primary-more-muted), transparent 80%);
+    background: radial-gradient(
+      circle,
+      var(--primary-more-muted),
+      transparent 80%
+    );
   }
 
   /*I'm going to make the button glow from where it's being hovered.*/
@@ -135,6 +144,6 @@
     background: linear-gradient(to right, var(--primary), var(--secondary));
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent
+    color: transparent;
   }
 }
