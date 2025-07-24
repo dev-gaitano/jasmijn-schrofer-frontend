@@ -1,18 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
+import { FilmProjectProps } from "@/types/FilmProject";
 
-interface FilmProject {
-  id: number;
-  title: string;
-  year: string;
-  category: string;
-  runtime: string;
-  thumbnail: string;
-  description: string;
-  awards?: string[];
-}
-
-const films: FilmProject[] = [
+const films: FilmProjectProps[] = [
   {
     id: 1,
     title: "Birth of Light",
