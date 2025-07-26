@@ -33,3 +33,4 @@ node_modules/
 # Generated files
 dist/
 build/
+stats.html
