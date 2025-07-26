@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <footer className="relative p-gap-xxl w-full">
-      <div className="py-gap-lg grid grid-cols-1 md:grid-cols-2 gap-gap-lg items-center">
+      <div className="pb-gap-lg grid grid-cols-1 md:grid-cols-2 gap-gap-lg items-center">
         <div className="h-60 flex gap-gap-lg">
           {/* Brand */}
           <div className="w-3/4 space-y-4 flex flex-col items-start justify-center">
