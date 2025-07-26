@@ -37,11 +37,11 @@ export default {
         secondary: {
           DEFAULT: "var(--secondary)",
           muted: "var(--secondary-muted)",
-          "more-muted": "var(--secondary-foreground)",
+          "more-muted": "var(--secondary-more-muted)",
         },
         accent: {
           DEFAULT: "var(--accent)",
-          muted: "var(--accent-muted))",
+          muted: "var(--accent-muted)",
           "more-muted": "var(--accent-more-muted)",
         },
         gold: "#D4AF37",
@@ -55,6 +55,15 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      spacing: {
+        "gap-xxl": "var(--gap-xxl)",
+        "gap-xl": "var(--gap-xl)",
+        "gap-lg": "var(--gap-lg)",
+        "gap-md": "var(--gap-md)",
+        "gap-sm": "var(--gap-sm)",
+        "gap-xs": "var(--gap-xs)",
+        "gap-xxs": "var(--gap-xxs)",
       },
       keyframes: {
         "accordion-down": {

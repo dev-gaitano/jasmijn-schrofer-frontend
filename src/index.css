@@ -29,7 +29,14 @@
     --success: hsla(152 45% 49%, 1);
     --info: hsla(217 80% 68%, 1);
     --b-radius-full: 9999px;
-    --radius: 0.5rem;
+    --radius: 4px;
+    --gap-xxl: 120px;
+    --gap-xl: 48px;
+    --gap-lg: 40px;
+    --gap-md: 32px;
+    --gap-sm: 24px;
+    --gap-xs: 16px;
+    --gap-xxs: 8px;
   }
 
   * {
