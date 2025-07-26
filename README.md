@@ -22,7 +22,7 @@
   <a href="https://github.com/dev-gaitano/jasmijn-schrofer-frontend/issues">
     <img src="https://img.shields.io/github/issues/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge" alt="Issues">
   </a>
-  <a href="https://github.com/dev-gaitano/jasmijn-schrofer-frontend/LICENSE">
+  <a href="https://github.com/dev-gaitano/jasmijn-schrofer-frontend/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge" alt="License">
   </a>
 
@@ -56,6 +56,7 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 A dynamic and visually engaging portfolio website built using React, specifically designed to showcase the creative work of acclaimed film director Jasmijn Schrofer
@@ -76,21 +77,21 @@ jasmijn-schrofer-frontend/
 ├── src/                    # Source code
 │   ├── components/         # Reusable components
 │   │   ├── assets/         # Assets like images and icons
-│   │   ├── ui/             # UI components 
-│   │   └── ...             # Other components 
+│   │   ├── ui/             # UI components
+│   │   └── ...             # Other components
 │   ├── hooks/              # Custom hooks
 │   │   ├── use-toast.ts    # Hook for toast notifications
-│   │   ├── useMobile.ts    # Hook for mobile detection 
+│   │   ├── useMobile.ts    # Hook for mobile detection
 │   │   └── useOnScreen.ts  # Hook to check if an element is on screen
 │   ├── lib/                # Library files
 │   │   └── utils.ts        # Utility functions
 │   ├── pages/              # Page components
-│   │   ├── About.tsx       # About page 
-│   │   ├── Contact.tsx     # Contact page 
-│   │   ├── InDevelopment.tsx # In Development page 
-│   │   ├── Index.tsx       # Home page 
-│   │   ├── News.tsx        # News page 
-│   │   ├── NotFound.tsx    # 404 Not Found page 
+│   │   ├── About.tsx       # About page
+│   │   ├── Contact.tsx     # Contact page
+│   │   ├── InDevelopment.tsx # In Development page
+│   │   ├── Index.tsx       # Home page
+│   │   ├── News.tsx        # News page
+│   │   ├── NotFound.tsx    # 404 Not Found page
 │   │   └── Work.tsx        # Work page
 │   ├── types/              # Type definitions
 │   │   └── CountUp.ts      # Home page stylesheet
@@ -117,6 +118,7 @@ jasmijn-schrofer-frontend/
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 This is an example of how you may approach setting up your project locally.
@@ -126,11 +128,11 @@ To get a local copy up and running follow these simple example steps.
 
 To run you have to have the following requirements installed;
 
-* Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 ### Installation
 
-Clone this repo and push changes. 
+Clone this repo and push changes.
 
 Follow these steps:
 
@@ -148,10 +150,10 @@ npm i
 npm run dev
 ```
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
+
 ## Roadmap
 
 - [ ] Home Page
@@ -159,12 +161,13 @@ npm run dev
 - [ ] News Page
 - [ ] About Page
 - [ ] Contact Page
-    - [x] Firestore Database
-    - [x] User Authentication
+  - [x] Firestore Database
+  - [x] User Authentication
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT license. See `LICENSE` for more information.
@@ -172,6 +175,7 @@ Distributed under the MIT license. See `LICENSE` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
+
 ## Contact
 
 Eugene Gaitano - dev.gaitano@gmail.com
@@ -191,6 +195,7 @@ Project Link:
 </div>
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge
 [contributors-url]: https://github.com/dev-gaitano/jasmijn-schrofer-frontend/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge
@@ -200,4 +205,4 @@ Project Link:
 [issues-shield]: https://img.shields.io/github/issues/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge
 [issues-url]: https://github.com/dev-gaitano/jasmijn-schrofer-frontend/issues
 [license-shield]: https://img.shields.io/github/license/dev-gaitano/jasmijn-schrofer-frontend.svg?style=for-the-badge
-[license-url]: https://github.com/dev-gaitano/jasmijn-schrofer-frontend/blob/master/LICENSE
+[license-url]: https://github.com/dev-gaitano/jasmijn-schrofer-frontend/blob/main/LICENSE
