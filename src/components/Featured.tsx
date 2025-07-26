@@ -16,39 +16,6 @@ const FeaturedFilm = () => {
               Discover My Latest Project: Birth of Light
             </h2>
 
-            <p
-              className={`text-[var(--text-muted)] mb-8 max-md:text-sm md:text-lg observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-500`}
-            >
-              So far, the sun and moon dictated the rhythm of the Samburu,
-              herdsmen in northern Kenya. Now, they are connected to the power
-              network. Poetic impression of life at a point of big changes.
-            </p>
-          </div>
-
-          <div className="max-md:hidden flex w-full gap-4 mb-8">
-            <div
-              className={`w-1/2 observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-600`}
-            >
-              <h3 className="font-serif italic font-bold text-xl mb-3">
-                Latest Project
-              </h3>
-              <p className="text-[var(--text-muted)]">
-                Delves into the complex themes of modernization's effects on
-                their traditional way of life
-              </p>
-            </div>
-
-            <div
-              className={`w-1/2 observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-650`}
-            >
-              <h3 className="font-serif italic font-bold text-xl mb-3">
-                Watch Now
-              </h3>
-              <p className="text-[var(--text-muted)]">
-                Join us in celebrating the artistry of Jasmijn Schrofer.
-              </p>
-            </div>
-          </div>
 
           <div className="flex flex-wrap gap-4">
             <a
