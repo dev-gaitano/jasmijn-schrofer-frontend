@@ -1,46 +1,44 @@
-import aboutImage from "/jasmijn-masterclass.jpg";
 import { useIsOnScreen } from "@/hooks/useOnScreen";
 import CountUp from "./CountUp.tsx";
 
 const About = () => {
   const { isOnScreen } = useIsOnScreen();
+  const aboutImage =
+    "https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:eco/v1/schrofer/jasmijn-masterclass?_a=BAMAK+Go0";
 
   return (
-    <section id="about" className="relative py-24 w-full">
+    <section id="about" className="relative p-gap-xxl w-full">
       {/* Background gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[var(--primary-more-muted)] via-transparent via-50% to-transparent pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[var(--accent-more-muted)] via-transparent via-20% to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary-more-muted via-transparent via-50% to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent-more-muted via-transparent via-20% to-transparent pointer-events-none"></div>
 
-      <div className="container px-4 mx-auto relative z-10">
-        <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">About Me</h2>
-        </div>
+      <div className="relative z-10 space-y-gap-lg">
+        <h2 className="text-3xl md:text-4xl">About Me</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-gap-lg items-center">
           {/* Image */}
-          <div className="relative">
-            <div className="aspect-[3/4] rounded-lg overflow-hidden">
-              <img
-                src={aboutImage}
-                alt="Jasmijn Schrofer"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div className="aspect-[3/4] rounded-lg overflow-hidden">
+            <img
+              src={aboutImage}
+              alt="Jasmijn Schrofer"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Content */}
-          <div className="space-y-8">
+          <div className="space-y-gap-md">
+            {/* Bio */}
             <div
-              className={`prose prose-invert flex flex-col gap-2 ${isOnScreen ? "off-screen-left -translate-x-0" : "on-screen"}`}
+              className={`prose prose-invert flex flex-col gap-gap-xs ${isOnScreen ? "off-screen-left -translate-x-0" : "on-screen"}`}
             >
-              <p className="text-lg text-[var(--text-muted)] leading-relaxed">
+              <p className="text-lg text-text-muted leading-relaxed">
                 For over 15 years, I have painted with light and motion,
                 crafting cinematic tapestries that transcend borders and speak
                 the universal language of emotion. My work—spanning film,
                 television, and the creative arts—is a journey through visual
                 poetry, cultural metamorphosis, and immersive storytelling.
               </p>
-              <p className="text-lg text-[var(--text-muted)] leading-relaxed max-md:hidden">
+              <p className="text-lg text-text-muted leading-relaxed max-md:hidden">
                 Among my creations,{" "}
                 <span className="font-serif italic font-bold">
                   Birth of Light
@@ -54,7 +52,7 @@ const About = () => {
                 international festivals—a testament to my dedication to stories
                 that linger in the heart long after the screen fades to black.
               </p>
-              <p className="text-lg text-[var(--text-muted)] leading-relaxed max-md:hidden">
+              <p className="text-lg text-text-muted leading-relaxed max-md:hidden">
                 With over 50 commissioned projects for visionaries like VPRO,
                 Manchester City, El País, and Holland Festival. From intimate
                 documentaries to bold visual experiments, every project is a new
@@ -66,9 +64,9 @@ const About = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-              <div className="glass-panel hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500 p-6 text-center">
-                <div className="text-2xl font-bold mb-1">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-gap-sm">
+              <div className="flex flex-col justify-center items-center gap-gap-xxs text-center glass-panel p-gap-sm hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500">
+                <div className="text-2xl font-bold">
                   <CountUp
                     from={0}
                     to={7}
@@ -78,12 +76,12 @@ const About = () => {
                     className="count-up-text"
                   />
                 </div>
-                <div className="text-sm text-[var(--text-more-muted)]">
+                <div className="text-sm text-text-more-muted">
                   Films Directed
                 </div>
               </div>
-              <div className="glass-panel hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500 p-6 text-center">
-                <div className="text-2xl font-bold mb-1">
+              <div className="flex flex-col justify-center items-center gap-gap-xxs text-center glass-panel p-gap-sm hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500">
+                <div className="text-2xl font-bold">
                   <CountUp
                     from={0}
                     to={8}
@@ -93,12 +91,10 @@ const About = () => {
                     className="count-up-text"
                   />
                 </div>
-                <div className="text-sm text-[var(--text-more-muted)]">
-                  Awards Won
-                </div>
+                <div className="text-sm text-text-more-muted">Awards Won</div>
               </div>
-              <div className="glass-panel hover-lift hover:shadow-lg t rounded-lg transition-all ease-in-out duration-500 p-6 text-center">
-                <div className="text-2xl font-bold mb-1 flex items-center justify-center gap-1">
+              <div className="flex flex-col justify-center items-center gap-gap-xxs text-center glass-panel p-gap-sm hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500">
+                <div className="text-2xl font-bold flex items-center justify-center gap-1">
                   <CountUp
                     from={0}
                     to={15}
@@ -109,25 +105,25 @@ const About = () => {
                   />
                   <p>+</p>
                 </div>
-                <div className="text-sm text-[var(--text-more-muted)]">
+                <div className="text-sm text-text-more-muted">
                   Years Experience
                 </div>
               </div>
             </div>
 
             {/* Expertise */}
-            <div className="space-y-4">
+            <div className="space-y-gap-xs">
               <h3 className="text-xl">Expertise</h3>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-gap-xxs">
                 {[
                   "Documentaries",
-                  "Narrative Film",
+                  "Narrative Films",
                   "Short & Feature Films",
-                  "Experimental",
+                  "Experimental Films",
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="px-4 py-2 rounded-full glass-panel, border border-[var(--secondary)] text-[var(--secondary)]"
+                    className="px-gap-xs py-gap-xxs rounded-full glass-panel, border border-secondary text-secondary"
                   >
                     {skill}
                   </span>

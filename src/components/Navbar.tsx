@@ -23,7 +23,11 @@ const Navbar = () => {
             href="/"
             className="text-2xl font-playfair font-bold text-gradient flex items-center ml-2"
           >
-            <img src="/logo.png" alt="JAS Logo" className="h-10" />
+            <img
+              src="https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,h_40,q_auto/v1/schrofer/logo?_a=BAMAK+Go0"
+              alt="JAS Logo"
+              className="h-10"
+            />
             {isScrolled ? null : (
               <p className="w-28 ml-1 text-base text-[var(--primary)]">
                 Jasmijn Schrofer
