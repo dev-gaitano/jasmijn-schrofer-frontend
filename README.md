@@ -65,7 +65,8 @@ A dynamic and visually engaging portfolio website built using React, specificall
 
 - React
 - TypeScript
-- Tailwind CSS
+- TailwindCSS
+- PostCSS
 - Vite
 
 ### Project Structure
