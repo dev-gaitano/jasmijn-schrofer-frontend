@@ -30,7 +30,7 @@ const Hero = () => {
       <div className="absolute inset-0 md:bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-secondary-more-muted via-transparent to-transparent via-50% pointer-events-none"></div>
 
       {/* Content */}
-      <div className="z-10 w-full text-center flex flex-col items-center space-y-gap-sm md:text-right md:items-end">
+      <div className="z-10 w-full text-center flex flex-col items-center space-y-gap-xxs md:space-y-gap-sm md:text-right md:items-end">
         <h1>
           <BlurText
             text="Jasmijn Schrofer"
