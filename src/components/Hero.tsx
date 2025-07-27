@@ -58,8 +58,8 @@ const Hero = () => {
           <p
             className={`md:hidden max-w-2xl text-lg text-text-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
           >
-            A Dutch/Chinese American film director based in Amsterdam, renowned
-            for visually poetic storytelling and exploration of profound themes.
+            A Dutch/Chinese American film director, renowned for visually poetic
+            storytelling and exploration of profound themes.
           </p>
         </div>
 
