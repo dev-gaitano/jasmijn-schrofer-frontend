@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative p-gap-xl md:px-gap-xxl min-h-screen flex items-end md:items-center justify-center overflow-hidden w-full"
+      className="relative p-gap-md md:px-gap-xxl min-h-screen flex items-end md:items-center justify-center overflow-hidden w-full"
     >
       {/* Background */}
       <div className="absolute inset-0 w-full h-full">
@@ -30,33 +30,42 @@ const Hero = () => {
       <div className="absolute inset-0 md:bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-secondary-more-muted via-transparent to-transparent via-50% pointer-events-none"></div>
 
       {/* Content */}
-      <div className="z-10 w-full text-center flex flex-col items-center space-y-gap-xxs md:space-y-gap-sm md:text-right md:items-end">
-        <h1>
-          <BlurText
-            text="Jasmijn Schrofer"
-            delay={300}
-            animateBy="words"
-            direction="top"
-            className="text-4xl md:text-7xl lg:text-7xl"
-          />
-        </h1>
-        <p
-          className={`font-serif italic text-xl md:text-2xl text-text-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
-        >
-          Film Director
-        </p>
-        <p
-          className={`max-w-2xl text-lg text-text-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
-        >
-          A Dutch/Chinese American documentary filmmaker based in Amsterdam,
-          renowned for visually poetic storytelling and exploration of profound
-          themes. My work often intertwines themes of spirituality, culture, and
-          human connection.
-        </p>
+      <div className="z-10 w-full flex flex-col items-center md:items-end">
+        <div className="text-center md:text-right flex flex-col items-center md:items-end gap-gap-xxs md:gap-gap-xs">
+          <h1>
+            <BlurText
+              text="Jasmijn Schrofer"
+              delay={300}
+              animateBy="words"
+              direction="top"
+              className="text-4xl md:text-7xl lg:text-7xl"
+            />
+          </h1>
+          <p
+            className={`font-serif italic text-xl md:text-2xl text-text-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
+          >
+            Film Director
+          </p>
+          <p
+            className={`hidden md:block max-w-2xl text-lg text-text-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
+          >
+            A Dutch/Chinese American film director based in Amsterdam, renowned
+            for visually poetic storytelling and exploration of profound themes.
+            My work often intertwines themes of spirituality, culture, and human
+            connection.
+          </p>
+
+          <p
+            className={`md:hidden max-w-2xl text-lg text-text-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
+          >
+            A Dutch/Chinese American film director based in Amsterdam, renowned
+            for visually poetic storytelling and exploration of profound themes.
+          </p>
+        </div>
 
         <a
           href="/work"
-          className="inline-block button-primary hover-lift animate-fadeIn"
+          className="inline-block mt-gap-sm md:mt-gap-md button-primary hover-lift animate-fadeIn"
           style={{ animationDelay: "1.4s" }}
         >
           Explore My Work
