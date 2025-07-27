@@ -87,9 +87,9 @@ const Films = () => {
   const { isOnScreen, observedElements } = useIsOnScreen();
 
   return (
-    <section id="films" className="relative p-gap-xl md:p-gap-xxl w-full">
+    <section id="films" className="relative p-gap-md md:p-gap-xxl w-full">
       {/* Background gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-secondary-muted via-transparent via-45% to-transparent pointer-events-none"></div>
+      <div className="hidden md:block absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-secondary-muted via-transparent via-45% to-transparent pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary-muted via-transparent via-55% to-transparent pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent-more-muted via-transparent via-50% to-transparent pointer-events-none"></div>
 
