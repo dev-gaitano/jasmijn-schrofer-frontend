@@ -87,7 +87,7 @@ const Films = () => {
   const { isOnScreen, observedElements } = useIsOnScreen();
 
   return (
-    <section id="films" className="relative p-gap-xxl w-full">
+    <section id="films" className="relative p-gap-xl md:p-gap-xxl w-full">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-secondary-muted via-transparent via-45% to-transparent pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary-muted via-transparent via-55% to-transparent pointer-events-none"></div>
@@ -101,7 +101,7 @@ const Films = () => {
             <div
               key={index}
               ref={(el) => (observedElements.current[index] = el)}
-              className={`relative group hover-lift space-y-gap-xs ${isOnScreen.has(index) ? "on-screen" : "off-screen-right"}`}
+              className={`relative group hover-lift space-y-gap-xs ${isOnScreen.has(index) ? "md:on-screen" : "md:off-screen-right"}`}
               style={{ animationDelay: `${index * 200}ms` }}
               onMouseEnter={() => setHoveredFilm(film.id)}
               onMouseLeave={() => setHoveredFilm(null)}
@@ -132,9 +132,9 @@ const Films = () => {
                   </div>
                 )}
               </div>
-              <div className="space-y-gap-xxs">
+              <div className="flex flex-col gap-gap-xxs text-right md:text-left">
                 <h3 className="font-serif italic text-lg">{film.title}</h3>
-                <div className="flex items-center justify-center md:justify-start gap-gap-xxs text-sm text-text-muted">
+                <div className="flex items-center justify-end md:justify-start gap-gap-xxs text-sm text-text-muted">
                   <span>{film.year}</span>
                   <span>•</span>
                   <span>{film.runtime}</span>

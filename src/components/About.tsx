@@ -7,7 +7,7 @@ const About = () => {
     "https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:eco/v1/schrofer/jasmijn-masterclass?_a=BAMAK+Go0";
 
   return (
-    <section id="about" className="relative p-gap-xxl w-full">
+    <section id="about" className="relative p-gap-xl md:p-gap-xxl w-full">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary-more-muted via-transparent via-50% to-transparent pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent-more-muted via-transparent via-20% to-transparent pointer-events-none"></div>

@@ -10,11 +10,11 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative p-gap-xxl w-full">
-      <div className="pb-gap-lg grid grid-cols-1 md:grid-cols-2 gap-gap-lg items-center">
-        <div className="h-60 flex gap-gap-lg">
+    <footer className="relative p-gap-xl md:p-gap-xxl w-full">
+      <div className="pb-gap-lg space-y-gap-lg md:space-y-0 grid grid-cols-1 md:grid-cols-2 gap-gap-lg items-center">
+        <div className="h-60 flex flex-col md:flex-row gap-gap-lg">
           {/* Brand */}
-          <div className="w-3/4 space-y-4 flex flex-col items-start justify-center">
+          <div className="w-full md:w-3/4 space-y-4 flex flex-col items-start justify-center">
             <div className="text-2xl font-bold flex items-center">
               <img
                 src="https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,h_40,q_auto/v1/schrofer/logo?_a=BAMAK+Go0"
@@ -32,7 +32,7 @@ const Footer = () => {
               film.
             </p>
 
-            <div className="space-y-gap-xs">
+            <div className="w-full space-y-gap-xs">
               <h5 className="text-lg">Subscribe to my Newsletter</h5>
               <div className="flex justify-between items-center gap-gap-xxs">
                 <input
@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-gap-xs">
+          <div className="hidden md:block space-y-gap-xs">
             <h4 className="text-lg">Quick Links</h4>
             <nav className="text-text-muted space-y-gap-xxs">
               <a
