@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative p-gap-md md:px-gap-xxl min-h-screen flex items-end md:items-center justify-center overflow-hidden w-full"
+      className="relative p-gap-md md:px-gap-xxl h-mscreen md:h-screen flex items-end md:items-center justify-center overflow-hidden w-full"
     >
       {/* Background */}
       <div className="absolute inset-0 w-full h-full">
@@ -16,12 +16,12 @@ const Hero = () => {
           alt="hero-image"
           className="absolute top-0 left-0 h-full object-cover max-md:object-[-22rem]"
         />
-        <div className="fixed top-0 right-0 h-screen w-[60vw] md:bg-gradient-to-l from-background via-transparent to-transparent"></div>
+        <div className="hidden md:block fixed top-0 right-0 h-screen w-[60vw] bg-gradient-to-l from-background via-transparent to-transparent"></div>
       </div>
 
       {/* Desktop Gradients */}
-      <div className="fixed top-0 right-0 h-screen w-[60vw] md:bg-gradient-to-l from-background to-transparent"></div>
-      <div className="absolute inset-y-0 left-0 w-28 md:bg-gradient-to-r from-background to-transparent"></div>
+      <div className="hidden md:block fixed top-0 right-0 h-screen w-[60vw] bg-gradient-to-l from-background to-transparent"></div>
+      <div className="hidden md:block absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-background to-transparent"></div>
 
       <div className="md:hidden absolute inset-y-0 w-full bg-gradient-to-t from-background via-transparent to-transparent"></div>
 

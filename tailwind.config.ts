@@ -18,6 +18,17 @@ export default {
       },
     },
     extend: {
+      screens: {
+        xs: "430px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
+      height: {
+        mscreen: "100svh",
+      },
       colors: {
         background: {
           DEFAULT: "var(--background)",
