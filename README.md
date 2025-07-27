@@ -145,7 +145,7 @@ git clone git@github.com:dev-gaitano/jasmijn-schrofer-frontend.git
 cd jasmijn-schrofer-frontend
 
 # Step 3: Install the necessary dependencies.
-npm i
+npm i --legacy-peer-deps
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
@@ -162,8 +162,7 @@ npm run dev
 - [ ] News Page
 - [ ] About Page
 - [ ] Contact Page
-  - [x] Firestore Database
-  - [x] User Authentication
+- [ ] Admin Page
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
