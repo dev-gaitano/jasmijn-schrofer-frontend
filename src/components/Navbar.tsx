@@ -90,7 +90,7 @@ const Navbar = () => {
             ) : null}
           </div>
           <button
-            className="md:hidden mx-gap-xs text-foreground hover:text-primary transition-colors duration-500"
+            className="md:hidden mx-gap-xs text-primary"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
