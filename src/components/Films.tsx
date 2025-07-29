@@ -94,7 +94,7 @@ const Films = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-accent-more-muted via-transparent via-50% to-transparent pointer-events-none"></div>
 
       <div className="space-y-gap-lg relative z-10">
-        <h2 className="text-3xl md:text-4xl">Featured Films</h2>
+        <h2 className="hidden md:block text-3xl md:text-4xl">Featured Films</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-md">
           {films.map((film, index) => (
