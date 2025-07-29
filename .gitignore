@@ -34,3 +34,4 @@ node_modules/
 dist/
 build/
 stats.html
+.vercel
