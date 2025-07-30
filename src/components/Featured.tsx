@@ -18,7 +18,8 @@ const FeaturedFilm = () => {
           <h2
             className={`text-3xl md:text-4xl lg:text-5xl flex flex-col observed ${isOnScreen ? "on-screen" : "off-screen-down"} delay-100`}
           >
-            Discover My Latest Project:
+            <span className="md:hidden">Latest Project:</span>
+            <span className="hidden md:block">Discover My Latest Project:</span>
             <span>Birth of Light</span>
           </h2>
 
