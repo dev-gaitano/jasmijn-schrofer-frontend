@@ -1,7 +1,15 @@
+import Navbar from "@/components/Navbar.tsx";
 import InDevelopment from "./InDevelopment.tsx";
+import Footer from "@/components/Footer.tsx";
 
-const newsPage = () => {
-  return <InDevelopment />;
+const NewsPage = () => {
+  return (
+    <main className="min-h-screen flex flex-col items-center">
+      <Navbar />
+      <InDevelopment />;
+      <Footer />
+    </main>
+  );
 };
 
-export default newsPage;
+export default NewsPage;
