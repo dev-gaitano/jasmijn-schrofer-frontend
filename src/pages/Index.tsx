@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Films from "@/components/Films";
-import Featured from "@/components/Featured";
-import About from "@/components/About";
+import Hero from "@/components/home/Hero";
+import Films from "@/components/home/Films";
+import Featured from "@/components/home/Featured";
+import About from "@/components/home/About";
 import Footer from "@/components/Footer";
 
 const Index = () => {
