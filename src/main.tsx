@@ -8,8 +8,8 @@ import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import WorkPage from "./pages/Work.tsx";
-import NewsPage from "./components/News.tsx";
-import AboutPage from "./components/About.tsx";
+import NewsPage from "./pages/News.tsx";
+import AboutPage from "./pages/About.tsx";
 import ContactPage from "./pages/Contact.tsx";
 
 import "./index.css";

@@ -2,10 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Films from "@/components/Films";
 import Featured from "@/components/Featured";
-import News from "@/components/News";
 import About from "@/components/About";
-import CallToAction from "@/components/CallToAction";
-import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,9 +12,7 @@ const Index = () => {
       <Hero />
       <Films />
       <Featured />
-      {/* <News /> */}
       <About />
-      {/* <ContactForm /> */}
       <Footer />
     </main>
   );
