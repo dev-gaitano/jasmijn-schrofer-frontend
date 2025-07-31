@@ -157,12 +157,10 @@ npm run dev
 
 ## Roadmap
 
-- [ ] Home Page
-- [ ] Work Page
-- [ ] News Page
-- [ ] About Page
-- [ ] Contact Page
-- [ ] Admin Page
+- [ ] UI/UX
+- [ ] Database Integration
+- [ ] Admin Panel
+- [ ] SEO Optimization
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
