@@ -1,5 +1,5 @@
 import { useIsOnScreen } from "@/hooks/useOnScreen";
-import CountUp from "./CountUp.tsx";
+import CountUp from "@/components/CountUp";
 
 const About = () => {
   const { isOnScreen } = useIsOnScreen();
@@ -7,7 +7,7 @@ const About = () => {
     "https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:eco/v1/schrofer/jasmijn-masterclass?_a=BAMAK+Go0";
 
   return (
-    <section id="about" className="relative p-gap-xl md:p-gap-xxl w-full">
+    <section id="about" className="relative p-gap-md md:p-gap-xxl w-full">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-primary-more-muted via-transparent via-50% to-transparent pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent-more-muted via-transparent via-20% to-transparent pointer-events-none"></div>
@@ -31,14 +31,14 @@ const About = () => {
             <div
               className={`prose prose-invert flex flex-col gap-gap-xs ${isOnScreen ? "off-screen-left -translate-x-0" : "on-screen"}`}
             >
-              <p className="text-lg text-text-muted leading-relaxed">
+              <p className="max-md:text-sm md:text-lg text-text-muted leading-relaxed">
                 For over 15 years, I have painted with light and motion,
                 crafting cinematic tapestries that transcend borders and speak
                 the universal language of emotion. My work—spanning film,
                 television, and the creative arts—is a journey through visual
                 poetry, cultural metamorphosis, and immersive storytelling.
               </p>
-              <p className="text-lg text-text-muted leading-relaxed max-md:hidden">
+              <p className="max-md:text-sm md:text-lg text-text-muted leading-relaxed max-md:hidden">
                 Among my creations,{" "}
                 <span className="font-serif italic font-bold">
                   Birth of Light
@@ -52,7 +52,7 @@ const About = () => {
                 international festivals—a testament to my dedication to stories
                 that linger in the heart long after the screen fades to black.
               </p>
-              <p className="text-lg text-text-muted leading-relaxed max-md:hidden">
+              <p className="max-md:text-sm md:text-lg text-text-muted leading-relaxed max-md:hidden">
                 With over 50 commissioned projects for visionaries like VPRO,
                 Manchester City, El País, and Holland Festival. From intimate
                 documentaries to bold visual experiments, every project is a new

@@ -10,8 +10,8 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative p-gap-xl md:p-gap-xxl w-full">
-      <div className="pb-gap-lg space-y-gap-lg md:space-y-0 grid grid-cols-1 md:grid-cols-2 gap-gap-lg items-center">
+    <footer className="relative p-gap-md md:p-gap-xxl w-full">
+      <div className="pb-gap-lg space-y-gap-sm md:space-y-0 grid grid-cols-1 md:grid-cols-2 gap-gap-lg items-center">
         <div className="h-60 flex flex-col md:flex-row gap-gap-lg">
           {/* Brand */}
           <div className="w-full md:w-3/4 space-y-4 flex flex-col items-start justify-center">
@@ -92,24 +92,24 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="h-60 border-[0.5px] border-foreground-more-muted p-8 rounded-lg space-y-4 flex flex-col items-start justify-center grow">
+        <div className="h-60 border-[0.5px] border-foreground-more-muted p-gap-sm md:p-gap-md rounded-lg space-y-gap-xxs md:space-y-gap-xs flex flex-col items-center md:items-start justify-center grow">
           <h3 className="text-3xl md:text-4xl text-center">
             Let's Create Something Amazing
           </h3>
 
-          <div className="space-y-4 text-text-muted">
-            <div className="flex items-start gap-4">
+          <div className="space-y-gap-xxs md:space-y-gap-xs text-text-muted">
+            <div className="flex items-center md:items-start gap-gap-xxs md:gap-gap-xs">
               <Mail className="w-5 h-5 mt-0.5" />
               <span>info@jasmijnschrofer.com</span>
             </div>
 
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-gap-xxs md:gap-gap-xs">
               <MapPin className="w-5 h-5 mt-0.5" />
               <span>Amsterdam, The Netherlands | Nairobi, Kenya</span>
             </div>
           </div>
 
-          <div className="flex items-center space-x-4 text-text-more-muted">
+          <div className="flex items-center space-x-gap-xs text-text-more-muted">
             <a
               href="https://www.instagram.com/jasmijnschrofer/"
               className="text-text-more-muted hover:text-primary transition-colors duration-500"

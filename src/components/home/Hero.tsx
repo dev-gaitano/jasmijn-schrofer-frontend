@@ -47,7 +47,7 @@ const Hero = () => {
             Film Director
           </p>
           <p
-            className={`hidden md:block max-w-2xl text-lg text-text-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
+            className={`hidden md:block max-w-2xl max-md:text-sm md:text-lg text-text-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
           >
             A Dutch/Chinese American film director based in Amsterdam, renowned
             for visually poetic storytelling and exploration of profound themes.
@@ -56,7 +56,7 @@ const Hero = () => {
           </p>
 
           <p
-            className={`md:hidden max-w-2xl text-lg text-text-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
+            className={`md:hidden max-w-2xl max-md:text-sm md:text-lg text-text-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
           >
             A Dutch/Chinese American film director, renowned for visually poetic
             storytelling and exploration of profound themes.

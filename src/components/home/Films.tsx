@@ -106,7 +106,7 @@ const Films = () => {
               onMouseEnter={() => setHoveredFilm(film.id)}
               onMouseLeave={() => setHoveredFilm(null)}
             >
-              <div className="relative aspect-[2/3] overflow-hidden rounded-lg">
+              <div className="relative aspect-[2/3] overflow-hidden rounded-lg shadow-2xl">
                 <img
                   src={film.thumbnail}
                   alt={film.title}

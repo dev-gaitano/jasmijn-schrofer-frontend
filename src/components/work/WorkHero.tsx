@@ -10,6 +10,8 @@ const WorkHero: React.FC<WorkHeroProps> = ({
   description,
   imagePath,
 }) => {
+  const { isOnScreen } = useIsOnScreen();
+
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Background Image with Overlay */}
@@ -23,17 +25,30 @@ const WorkHero: React.FC<WorkHeroProps> = ({
       <div className="absolute inset-0 md:bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-[var(--background-more-muted)] via-transparent to-transparent via-50% pointer-events-none"></div>
 
       {/* Project Content */}
-      <div className="relative h-screen flex flex-col justify-end px-8 md:px-20 pb-24">
-        <div className="max-w-2xl animate-fade-in">
-          <h1 className="text-4xl md:text-7xl lg:text-7xl font-bold mb-6 text-[var(--text)]">
-            {title}
+      <div className="relative h-screen flex flex-col justify-end p-[var(--gap-xxl)]">
+        <div className="max-w-2xl space-y-4 md:space-y-[var(--gap-sm)]">
+          <h1>
+            <BlurText
+              text={title}
+              delay={300}
+              animateBy="words"
+              direction="top"
+              className="font-sans text-4xl md:text-7xl lg:text-7xl font-bold text-[var(--text)]"
+            />
           </h1>
-          <div className="font-serif italic text-xl md:text-2xl text-[var(--text-muted)] mb-4 md:mb-8">
+
+          <p
+            className={`font-serif italic text-xl md:text-2xl text-[var(--text-muted)] observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
+          >
             {category}
-          </div>
-          <p className="max-w-2xl text-lg text-[var(--text-more-muted)] mb-4 md:mb-8">
+          </p>
+
+          <p
+            className={`max-w-2xl text-lg text-[var(--text-more-muted)] observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-500`}
+          >
             {description}
           </p>
+
           <Link
             to="/work/birth-of-light"
             className="inline-block button-primary hover-lift"
@@ -45,12 +60,12 @@ const WorkHero: React.FC<WorkHeroProps> = ({
 
       {/* Navigation Arrows */}
       <div className="absolute bottom-1/2 left-4 transform -translate-y-1/2">
-        <button className="p-2 text-[var(--foreground-more-muted)] hover:text-[var(--foreground)] transition-colors duration-300">
+        <button className="p-[var(--gap-xxs)] text-[var(--foreground-more-muted)] hover:text-[var(--foreground)] transition-colors duration-300">
           <ChevronLeft size={36} />
         </button>
       </div>
       <div className="absolute bottom-1/2 right-4 transform -translate-y-1/2">
-        <button className="p-2 text-[var(--foreground-more-muted)] hover:text-[var(--foreground)] transition-colors duration-300">
+        <button className="p-[var(--gap-xxs)] text-[var(--foreground-more-muted)] hover:text-[var(--foreground)] transition-colors duration-300">
           <ChevronRight size={36} />
         </button>
       </div>

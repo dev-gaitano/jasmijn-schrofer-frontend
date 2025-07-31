@@ -8,13 +8,13 @@ const FeaturedFilm = () => {
 
   return (
     <section
-      className="w-full h-[50vh] md:h-screen bg-center bg-cover flex flex-col justify-center md:justify-end items-center relative p-gap-xl md:p-gap-xxl"
+      className="w-full h-[50vh] md:h-screen bg-center bg-cover flex flex-col justify-center md:justify-end items-center relative p-gap-md md:p-gap-xxl"
       style={{ backgroundImage: `url(${featuredFilm})` }}
     >
       <div className="absolute inset-0 bg-gradient-to-t from-background-muted via-transparent via-50% to-transparent pointer-events-none"></div>
       {/* Content */}
-      <div className="flex flex-col items-center text-center w-full md:w-[60%] space-y-gap-md">
-        <div className="space-y-gap-md">
+      <div className="flex flex-col items-center text-center w-full md:w-[60%] space-y-gap-sm md:space-y-gap-md">
+        <div className="space-y-gap-xxs md:space-y-gap-md">
           <h2
             className={`text-3xl md:text-4xl lg:text-5xl flex flex-col observed ${isOnScreen ? "on-screen" : "off-screen-down"} delay-100`}
           >
@@ -33,7 +33,7 @@ const FeaturedFilm = () => {
         </div>
 
         <div
-          className={`flex flex-wrap gap-4  observed ${isOnScreen ? "on-screen" : "off-screen-down"} delay-500`}
+          className={`flex flex-wrap gap-[4px] md:gap-gap-xs  observed ${isOnScreen ? "on-screen" : "off-screen-down"} delay-500`}
         >
           <a
             href="https://vimeo.com/jasmijnschrofer"
