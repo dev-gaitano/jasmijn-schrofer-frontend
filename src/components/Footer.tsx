@@ -36,7 +36,7 @@ const Footer = () => {
               <h5 className="text-lg">Subscribe to my Newsletter</h5>
               <div className="flex justify-between items-center gap-gap-xxs">
                 <input
-                  className="h-6 pl-gap-xxs flex-grow bg-background border-b-[0.5px] border-foreground-muted placeholder-text-more-muted"
+                  className="h-6 pl-gap-xxs flex-grow bg-background border-b-[0.5px] border-foreground-muted placeholder-foreground-more-muted"
                   placeholder="Email"
                   type="email"
                 />
