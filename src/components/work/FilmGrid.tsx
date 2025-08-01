@@ -35,6 +35,72 @@ const films: FilmProjectProps[] = [
       "An intimate portrayal of transformation and self-discovery through movement and light.",
     awards: ["Best Experimental Film - Berlin Short Film Awards"],
   },
+  {
+    id: 4,
+    title: "Metamorphosis",
+    year: "2023",
+    category: "Short Film",
+    runtime: "15mins",
+    thumbnail: "/birth-of-light-still-comp.jpg",
+    description:
+      "A visual exploration of personal transformation through the lens of contemporary dance.",
+    awards: ["Audience Choice Award - Cannes Short Film Corner"],
+  },
+  {
+    id: 5,
+    title: "Silent Echoes",
+    year: "2022",
+    category: "Documentary",
+    runtime: "28mins",
+    thumbnail: "/tarikat-poster-comp.jpg",
+    description:
+      "An intimate documentary following three generations of women in rural Morocco.",
+    awards: ["Best Documentary - Amsterdam Documentary Festival"],
+  },
+  {
+    id: 6,
+    title: "The Space Between",
+    year: "2021",
+    category: "Short Film",
+    runtime: "12mins",
+    thumbnail: "/unfold-poster-comp.jpg",
+    description:
+      "A meditation on isolation and connection in urban environments during the pandemic.",
+    awards: ["Critics Choice Award - Berlin International Film Festival"],
+  },
+  {
+    id: 7,
+    title: "Fragments",
+    year: "2020",
+    category: "Experimental",
+    runtime: "9mins",
+    thumbnail: "/birth-of-light-still-comp.jpg",
+    description:
+      "An experimental film exploring memory and trauma through abstract visual storytelling.",
+    awards: ["Innovation Award - Sundance Film Festival"],
+  },
+  {
+    id: 8,
+    title: "Crossroads",
+    year: "2019",
+    category: "Short Film",
+    runtime: "20mins",
+    thumbnail: "/tarikat-poster-comp.jpg",
+    description:
+      "A coming-of-age story set against the backdrop of political upheaval in the Middle East.",
+    awards: ["Golden Palm - Cannes Directors' Fortnight"],
+  },
+  {
+    id: 9,
+    title: "Horizon",
+    year: "2018",
+    category: "Short Film",
+    runtime: "18mins",
+    thumbnail: "/unfold-poster-comp.jpg",
+    description:
+      "A poetic journey through landscapes both physical and emotional, exploring themes of migration.",
+    awards: ["Best Cinematography - Venice Film Festival"],
+  },
 ];
 
 const FilmGrid = () => {
@@ -48,7 +114,7 @@ const FilmGrid = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-gap-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-lg">
           {films.map((film) => (
             <div
               key={film.id}
