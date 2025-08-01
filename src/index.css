@@ -10,9 +10,6 @@
     --foreground: hsla(47, 53%, 81%, 1);
     --foreground-muted: hsla(47, 53%, 81%, 0.7);
     --foreground-more-muted: hsla(47, 53%, 81%, 0.5);
-    --text: hsla(47, 53%, 81%, 1);
-    --text-muted: hsla(47, 53%, 81%, 0.7);
-    --text-more-muted: hsla(47, 53%, 81%, 0.6);
     --primary: hsla(22, 99%, 50%, 1);
     --primary-muted: hsla(22, 99%, 50%, 0.7);
     --primary-more-muted: hsla(22, 99%, 50%, 0.5);
