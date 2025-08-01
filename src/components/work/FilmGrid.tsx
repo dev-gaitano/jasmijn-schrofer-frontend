@@ -48,7 +48,7 @@ const FilmGrid = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-lg">
+        <div className="grid grid-cols-1 gap-gap-lg">
           {films.map((film) => (
             <div
               key={film.id}
