@@ -91,13 +91,13 @@ const PodcastCarousel = () => {
   return (
     <section
       id="podcast-section"
-      className="w-full mx-auto p-gap-md md:p-gap-xxl bg-gradient-to-br from-background via-background to-accent/5"
+      className="w-full mx-auto p-gap-md md:px-gap-xxl"
     >
       <div className="space-y-gap-lg">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div className="space-y-gap-xs">
-            <h2 className="text-2xl md:text-3xl font-serif">Podcast Series</h2>
+            <h2 className="text-3xl md:text-4xl">Podcast Series</h2>
             <p className="text-foreground-muted">
               In-depth conversations about filmmaking, storytelling, and the art
               of cinema
@@ -151,7 +151,7 @@ const PodcastCarousel = () => {
 
                   {/* Episode Info */}
                   <div className="space-y-gap-xs">
-                    <h3 className="font-medium text-sm group-hover:text-primary transition-colors line-clamp-2">
+                    <h3 className="font-serif italic text-md group-hover:text-primary transition-colors line-clamp-2">
                       {episode.title}
                     </h3>
 
