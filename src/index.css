@@ -160,7 +160,6 @@
     -webkit-background-clip: text;
     color: transparent;
   }
-  }
 
   .animate-smooth-scroll {
     animation: smooth-scroll 30s linear infinite;
