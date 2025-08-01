@@ -110,7 +110,7 @@ const FilmGrid = () => {
               </div>
 
               {/* Film info */}
-              <div className="mt-gap-sm space-y-gap-xxs">
+              <div className="mt-gap-sm flex flex-col gap-gap-xxs text-right md:text-left">
                 <h3 className="font-serif italic text-lg group-hover:text-primary transition-colors duration-500">
                   {film.title}
                 </h3>
