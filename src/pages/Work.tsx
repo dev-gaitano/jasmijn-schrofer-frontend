@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import InDevelopment from "./InDevelopment";
 import Footer from "@/components/Footer";
 import Hero from "@/components/work/WorkHero";
+import FilmGrid from "@/components/work/FilmGrid";
+import PodcastCarousel from "@/components/work/PodcastCarousel";
 
 const WorkPage = () => {
   return (
@@ -13,7 +15,8 @@ const WorkPage = () => {
         description="Explores the impact of electricity on a remote nomadic community in Northern Kenya, raising questions about modernization's effects on their traditional way of life"
         imagePath="/birth-of-light-still-comp.jpg"
       />
-      {/*<InDevelopment />*/}
+      <FilmGrid />
+      <PodcastCarousel />
       <Footer />
     </main>
   );
