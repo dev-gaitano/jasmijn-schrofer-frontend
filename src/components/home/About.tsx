@@ -31,14 +31,14 @@ const About = () => {
             <div
               className={`prose prose-invert flex flex-col gap-gap-xs ${isOnScreen ? "off-screen-left -translate-x-0" : "on-screen"}`}
             >
-              <p className="max-md:text-sm md:text-lg text-text-muted leading-relaxed">
+              <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
                 For over 15 years, I have painted with light and motion,
                 crafting cinematic tapestries that transcend borders and speak
                 the universal language of emotion. My work—spanning film,
                 television, and the creative arts—is a journey through visual
                 poetry, cultural metamorphosis, and immersive storytelling.
               </p>
-              <p className="max-md:text-sm md:text-lg text-text-muted leading-relaxed max-md:hidden">
+              <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed max-md:hidden">
                 Among my creations,{" "}
                 <span className="font-serif italic font-bold">
                   Birth of Light
@@ -52,7 +52,7 @@ const About = () => {
                 international festivals—a testament to my dedication to stories
                 that linger in the heart long after the screen fades to black.
               </p>
-              <p className="max-md:text-sm md:text-lg text-text-muted leading-relaxed max-md:hidden">
+              <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed max-md:hidden">
                 With over 50 commissioned projects for visionaries like VPRO,
                 Manchester City, El País, and Holland Festival. From intimate
                 documentaries to bold visual experiments, every project is a new
@@ -76,7 +76,7 @@ const About = () => {
                     className="count-up-text"
                   />
                 </div>
-                <div className="text-sm text-text-more-muted">
+                <div className="text-sm text-foreground-more-muted">
                   Films Directed
                 </div>
               </div>
@@ -91,7 +91,9 @@ const About = () => {
                     className="count-up-text"
                   />
                 </div>
-                <div className="text-sm text-text-more-muted">Awards Won</div>
+                <div className="text-sm text-foreground-more-muted">
+                  Awards Won
+                </div>
               </div>
               <div className="flex flex-col justify-center items-center gap-gap-xxs text-center glass-panel p-gap-sm hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500">
                 <div className="text-2xl font-bold flex items-center justify-center gap-1">
@@ -105,7 +107,7 @@ const About = () => {
                   />
                   <p>+</p>
                 </div>
-                <div className="text-sm text-text-more-muted">
+                <div className="text-sm text-foreground-more-muted">
                   Years Experience
                 </div>
               </div>

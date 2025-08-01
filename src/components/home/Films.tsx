@@ -120,7 +120,7 @@ const Films = () => {
                         Watch Trailer
                       </button>
                       <h3 className="text-xl">{film.title}</h3>
-                      <p className="text-sm text-text-muted">
+                      <p className="text-sm text-foreground-muted">
                         {film.description}
                       </p>
                       {film.awards && (
@@ -134,7 +134,7 @@ const Films = () => {
               </div>
               <div className="flex flex-col gap-gap-xxs text-right md:text-left">
                 <h3 className="font-serif italic text-lg">{film.title}</h3>
-                <div className="flex items-center justify-end md:justify-start gap-gap-xxs text-sm text-text-muted">
+                <div className="flex items-center justify-end md:justify-start gap-gap-xxs text-sm text-foreground-muted">
                   <span>{film.year}</span>
                   <span>•</span>
                   <span>{film.runtime}</span>

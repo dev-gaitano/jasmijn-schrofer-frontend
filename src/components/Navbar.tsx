@@ -13,7 +13,7 @@ const MobileNavLink = ({
   <a
     href={href}
     onClick={onClick}
-    className="text-lg text-text hover:text-primary transition-colors duration-500 block py-gap-xxs"
+    className="text-lg text-foreground hover:text-primary transition-colors duration-500 block py-gap-xxs"
   >
     {children}
   </a>
