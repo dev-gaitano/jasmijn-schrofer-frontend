@@ -42,12 +42,12 @@ const Hero = () => {
             />
           </h1>
           <p
-            className={`font-serif italic text-xl md:text-2xl text-text-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
+            className={`font-serif italic text-xl md:text-2xl text-foreground-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
           >
             Film Director
           </p>
           <p
-            className={`hidden md:block max-w-2xl max-md:text-sm md:text-lg text-text-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
+            className={`hidden md:block max-w-2xl max-md:text-sm md:text-lg text-foreground-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
           >
             A Dutch/Chinese American film director based in Amsterdam, renowned
             for visually poetic storytelling and exploration of profound themes.
@@ -56,7 +56,7 @@ const Hero = () => {
           </p>
 
           <p
-            className={`md:hidden max-w-2xl max-md:text-sm md:text-lg text-text-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
+            className={`md:hidden max-w-2xl max-md:text-sm md:text-lg text-foreground-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
           >
             A Dutch/Chinese American film director, renowned for visually poetic
             storytelling and exploration of profound themes.
@@ -75,7 +75,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <div className="absolute w-full bottom-8 px-gap-xxl transform -translate-x-1/2 animate-bounce justify-center md:justify-end hidden md:flex">
         <svg
-          className="w-6 h-6 text-text-more-muted"
+          className="w-6 h-6 text-foreground-more-muted"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"

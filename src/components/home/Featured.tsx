@@ -24,7 +24,7 @@ const FeaturedFilm = () => {
           </h2>
 
           <p
-            className={`text-text-muted max-md:text-sm md:text-lg observed ${isOnScreen ? "on-screen" : "off-screen-down"} delay-300`}
+            className={`text-foreground-muted max-md:text-sm md:text-lg observed ${isOnScreen ? "on-screen" : "off-screen-down"} delay-300`}
           >
             So far, the sun and moon dictated the rhythm of the Samburu,
             herdsmen in northern Kenya. Now, they are connected to the power

@@ -40,7 +40,7 @@ const Footer = () => {
                   placeholder="Email"
                   type="email"
                 />
-                <button className="text-text-muted hover:text-primary transition-colors duration-500">
+                <button className="text-foreground-muted hover:text-primary transition-colors duration-500">
                   Subscribe
                 </button>
               </div>
@@ -50,40 +50,40 @@ const Footer = () => {
           {/* Quick Links */}
           <div className="hidden md:block space-y-gap-xs">
             <h4 className="text-lg">Quick Links</h4>
-            <nav className="text-text-muted space-y-gap-xxs">
+            <nav className="text-foreground-muted space-y-gap-xxs">
               <a
                 href="/"
-                className="block text-text-muted hover:text-primary transition-colors duration-500"
+                className="block text-foreground-muted hover:text-primary transition-colors duration-500"
               >
                 Home
               </a>
               <a
                 href="/work"
-                className="block text-text-muted hover:text-primary transition-colors duration-500"
+                className="block text-foreground-muted hover:text-primary transition-colors duration-500"
               >
                 Work
               </a>
               <a
                 href="/news"
-                className="block text-text-muted hover:text-primary transition-colors duration-500"
+                className="block text-foreground-muted hover:text-primary transition-colors duration-500"
               >
                 News
               </a>
               <a
                 href="/about"
-                className="block text-text-muted hover:text-primary transition-colors duration-500"
+                className="block text-foreground-muted hover:text-primary transition-colors duration-500"
               >
                 About
               </a>
               <a
                 href="/contact"
-                className="block text-text-muted hover:text-primary transition-colors duration-500"
+                className="block text-foreground-muted hover:text-primary transition-colors duration-500"
               >
                 Contact
               </a>
               <a
                 href="/admin"
-                className="block text-text-muted hover:text-primary transition-colors duration-500"
+                className="block text-foreground-muted hover:text-primary transition-colors duration-500"
               >
                 Admin
               </a>
@@ -97,7 +97,7 @@ const Footer = () => {
             Let's Create Something Amazing
           </h3>
 
-          <div className="space-y-gap-xxs md:space-y-gap-xs text-text-muted">
+          <div className="space-y-gap-xxs md:space-y-gap-xs text-foreground-muted">
             <div className="flex items-center md:items-start gap-gap-xxs md:gap-gap-xs">
               <Mail className="w-5 h-5 mt-0.5" />
               <span>info@jasmijnschrofer.com</span>
@@ -109,34 +109,34 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex items-center space-x-gap-xs text-text-more-muted">
+          <div className="flex items-center space-x-gap-xs text-foreground-more-muted">
             <a
               href="https://www.instagram.com/jasmijnschrofer/"
-              className="text-text-more-muted hover:text-primary transition-colors duration-500"
+              className="text-foreground-more-muted hover:text-primary transition-colors duration-500"
             >
               <Instagram className="w-5 h-5" />
             </a>
             <a
               href="https://www.facebook.com/jasmijn.schrofer/"
-              className="text-text-more-muted hover:text-primary transition-colors duration-500"
+              className="text-foreground-more-muted hover:text-primary transition-colors duration-500"
             >
               <Facebook className="w-5 h-5" />
             </a>
             <a
               href="#"
-              className="text-text-more-muted hover:text-primary transition-colors duration-500"
+              className="text-foreground-more-muted hover:text-primary transition-colors duration-500"
             >
               <Twitter className="w-5 h-5" />
             </a>
             <a
               href="https://www.youtube.com/user/jasmijn12"
-              className="text-text-more-muted hover:text-primary transition-colors duration-500"
+              className="text-foreground-more-muted hover:text-primary transition-colors duration-500"
             >
               <Youtube className="w-5 h-5" />
             </a>
             <a
               href="https://www.linkedin.com/in/jasmijn-schrofer-2b186a78/?originalSubdomain=nl"
-              className="text-text-more-muted hover:text-primary transition-colors duration-500"
+              className="text-foreground-more-muted hover:text-primary transition-colors duration-500"
             >
               <Linkedin className="w-5 h-5" />
             </a>
@@ -144,7 +144,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="pt-gap-md border-t-[0.5px] border-foreground-more-muted text-center text-foreground/40 text-sm">
+      <div className="pt-gap-md border-t-[0.5px] border-foreground-more-muted text-center text-foreground-more-muted text-sm">
         <p>
           &copy; {new Date().getFullYear()} Jasmijn Schrofer. All rights
           reserved.
