@@ -160,4 +160,23 @@
     -webkit-background-clip: text;
     color: transparent;
   }
+  }
+
+  .animate-smooth-scroll {
+    animation: smooth-scroll 30s linear infinite;
+  }
+
+  .animate-smooth-scroll-paused {
+    animation: smooth-scroll 30s linear infinite;
+    animation-play-state: paused;
+  }
+
+  @keyframes smooth-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
