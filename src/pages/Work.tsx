@@ -3,6 +3,7 @@ import InDevelopment from "./InDevelopment";
 import Footer from "@/components/Footer";
 import Hero from "@/components/work/WorkHero";
 import FilmGrid from "@/components/work/FilmGrid";
+import PodcastCarousel from "@/components/work/PodcastCarousel";
 
 const WorkPage = () => {
   return (
@@ -15,6 +16,7 @@ const WorkPage = () => {
         imagePath="/birth-of-light-still-comp.jpg"
       />
       <FilmGrid />
+      <PodcastCarousel />
       <Footer />
     </main>
   );
