@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import { Play, Pause, SkipBack, SkipForward } from "lucide-react";
+import { useState } from "react";
+import { Play, Pause } from "lucide-react";
 
 interface PodcastEpisode {
   id: number;
@@ -69,52 +69,8 @@ const podcastEpisodes: PodcastEpisode[] = [
 ];
 
 const PodcastCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  const itemsToShow = 3;
-  const maxIndex = podcastEpisodes.length - itemsToShow;
-
-  const startAutoScroll = () => {
-    if (intervalRef.current) return;
-    
-    intervalRef.current = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
-        prevIndex >= maxIndex ? 0 : prevIndex + 1
-      );
-    }, 4000);
-  };
-
-  const stopAutoScroll = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-  };
-
-  useEffect(() => {
-    if (!isHovered) {
-      startAutoScroll();
-    } else {
-      stopAutoScroll();
-    }
-
-    return () => stopAutoScroll();
-  }, [isHovered, maxIndex]);
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex >= maxIndex ? 0 : prevIndex + 1
-    );
-  };
-
-  const goToPrev = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex <= 0 ? maxIndex : prevIndex - 1
-    );
-  };
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
@@ -135,25 +91,11 @@ const PodcastCarousel = () => {
           {/* Controls */}
           <div className="flex items-center gap-gap-sm">
             <button
-              onClick={goToPrev}
-              className="p-gap-xs rounded-full bg-background-muted hover:bg-accent/20 transition-colors"
-              aria-label="Previous episode"
-            >
-              <SkipBack className="w-4 h-4" />
-            </button>
-            <button
               onClick={togglePlay}
               className="p-gap-sm rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
               aria-label={isPlaying ? "Pause" : "Play"}
             >
               {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 fill-current" />}
-            </button>
-            <button
-              onClick={goToNext}
-              className="p-gap-xs rounded-full bg-background-muted hover:bg-accent/20 transition-colors"
-              aria-label="Next episode"
-            >
-              <SkipForward className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -165,17 +107,65 @@ const PodcastCarousel = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
           <div 
-            className="flex transition-transform duration-500 ease-out"
+            className={`flex gap-gap-md ${!isHovered ? 'animate-smooth-scroll' : 'animate-smooth-scroll-paused'}`}
             style={{ 
-              transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
-              width: `${(podcastEpisodes.length / itemsToShow) * 100}%`
+              width: `${podcastEpisodes.length * 2 * 100 / 3}%` // Double the episodes for seamless loop
             }}
           >
+            {/* First set of episodes */}
             {podcastEpisodes.map((episode) => (
               <div 
-                key={episode.id}
-                className="flex-shrink-0 px-gap-sm"
-                style={{ width: `${100 / podcastEpisodes.length}%` }}
+                key={`first-${episode.id}`}
+                className="flex-shrink-0"
+                style={{ width: `${100 / (podcastEpisodes.length * 2)}%` }}
+              >
+                <div className="group bg-background/50 backdrop-blur-sm rounded-xl p-gap-md border border-border/50 hover:border-primary/20 transition-all duration-300 hover-lift">
+                  {/* Episode Thumbnail */}
+                  <div className="relative aspect-square overflow-hidden rounded-lg mb-gap-sm">
+                    <img
+                      src={episode.thumbnail}
+                      alt={episode.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    
+                    {/* Play overlay */}
+                    <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="bg-primary text-primary-foreground rounded-full p-gap-sm">
+                        <Play className="w-6 h-6 fill-current" />
+                      </div>
+                    </div>
+
+                    {/* Category badge */}
+                    <div className="absolute top-gap-xs left-gap-xs bg-accent/90 text-accent-foreground text-xs px-gap-xs py-1 rounded-full">
+                      {episode.category}
+                    </div>
+                  </div>
+
+                  {/* Episode Info */}
+                  <div className="space-y-gap-xs">
+                    <h3 className="font-medium text-sm group-hover:text-primary transition-colors line-clamp-2">
+                      {episode.title}
+                    </h3>
+                    
+                    <p className="text-xs text-foreground-muted line-clamp-3">
+                      {episode.description}
+                    </p>
+
+                    <div className="flex items-center justify-between text-xs text-foreground-muted">
+                      <span>{episode.date}</span>
+                      <span>{episode.duration}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            
+            {/* Duplicate set for seamless loop */}
+            {podcastEpisodes.map((episode) => (
+              <div 
+                key={`second-${episode.id}`}
+                className="flex-shrink-0"
+                style={{ width: `${100 / (podcastEpisodes.length * 2)}%` }}
               >
                 <div className="group bg-background/50 backdrop-blur-sm rounded-xl p-gap-md border border-border/50 hover:border-primary/20 transition-all duration-300 hover-lift">
                   {/* Episode Thumbnail */}
@@ -218,22 +208,6 @@ const PodcastCarousel = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Progress indicators */}
-        <div className="flex justify-center gap-gap-xxs">
-          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? 'bg-primary w-6' 
-                  : 'bg-background-muted hover:bg-accent/50'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
         </div>
       </div>
     </section>
