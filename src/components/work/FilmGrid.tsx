@@ -1,4 +1,4 @@
-import { Play, Clock, Calendar } from "lucide-react";
+import { Play, Clock } from "lucide-react";
 import { FilmProjectProps } from "@/types/FilmProject";
 
 const films: FilmProjectProps[] = [
@@ -8,64 +8,66 @@ const films: FilmProjectProps[] = [
     year: "2024",
     category: "Documentary Film",
     runtime: "23mins",
-    thumbnail: "/birth-of-light-still.png",
+    thumbnail: "/birth-of-light-still-comp.jpg",
     description:
-      "Explores the impact of electricity on a remote nomadic community in Northern Kenya, raising questions about modernization's effects on their traditional way of life",
+      "The Death of Darkness examines how life is influenced by the increasing use of artificial light and the question to what extent mankind has progressed.",
     awards: ["Best Documentary Short - Toronto Film Festival"],
   },
   {
     id: 2,
     title: "Tarikat",
-    year: "2015",
+    year: "2021",
     category: "Short Film",
     runtime: "17mins",
-    thumbnail: "/tarikat-poster-comp.jpg",
+    thumbnail: "/tarikat-still.jpg",
     description:
-      "A poetic journey into the rituals of a mystical order, blending reality and surrealism.",
+      "Dive into an intimate, entrancing viewing experience that takes you into the midst of dhikr, a ritual at the heart of Sufism.",
     awards: ["Special Jury Prize - Rotterdam International Film Festival"],
   },
   {
     id: 3,
+    title: "After Party: What young people do",
+    year: "2018",
+    category: "Documentary",
+    runtime: "23mins",
+    thumbnail:
+      "https://i.vimeocdn.com/video/702097057-5f3c093f9c8d58928b19e3d46936cbd5fbb307dec3c101f9551f50653d3221e5-d_1920x1080?&r=pad&region=us",
+    description:
+      "This documentary shows us what the Afterparty is about in a discreet and non-sensationalistic way.",
+    awards: ["Best Documentary - Amsterdam Documentary Festival"],
+  },
+  {
+    id: 4,
     title: "Unfold",
     year: "2014",
     category: "Short Film",
     runtime: "7mins",
-    thumbnail: "/unfold-poster-comp.jpg",
+    thumbnail: "/unfold-still.jpg",
     description:
       "An intimate portrayal of transformation and self-discovery through movement and light.",
     awards: ["Best Experimental Film - Berlin Short Film Awards"],
   },
   {
-    id: 4,
+    id: 5,
     title: "Te Allen Tijde",
-    year: "2023",
+    year: "2014",
     category: "Short Film",
     runtime: "3mins",
-    thumbnail: "/birth-of-light-still-comp.jpg",
+    thumbnail:
+      "https://i.vimeocdn.com/video/460494841-e30e8fdc4c46f633992ef53ef8910988aac23e2b83f4b6f691c0fd1e18ba5d86-d_1920x1080?&r=pad&region=us",
     description:
-      "A visual exploration of personal transformation through the lens of contemporary dance.",
+      'This film is a dance registration of "TE ALLEN TIJDE"  (AT ANY TIME) performed in Museum Sonnenborgh',
     awards: ["Audience Choice Award - Cannes Short Film Corner"],
-  },
-  {
-    id: 5,
-    title: "After Party: What young people do",
-    year: "2022",
-    category: "Documentary",
-    runtime: "23mins",
-    thumbnail: "/tarikat-poster-comp.jpg",
-    description:
-      "An intimate documentary following three generations of women in rural Morocco.",
-    awards: ["Best Documentary - Amsterdam Documentary Festival"],
   },
   {
     id: 6,
     title: "Huis Werk",
-    year: "2021",
+    year: "2014",
     category: "Short Documentary",
     runtime: "7mins",
-    thumbnail: "/unfold-poster-comp.jpg",
+    thumbnail: "/scrn-huis-werk-still.png",
     description:
-      "A meditation on isolation and connection in urban environments during the pandemic.",
+      "Home Work provides an insight into the operations of a local Amsterdam hotel. It is a short documentary about a young Polish female immigrant who works as a chambermaid to financially supports her family back home.",
     awards: ["Critics Choice Award - Berlin International Film Festival"],
   },
 ];
