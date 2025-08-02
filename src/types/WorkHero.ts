@@ -3,4 +3,5 @@ export interface WorkHeroProps {
   category: string;
   description: string;
   imagePath: string;
+  videoPath: string;
 }
