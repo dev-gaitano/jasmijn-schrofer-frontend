@@ -19,7 +19,6 @@ const WorkHero: React.FC<WorkHeroProps> = ({
     const video = videoRef.current;
     if (video) {
       video.muted = true;
-      console.log("mad");
 
       setIsMuted(true);
     }
