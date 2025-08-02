@@ -83,16 +83,16 @@ const FilmGrid = () => {
         </p>
       </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-lg">
-          {films.map((film) => (
-            <div key={film.id} className="group cursor-pointer">
-              {/* Thumbnail */}
-              <div className="relative aspect-video overflow-hidden rounded-lg bg-background-muted">
-                <img
-                  src={film.thumbnail}
-                  alt={film.title}
-                  className="w-full h-full object-cover"
-                />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-lg">
+        {films.map((film) => (
+          <div key={film.id} className="group cursor-pointer">
+            {/* Thumbnail */}
+            <div className="relative aspect-video overflow-hidden rounded-lg bg-background-muted">
+              <img
+                src={film.thumbnail}
+                alt={film.title}
+                className="w-full h-full object-cover"
+              />
 
               {/* Play overlay */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
