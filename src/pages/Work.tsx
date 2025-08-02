@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import InDevelopment from "./InDevelopment";
 import Footer from "@/components/Footer";
 import Hero from "@/components/work/WorkHero";
 import FilmGrid from "@/components/work/FilmGrid";
@@ -12,8 +11,9 @@ const WorkPage = () => {
       <Hero
         title="Birth of Light"
         category="Globalization and cultures"
-        description="Explores the impact of electricity on a remote nomadic community in Northern Kenya, raising questions about modernization's effects on their traditional way of life"
+        description="Examines how life is influenced by the increasing use of artificial light and the question to what extent mankind has progressed"
         imagePath="/birth-of-light-still-comp.jpg"
+        videoPath="birth-of-light-trailer-lrg.mp4"
       />
       <FilmGrid />
       <PodcastCarousel />
