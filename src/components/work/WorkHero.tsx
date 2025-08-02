@@ -125,18 +125,6 @@ const WorkHero: React.FC<WorkHeroProps> = ({
           </button>
         </div>
       </div>
-
-      {/* Navigation Arrows */}
-      <div className="hidden md:block absolute bottom-1/2 left-4 transform -translate-y-1/2">
-        <button className="p-gap-xxs text-foreground-more-muted hover:text-foreground transition-colors duration-300">
-          <ChevronLeft size={36} />
-        </button>
-      </div>
-      <div className="hidden md:block absolute bottom-1/2 right-4 transform -translate-y-1/2">
-        <button className="p-gap-xxs text-foreground-more-muted hover:text-foreground transition-colors duration-300">
-          <ChevronRight size={36} />
-        </button>
-      </div>
     </section>
   );
 };
