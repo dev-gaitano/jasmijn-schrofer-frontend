@@ -74,12 +74,12 @@ const FilmSearchAndFilter = ({ filters, onFiltersChange, categories }: FilmSearc
               {/* Category Filter */}
               <div className="space-y-gap-xs">
                 <label className="text-sm font-medium">Category</label>
-                <Select value={filters.category} onValueChange={(value) => updateFilter("category", value)}>
+                <Select value={filters.category || "all"} onValueChange={(value) => updateFilter("category", value === "all" ? "" : value)}>
                   <SelectTrigger>
                     <SelectValue placeholder="All categories" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All categories</SelectItem>
+                    <SelectItem value="all">All categories</SelectItem>
                     {categories.map((category) => (
                       <SelectItem key={category} value={category}>
                         {category}
