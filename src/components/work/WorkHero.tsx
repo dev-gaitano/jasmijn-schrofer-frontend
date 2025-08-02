@@ -56,7 +56,7 @@ const WorkHero: React.FC<WorkHeroProps> = ({
   return (
     <section
       id="work-hero"
-      className="relative p-gap-md md:p-gap-xxl h-mscreen md:h-screen w-full overflow-hidden"
+      className="relative p-gap-md md:p-gap-xxl h-mscreen md:h-screen flex items-end justify-center overflow-hidden w-full"
     >
       {/* Background */}
       <div className="absolute inset-0 w-full h-full">
@@ -76,36 +76,43 @@ const WorkHero: React.FC<WorkHeroProps> = ({
 
       {/* All Gradients */}
       <div className="absolute inset-0 md:bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-secondary-more-muted via-transparent to-transparent via-50% pointer-events-none"></div>
-      <div className="absolute inset-0 bg-gradient-to-t md:bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-background-muted md:from-background-more-muted to-transparent via-20% md:via-50% pointer-events-none"></div>
+      <div className="absolute inset-0 md:bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-background via-transparent to-transparent via-50% pointer-events-none"></div>
 
-      {/* Project Content */}
-      <div className="h-full flex flex-col justify-end">
-        <div className="max-w-2xl space-y-gap-xs md:space-y-gap-sm">
+      {/* Content */}
+      <div className="z-10 w-full flex flex-col items-start">
+        <div className="text-left w-full flex flex-col items-start gap-gap-xxs md:gap-gap-xs">
           <h1>
             <BlurText
               text={title}
               delay={300}
               animateBy="words"
               direction="top"
-              className="font-sans text-4xl md:text-7xl lg:text-7xl font-bold text-foreground"
+              className="text-4xl md:text-7xl lg:text-7xl"
             />
           </h1>
-
           <p
             className={`font-serif italic text-xl md:text-2xl text-foreground-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
           >
             {category}
           </p>
-
           <p
-            className={`max-w-2xl text-sm md:text-lg text-foreground-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-left"} delay-500`}
+            className={`hidden md:block max-w-2xl max-md:text-sm md:text-lg text-foreground-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
           >
             {description}
           </p>
 
-          <Link
-            to="/work/birth-of-light"
-            className="inline-block button-primary hover-lift"
+          <p
+            className={`md:hidden max-md:text-sm md:text-lg text-foreground-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
+          >
+            {description}
+          </p>
+        </div>
+
+        <div className="mt-gap-sm md:mt-gap-md w-full flex items-center justify-between">
+          <a
+            href="/work/birth-of-light"
+            className="inline-block button-primary hover-lift animate-fadeIn"
+            style={{ animationDelay: "1.4s" }}
           >
             Watch Now
           </a>
