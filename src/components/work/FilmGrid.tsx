@@ -1,5 +1,7 @@
 import { Play, Clock } from "lucide-react";
 import { FilmProjectProps } from "@/types/FilmProject";
+import { useState, useMemo } from "react";
+import FilmSearchAndFilter from "./FilmSearchAndFilter";
 
 const films: FilmProjectProps[] = [
   {
@@ -73,6 +75,36 @@ const films: FilmProjectProps[] = [
 ];
 
 const FilmGrid = () => {
+  const [filters, setFilters] = useState({
+    search: "",
+    category: "",
+    yearRange: [2010, 2024] as [number, number],
+    runtimeRange: [0, 30] as [number, number],
+  });
+
+  // Get unique categories for filter dropdown
+  const categories = useMemo(() => {
+    return Array.from(new Set(films.map(film => film.category)));
+  }, []);
+
+  // Filter films based on search and filter criteria
+  const filteredFilms = useMemo(() => {
+    return films.filter(film => {
+      const matchesSearch = film.title.toLowerCase().includes(filters.search.toLowerCase()) ||
+                           film.description.toLowerCase().includes(filters.search.toLowerCase());
+      
+      const matchesCategory = !filters.category || film.category === filters.category;
+      
+      const filmYear = parseInt(film.year);
+      const matchesYear = filmYear >= filters.yearRange[0] && filmYear <= filters.yearRange[1];
+      
+      const runtimeMinutes = parseInt(film.runtime.replace('mins', '').replace('min', ''));
+      const matchesRuntime = runtimeMinutes >= filters.runtimeRange[0] && runtimeMinutes <= filters.runtimeRange[1];
+      
+      return matchesSearch && matchesCategory && matchesYear && matchesRuntime;
+    });
+  }, [filters]);
+
   return (
     <section className="w-full p-gap-md md:p-gap-xxl space-y-gap-lg">
       <div className="space-y-gap-xs text-right">
@@ -83,16 +115,25 @@ const FilmGrid = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-lg">
-        {films.map((film) => (
-          <div key={film.id} className="group cursor-pointer">
-            {/* Thumbnail */}
-            <div className="relative aspect-video overflow-hidden rounded-lg bg-background-muted">
-              <img
-                src={film.thumbnail}
-                alt={film.title}
-                className="w-full h-full object-cover"
-              />
+
+        {/* Search and Filter Component */}
+        <FilmSearchAndFilter 
+          filters={filters}
+          onFiltersChange={setFilters}
+          categories={categories}
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-lg">
+          {filteredFilms.length > 0 ? (
+            filteredFilms.map((film) => (
+            <div key={film.id} className="group cursor-pointer">
+              {/* Thumbnail */}
+              <div className="relative aspect-video overflow-hidden rounded-lg bg-background-muted">
+                <img
+                  src={film.thumbnail}
+                  alt={film.title}
+                  className="w-full h-full object-cover"
+                />
 
               {/* Play overlay */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -121,8 +162,15 @@ const FilmGrid = () => {
                 {film.description}
               </p>
             </div>
-          </div>
-        ))}
+
+            ))
+          ) : (
+            <div className="col-span-full text-center py-gap-xxl">
+              <p className="text-foreground-muted">No films found matching your criteria.</p>
+            </div>
+          )}
+        </div>
+
       </div>
     </section>
   );
