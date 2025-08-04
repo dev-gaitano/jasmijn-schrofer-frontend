@@ -57,7 +57,13 @@
 
 ## About The Project
 
-A dynamic and visually engaging portfolio website built using React, specifically designed to showcase the creative work of acclaimed film director Jasmijn Schrofer
+A dynamic and visually engaging portfolio website built using React, specifically designed to showcase the creative work of acclaimed film director Jasmijn Schrofer.
+
+Project Link:
+[Jasmijn Schrofer Portfolio](https://jasmijnschrofer.netlify.app/)
+
+Documentation:
+[Jasmijn Schrofer Docs](https://jasmijn-docs.vercel.app/)
 
 
 ### Project Structure
@@ -146,8 +152,6 @@ Distributed under the MIT license. See `LICENSE` for more information.
 
 Eugene Gaitano - dev.gaitano@gmail.com
 
-Project Link:
-[Jasmijn Schrofer Portfolio](https://jasmijnschrofer.netlify.app/)
 
 <br />
 <br />
