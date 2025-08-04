@@ -11,6 +11,7 @@ import WorkPage from "./pages/Work.tsx";
 import NewsPage from "./pages/News.tsx";
 import AboutPage from "./pages/About.tsx";
 import ContactPage from "./pages/Contact.tsx";
+import AdminPage from "./pages/Admin.tsx";
 
 import "./index.css";
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <ContactPage />,
+  },
+  {
+    path: "/admin",
+    element: <AdminPage />,
   },
 ]);
 
