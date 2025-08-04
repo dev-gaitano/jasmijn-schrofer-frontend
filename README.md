@@ -38,7 +38,6 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
         <li><a href="project-structure">Project Structure</a></li>
       </ul>
     </li>
@@ -49,7 +48,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -61,13 +59,6 @@
 
 A dynamic and visually engaging portfolio website built using React, specifically designed to showcase the creative work of acclaimed film director Jasmijn Schrofer
 
-### Built With
-
-- React
-- TypeScript
-- TailwindCSS
-- PostCSS
-- Vite
 
 ### Project Structure
 
@@ -81,21 +72,9 @@ jasmijn-schrofer-frontend/
 │   │   ├── ui/             # UI components
 │   │   └── ...             # Other components
 │   ├── hooks/              # Custom hooks
-│   │   ├── use-toast.ts    # Hook for toast notifications
-│   │   ├── useMobile.ts    # Hook for mobile detection
-│   │   └── useOnScreen.ts  # Hook to check if an element is on screen
 │   ├── lib/                # Library files
-│   │   └── utils.ts        # Utility functions
 │   ├── pages/              # Page components
-│   │   ├── About.tsx       # About page
-│   │   ├── Contact.tsx     # Contact page
-│   │   ├── InDevelopment.tsx # In Development page
-│   │   ├── Index.tsx       # Home page
-│   │   ├── News.tsx        # News page
-│   │   ├── NotFound.tsx    # 404 Not Found page
-│   │   └── Work.tsx        # Work page
 │   ├── types/              # Type definitions
-│   │   └── CountUp.ts      # Home page stylesheet
 │   ├── App.tsx             # Main application component
 │   ├── index.css           # Global styles
 │   ├── main.tsx            # Entry point for the application
@@ -150,17 +129,6 @@ npm i --legacy-peer-deps
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ROADMAP -->
-
-## Roadmap
-
-- [ ] UI/UX
-- [ ] Database Integration
-- [ ] Admin Panel
-- [ ] SEO Optimization
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
