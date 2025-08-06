@@ -1,12 +1,14 @@
 import Navbar from "@/components/Navbar.tsx";
-import InDevelopment from "./InDevelopment.tsx";
+import About from "@/components/home/About.tsx";
 import Footer from "@/components/Footer.tsx";
 
 const AboutPage = () => {
   return (
-    <main className="min-h-screen flex flex-col items-center">
+    <main className="min-h-screen flex flex-col">
       <Navbar />
-      <InDevelopment />;
+      <div className="flex-1">
+        <About />
+      </div>
       <Footer />
     </main>
   );
