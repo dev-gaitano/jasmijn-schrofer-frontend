@@ -68,12 +68,6 @@ const Navbar = () => {
               Work
             </a>
             <a
-              href="/news"
-              className="nav-link hover-lift transition-all duration-500"
-            >
-              News
-            </a>
-            <a
               href="/about"
               className="nav-link hover-lift transition-all duration-500"
             >
@@ -126,12 +120,6 @@ const Navbar = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Work
-                </MobileNavLink>
-                <MobileNavLink
-                  href="/news"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  News
                 </MobileNavLink>
                 <MobileNavLink
                   href="/about"
