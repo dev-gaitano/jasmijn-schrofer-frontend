@@ -42,24 +42,23 @@ const ContactForm = () => {
   return (
     <section id="contact" className="relative w-full py-24">
       {/* Background gradients */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-background via-background to-black/50 pointer-events-none"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-tr from-background via-background to-background-more-muted pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary-muted via-transparent to-transparent pointer-events-none"></div>
 
       <div className="container px-4 mx-auto relative z-10">
-        <div className="flex items-center gap-4 mb-12">
-          {/* <Mail className="w-8 h-8 text-gold" /> */}
-          <h2 className="text-3xl md:text-4xl font-playfair font-bold">
-            Get in Touch
-          </h2>
-        </div>
-
         <div className="max-w-2xl mx-auto">
-          <form onSubmit={handleSubmit} className="glass-panel p-8">
+          <form onSubmit={handleSubmit} className="glass-panel p-8 rounded-3xl">
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold">
+                Get in Touch
+              </h2>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-white/70 mb-2"
+                  className="block text-sm font-medium text-foreground-muted ml-4 mb-2"
                 >
                   Your Name
                 </label>
@@ -70,14 +69,14 @@ const ContactForm = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-gold/50"
-                  placeholder="John Doe"
+                  className="w-full bg-white/5 border border-white/10 rounded-full px-4 py-3 text-white placeholder:text-foreground-more-muted focus:outline-none focus:ring-2 focus:ring-gold/50"
+                  placeholder="Jane Doe"
                 />
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-white/70 mb-2"
+                  className="block text-sm font-medium text-foreground-muted ml-4 mb-2"
                 >
                   Email Address
                 </label>
@@ -88,7 +87,7 @@ const ContactForm = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                  className="w-full bg-white/5 border border-white/10 rounded-full px-4 py-3 text-foreground placeholder:text-foreground-more-muted focus:outline-none focus:ring-2 focus:ring-gold/50"
                   placeholder="example@email.com"
                 />
               </div>
@@ -97,7 +96,7 @@ const ContactForm = () => {
             <div className="mb-6">
               <label
                 htmlFor="subject"
-                className="block text-sm font-medium text-white/70 mb-2"
+                className="block text-sm font-medium text-foreground-muted ml-4 mb-2"
               >
                 Subject
               </label>
@@ -108,7 +107,7 @@ const ContactForm = () => {
                 required
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                className="w-full bg-white/5 border border-white/10 rounded-full px-4 py-3 text-foreground placeholder:text-foreground-more-muted focus:outline-none focus:ring-2 focus:ring-gold/50"
                 placeholder="Project Inquiry"
               />
             </div>
@@ -116,7 +115,7 @@ const ContactForm = () => {
             <div className="mb-6">
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-white/70 mb-2"
+                className="block text-sm font-medium text-foreground-muted ml-4 mb-2"
               >
                 Message
               </label>
@@ -127,7 +126,7 @@ const ContactForm = () => {
                 required
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-gold/50 resize-none"
+                className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-foreground placeholder:text-foreground-more-muted focus:outline-none focus:ring-2 focus:ring-gold/50 resize-none"
                 placeholder="Share details about your project..."
               />
             </div>
@@ -135,7 +134,7 @@ const ContactForm = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-3 bg-gold text-black font-medium rounded-md hover:bg-gold/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+              className="hover-lift button-primary w-full md:w-auto flex items-center justify-center gap-2 px-8 py-3 border-secondary text-secondary disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
