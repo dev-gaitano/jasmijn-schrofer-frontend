@@ -4,9 +4,9 @@ import Footer from "@/components/Footer.tsx";
 
 const ContactPage = () => {
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col items-center">
       <Navbar />
-      <div className="flex-1">
+      <div className="flex-1 w-full">
         <ContactForm />
       </div>
       <Footer />
