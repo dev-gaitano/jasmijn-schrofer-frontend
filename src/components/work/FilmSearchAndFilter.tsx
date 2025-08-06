@@ -2,9 +2,21 @@ import { useState } from "react";
 import { Search, Filter, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 interface FilterState {
   search: string;
@@ -19,7 +31,11 @@ interface FilmSearchAndFilterProps {
   categories: string[];
 }
 
-const FilmSearchAndFilter = ({ filters, onFiltersChange, categories }: FilmSearchAndFilterProps) => {
+const FilmSearchAndFilter = ({
+  filters,
+  onFiltersChange,
+  categories,
+}: FilmSearchAndFilterProps) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const updateFilter = (key: keyof FilterState, value: any) => {
@@ -38,18 +54,23 @@ const FilmSearchAndFilter = ({ filters, onFiltersChange, categories }: FilmSearc
     });
   };
 
-  const hasActiveFilters = filters.category || filters.yearRange[0] > 2010 || filters.yearRange[1] < 2024 || filters.runtimeRange[0] > 0 || filters.runtimeRange[1] < 30;
+  const hasActiveFilters =
+    filters.category ||
+    filters.yearRange[0] > 2010 ||
+    filters.yearRange[1] < 2024 ||
+    filters.runtimeRange[0] > 0 ||
+    filters.runtimeRange[1] < 30;
 
   return (
-    <div className="space-y-gap-sm">
+    <div className="flex gap-gap-sm items-center">
       {/* Search Bar */}
-      <div className="relative">
+      <div className="relative h-10">
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground-muted w-4 h-4" />
         <Input
           placeholder="Search films..."
           value={filters.search}
           onChange={(e) => updateFilter("search", e.target.value)}
-          className="pl-10"
+          className="py-3 pl-gap-md flex-grow bg-background border-b-[0.5px] border-foreground-muted placeholder-foreground-more-muted rounded-full active:border-primary-muted"
         />
       </div>
 
@@ -57,24 +78,32 @@ const FilmSearchAndFilter = ({ filters, onFiltersChange, categories }: FilmSearc
       <div className="flex items-center gap-gap-sm">
         <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
           <SheetTrigger asChild>
-            <Button variant="outline" size="sm">
-              <Filter className="w-4 h-4 mr-2" />
+            <Button
+              size="sm"
+              className={`button-primary bg-background h-10 py-3 max-md:px-2 md:px-4 ${hasActiveFilters ? "text-primary-muted border-primary-muted" : "text-foreground-muted border-foreground-muted"} border-[0.5px] rounded-full hover-lift transition-all duration-500`}
+            >
+              <Filter className="w-4 h-4 mr-1" />
               Filters
               {hasActiveFilters && (
                 <span className="ml-2 bg-primary text-primary-foreground rounded-full w-2 h-2"></span>
               )}
             </Button>
           </SheetTrigger>
-          <SheetContent>
+          <SheetContent className="rounded-3xl">
             <SheetHeader>
               <SheetTitle>Filter Films</SheetTitle>
             </SheetHeader>
-            
+
             <div className="space-y-gap-lg mt-gap-lg">
               {/* Category Filter */}
               <div className="space-y-gap-xs">
                 <label className="text-sm font-medium">Category</label>
-                <Select value={filters.category || "all"} onValueChange={(value) => updateFilter("category", value === "all" ? "" : value)}>
+                <Select
+                  value={filters.category || "all"}
+                  onValueChange={(value) =>
+                    updateFilter("category", value === "all" ? "" : value)
+                  }
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="All categories" />
                   </SelectTrigger>
@@ -107,7 +136,8 @@ const FilmSearchAndFilter = ({ filters, onFiltersChange, categories }: FilmSearc
               {/* Runtime Range Filter */}
               <div className="space-y-gap-xs">
                 <label className="text-sm font-medium">
-                  Runtime: {filters.runtimeRange[0]}min - {filters.runtimeRange[1]}min
+                  Runtime: {filters.runtimeRange[0]}min -{" "}
+                  {filters.runtimeRange[1]}min
                 </label>
                 <Slider
                   value={filters.runtimeRange}
@@ -121,12 +151,11 @@ const FilmSearchAndFilter = ({ filters, onFiltersChange, categories }: FilmSearc
 
               {/* Clear Filters */}
               {hasActiveFilters && (
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="destructive"
                   onClick={clearFilters}
                   className="w-full"
                 >
-                  <X className="w-4 h-4 mr-2" />
                   Clear All Filters
                 </Button>
               )}
@@ -136,10 +165,9 @@ const FilmSearchAndFilter = ({ filters, onFiltersChange, categories }: FilmSearc
 
         {/* Active Filter Tags */}
         {hasActiveFilters && (
-          <div className="flex items-center gap-gap-xs text-sm text-foreground-muted">
-            <span>Active filters:</span>
+          <div className="flex items-center text-sm text-secondary-muted">
             {filters.category && (
-              <span className="bg-background-muted px-2 py-1 rounded text-xs">
+              <span className="bg-background-muted py-1 rounded text-xs">
                 {filters.category}
               </span>
             )}

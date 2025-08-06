@@ -105,7 +105,7 @@ const PodcastCarousel = () => {
           </div>
 
           {/* Controls */}
-          <div className="flex items-center gap-gap-sm">
+          <div className="hidden md:flex items-center gap-gap-sm">
             <button
               onClick={togglePlay}
               className="p-gap-sm rounded-full button-primary"

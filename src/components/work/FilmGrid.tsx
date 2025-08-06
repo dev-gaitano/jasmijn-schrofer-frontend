@@ -84,23 +84,30 @@ const FilmGrid = () => {
 
   // Get unique categories for filter dropdown
   const categories = useMemo(() => {
-    return Array.from(new Set(films.map(film => film.category)));
+    return Array.from(new Set(films.map((film) => film.category)));
   }, []);
 
   // Filter films based on search and filter criteria
   const filteredFilms = useMemo(() => {
-    return films.filter(film => {
-      const matchesSearch = film.title.toLowerCase().includes(filters.search.toLowerCase()) ||
-                           film.description.toLowerCase().includes(filters.search.toLowerCase());
-      
-      const matchesCategory = !filters.category || film.category === filters.category;
-      
+    return films.filter((film) => {
+      const matchesSearch =
+        film.title.toLowerCase().includes(filters.search.toLowerCase()) ||
+        film.description.toLowerCase().includes(filters.search.toLowerCase());
+
+      const matchesCategory =
+        !filters.category || film.category === filters.category;
+
       const filmYear = parseInt(film.year);
-      const matchesYear = filmYear >= filters.yearRange[0] && filmYear <= filters.yearRange[1];
-      
-      const runtimeMinutes = parseInt(film.runtime.replace('mins', '').replace('min', ''));
-      const matchesRuntime = runtimeMinutes >= filters.runtimeRange[0] && runtimeMinutes <= filters.runtimeRange[1];
-      
+      const matchesYear =
+        filmYear >= filters.yearRange[0] && filmYear <= filters.yearRange[1];
+
+      const runtimeMinutes = parseInt(
+        film.runtime.replace("mins", "").replace("min", ""),
+      );
+      const matchesRuntime =
+        runtimeMinutes >= filters.runtimeRange[0] &&
+        runtimeMinutes <= filters.runtimeRange[1];
+
       return matchesSearch && matchesCategory && matchesYear && matchesRuntime;
     });
   }, [filters]);
@@ -115,17 +122,16 @@ const FilmGrid = () => {
         </p>
       </div>
 
+      {/* Search and Filter Component */}
+      <FilmSearchAndFilter
+        filters={filters}
+        onFiltersChange={setFilters}
+        categories={categories}
+      />
 
-        {/* Search and Filter Component */}
-        <FilmSearchAndFilter 
-          filters={filters}
-          onFiltersChange={setFilters}
-          categories={categories}
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-lg">
-          {filteredFilms.length > 0 ? (
-            filteredFilms.map((film) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-lg">
+        {filteredFilms.length > 0 ? (
+          filteredFilms.map((film) => (
             <div key={film.id} className="group cursor-pointer">
               {/* Thumbnail */}
               <div className="relative aspect-video overflow-hidden rounded-lg bg-background-muted">
@@ -135,42 +141,42 @@ const FilmGrid = () => {
                   className="w-full h-full object-cover"
                 />
 
-              {/* Play overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {/* Runtime badge */}
-                <div className="flex flex-col items-start gap-1 absolute bottom-gap-xs left-gap-xs text-foreground-muted text-xs">
-                  <span>{film.year}</span>
+                {/* Play overlay */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Runtime badge */}
+                  <div className="flex flex-col items-start gap-1 absolute bottom-gap-xs left-gap-xs text-foreground-muted text-xs">
+                    <span>{film.year}</span>
 
-                  <div className="flex items-center justify-center gap-1 text-foreground-muted text-xs">
-                    {film.runtime}
-                    <Clock className="w-4 h-4" />
+                    <div className="flex items-center justify-center gap-1 text-foreground-muted text-xs">
+                      {film.runtime}
+                      <Clock className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div className="button-primary rounded-full absolute bottom-gap-xs right-gap-xs p-gap-xs">
+                    <Play className="w-6 h-6 fill-current" />
                   </div>
                 </div>
-                <div className="button-primary rounded-full absolute bottom-gap-xs right-gap-xs p-gap-xs">
-                  <Play className="w-6 h-6 fill-current" />
-                </div>
+              </div>
+
+              {/* Film info */}
+              <div className="mt-gap-sm flex flex-col gap-gap-xxs text-right md:text-left">
+                <h3 className="font-serif italic text-lg group-hover:text-primary transition-colors duration-500">
+                  {film.title}
+                </h3>
+
+                <p className="text-sm text-foreground-more-muted line-clamp-2">
+                  {film.description}
+                </p>
               </div>
             </div>
-
-            {/* Film info */}
-            <div className="mt-gap-sm flex flex-col gap-gap-xxs text-right md:text-left">
-              <h3 className="font-serif italic text-lg group-hover:text-primary transition-colors duration-500">
-                {film.title}
-              </h3>
-
-              <p className="text-sm text-foreground-more-muted line-clamp-2">
-                {film.description}
-              </p>
-            </div>
-
-            ))
-          ) : (
-            <div className="col-span-full text-center py-gap-xxl">
-              <p className="text-foreground-muted">No films found matching your criteria.</p>
-            </div>
-          )}
-        </div>
-
+          ))
+        ) : (
+          <div className="col-span-full text-center py-gap-xxl">
+            <p className="text-foreground-muted">
+              No films found matching your criteria.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
