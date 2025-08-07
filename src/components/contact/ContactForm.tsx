@@ -47,7 +47,10 @@ const ContactForm = () => {
 
       <div className="container px-4 mx-auto relative z-10">
         <div className="max-w-2xl mx-auto">
-          <form onSubmit={handleSubmit} className="glass-panel p-8 rounded-3xl">
+          <form
+            onSubmit={handleSubmit}
+            className="glass-panel p-gap-sm md:p-8 rounded-3xl"
+          >
             <div className="flex items-center gap-4 mb-8">
               <h2 className="text-3xl md:text-4xl font-playfair font-bold">
                 Get in Touch
