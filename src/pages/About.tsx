@@ -20,7 +20,7 @@ const AboutPage = () => {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary-more-muted via-transparent via-50% to-transparent pointer-events-none"></div>
 
           <div className="relative z-10 space-y-gap-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-gap-lg items-center">
+            <div className="mt-gap-xl md:mt-0 grid grid-cols-1 md:grid-cols-2 gap-gap-lg items-center">
               {/* Image */}
               <div className="aspect-[3/4] rounded-lg overflow-hidden">
                 <img
@@ -87,13 +87,36 @@ const AboutPage = () => {
                     universal.
                   </p>
                 </div>
+              </div>
+
+              <div className="space-y-gap-md">
+                {/* My Process */}
+                <div
+                  className={`prose prose-invert flex flex-col gap-gap-xs ${isOnScreen ? "off-screen-left -translate-x-0" : "on-screen"}`}
+                >
+                  <h2 className="text-3xl md:text-4xl">My Process</h2>
+                  <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
+                    Pre-production is archaeology: I dig for the emotional
+                    fossils no one else noticed. On set, I treat the camera like
+                    a dance partner—hand-held, breath-synced, always one step
+                    ahead of the moment.
+                  </p>
+                  <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
+                    In post, I swap lenses for timelines, sculpting sound design
+                    and color until the footage begins to dream on its own.
+                  </p>
+                  <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
+                    The goal is never a “look”; it’s a feeling that lingers like
+                    perfume in an empty room.
+                  </p>
+                </div>
 
                 {/* Awards */}
                 <div
                   className={`prose prose-invert flex flex-col gap-gap-xs ${isOnScreen ? "off-screen-left -translate-x-0" : "on-screen"}`}
                 >
                   <h2 className="text-3xl md:text-4xl">Awards</h2>
-                  <ul className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed max-md:hidden">
+                  <ul className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
                     <li>Blue Planet Grant – Busan, Korea (Birth of Light)</li>
                     <li>
                       Golden Calf Nominee – Netherlands Film Festival (Birth of
@@ -112,41 +135,13 @@ const AboutPage = () => {
                     <li>Best Cinematography – Camerimage (Commercial Reel)</li>
                   </ul>
                 </div>
-              </div>
-              {/* Content */}
-              <div className="space-y-gap-md">
-                {/* Intro */}
-                <div
-                  className={`prose prose-invert flex flex-col gap-gap-xs ${isOnScreen ? "off-screen-left -translate-x-0" : "on-screen"}`}
-                >
-                  <h2 className="text-3xl md:text-4xl">My Process</h2>
-                  <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
-                    Pre-production is archaeology: I dig for the emotional
-                    fossils no one else noticed. On set, I treat the camera like
-                    a dance partner—hand-held, breath-synced, always one step
-                    ahead of the moment.
-                  </p>
-                  <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
-                    In post, I swap lenses for timelines, sculpting sound design
-                    and color until the footage begins to dream on its own.
-                  </p>
-                  <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
-                    Collaboration is my oxygen: composers, athletes, Sufi
-                    masters, or AI programmers—each new voice bends the light in
-                    a way I could never predict.
-                  </p>
-                  <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
-                    The goal is never a “look”; it’s a feeling that lingers like
-                    perfume in an empty room.
-                  </p>
-                </div>
 
                 {/* Upcoming Screenings */}
                 <div
                   className={`prose prose-invert flex flex-col gap-gap-xs ${isOnScreen ? "off-screen-left -translate-x-0" : "on-screen"}`}
                 >
                   <h2 className="text-3xl md:text-4xl">Upcoming Screenings</h2>
-                  <ul className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed max-md:hidden">
+                  <ul className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
                     <li>
                       Cannes Directors’ Fortnight – Birth of Light (feature
                       sneak-peek) – 18 May 2026
