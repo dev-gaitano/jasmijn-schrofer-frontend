@@ -8,7 +8,7 @@ const films: FilmProjectProps[] = [
     id: 1,
     title: "Birth of Light",
     year: "2024",
-    category: "Documentary Film",
+    category: ["Documentary Film"],
     runtime: "23mins",
     thumbnail: "/birth-of-light-still-comp.jpg",
     description:
@@ -19,7 +19,7 @@ const films: FilmProjectProps[] = [
     id: 2,
     title: "Tarikat",
     year: "2021",
-    category: "Short Film",
+    category: ["Documentary Film"],
     runtime: "17mins",
     thumbnail: "/tarikat-still.jpg",
     description:
@@ -30,7 +30,7 @@ const films: FilmProjectProps[] = [
     id: 3,
     title: "After Party: What young people do",
     year: "2018",
-    category: "Documentary",
+    category: ["Documentary Film", "Commissioned"],
     runtime: "23mins",
     thumbnail:
       "https://i.vimeocdn.com/video/702097057-5f3c093f9c8d58928b19e3d46936cbd5fbb307dec3c101f9551f50653d3221e5-d_1920x1080?&r=pad&region=us",
@@ -42,7 +42,7 @@ const films: FilmProjectProps[] = [
     id: 4,
     title: "Unfold",
     year: "2014",
-    category: "Short Film",
+    category: ["Dance Film"],
     runtime: "7mins",
     thumbnail: "/unfold-still.jpg",
     description:
@@ -53,7 +53,7 @@ const films: FilmProjectProps[] = [
     id: 5,
     title: "Te Allen Tijde",
     year: "2014",
-    category: "Short Film",
+    category: ["Dance Film", "Commissioned"],
     runtime: "3mins",
     thumbnail:
       "https://i.vimeocdn.com/video/460494841-e30e8fdc4c46f633992ef53ef8910988aac23e2b83f4b6f691c0fd1e18ba5d86-d_1920x1080?&r=pad&region=us",
@@ -65,7 +65,7 @@ const films: FilmProjectProps[] = [
     id: 6,
     title: "Huis Werk",
     year: "2014",
-    category: "Short Documentary",
+    category: ["Commissioned"],
     runtime: "7mins",
     thumbnail: "/scrn-huis-werk-still.png",
     description:
@@ -84,7 +84,7 @@ const FilmGrid = () => {
 
   // Get unique categories for filter dropdown
   const categories = useMemo(() => {
-    return Array.from(new Set(films.map((film) => film.category)));
+    return Array.from(new Set(films.flatMap((film) => film.category)));
   }, []);
 
   // Filter films based on search and filter criteria
@@ -95,7 +95,7 @@ const FilmGrid = () => {
         film.description.toLowerCase().includes(filters.search.toLowerCase());
 
       const matchesCategory =
-        !filters.category || film.category === filters.category;
+        !filters.category || film.category.includes(filters.category);
 
       const filmYear = parseInt(film.year);
       const matchesYear =
@@ -143,6 +143,7 @@ const FilmGrid = () => {
 
                 {/* Play overlay */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-y-0 w-full bg-gradient-to-t from-background via-transparent to-transparent"></div>
                   {/* Runtime badge */}
                   <div className="flex flex-col items-start gap-1 absolute bottom-gap-xs left-gap-xs text-foreground-muted text-xs">
                     <span>{film.year}</span>

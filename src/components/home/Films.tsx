@@ -7,7 +7,7 @@ const films: FilmProjectProps[] = [
     id: 1,
     title: "Birth of Light",
     year: "2024",
-    category: "Short Film",
+    category: ["Documentary Film"],
     runtime: "23mins",
     thumbnail:
       "https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:eco/v1/schrofer/birth-of-light-poster?_a=BAMAK+Go0",
@@ -19,7 +19,7 @@ const films: FilmProjectProps[] = [
     id: 2,
     title: "Tarikat",
     year: "2015",
-    category: "Short Film",
+    category: ["Documentary Film"],
     runtime: "17mins",
     thumbnail:
       "https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:low/v1/schrofer/tarikat-poster-comp?_a=BAMAK+Go0",
@@ -31,7 +31,7 @@ const films: FilmProjectProps[] = [
     id: 3,
     title: "Unfold",
     year: "2014",
-    category: "Short Film",
+    category: ["Dance Film"],
     runtime: "7mins",
     thumbnail:
       "https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:eco/v1/schrofer/unfold-poster?_a=BAMAK+Go0",
@@ -123,6 +123,8 @@ const Films = () => {
                       <p className="text-sm text-foreground-muted">
                         {film.description}
                       </p>
+
+                      {/*TODO: Cleanup*/}
                       {film.awards && (
                         <div className="flex items-center gap-gap-xxs font-serif italic text-gold">
                           <span className="text-sm">{film.awards[0]}</span>
