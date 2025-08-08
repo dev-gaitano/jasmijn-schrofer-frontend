@@ -58,7 +58,7 @@ const AboutPage = () => {
                     the kaleidoscopic chaos of Istanbul’s bazaars, I learned
                     early that stories are passports.
                   </p>
-                  <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed max-md:hidden">
+                  <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
                     After graduating from the Netherlands Film Academy with{" "}
                     <span className="font-serif italic font-bold">
                       Tarikat—a dream-soaked short that went on to screen at 47
@@ -71,7 +71,7 @@ const AboutPage = () => {
                     Haaland’s heartbeat in 1000 fps, every project is an
                     excavation of wonder.
                   </p>
-                  <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed max-md:hidden">
+                  <p className="max-md:text-sm md:text-lg text-foreground-muted leading-relaxed">
                     I spent a decade directing over 50 commissioned works for
                     VPRO, Manchester City, El País, the Holland Festival, and
                     others. Whether I’m following a Sufi apprentice,
