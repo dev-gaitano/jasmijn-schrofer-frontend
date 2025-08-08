@@ -92,7 +92,7 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="h-60 border-[0.5px] border-foreground-more-muted p-gap-sm md:p-gap-md rounded-lg space-y-gap-xxs md:space-y-gap-xs flex flex-col items-center md:items-start justify-center grow">
+        <div className="h-60 border-[0.5px] border-foreground-more-muted p-gap-sm md:p-gap-md rounded-xl space-y-gap-xxs md:space-y-gap-xs flex flex-col items-center md:items-start justify-center grow">
           <h3 className="text-3xl md:text-4xl text-center">
             Let's Create Something Amazing
           </h3>

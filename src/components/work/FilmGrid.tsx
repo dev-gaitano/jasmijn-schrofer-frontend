@@ -134,7 +134,7 @@ const FilmGrid = () => {
           filteredFilms.map((film) => (
             <div key={film.id} className="group cursor-pointer">
               {/* Thumbnail */}
-              <div className="relative aspect-video overflow-hidden rounded-lg bg-background-muted">
+              <div className="relative aspect-video overflow-hidden rounded-xl bg-background-muted">
                 <img
                   src={film.thumbnail}
                   alt={film.title}

@@ -22,7 +22,7 @@ const AboutPage = () => {
           <div className="relative z-10 space-y-gap-lg">
             <div className="mt-gap-xl md:mt-0 grid grid-cols-1 md:grid-cols-2 gap-gap-lg items-center">
               {/* Image */}
-              <div className="aspect-[3/4] rounded-lg overflow-hidden">
+              <div className="aspect-[3/4] rounded-xl overflow-hidden">
                 <img
                   src={image1}
                   alt="Jasmijn Schrofer"
@@ -169,7 +169,7 @@ const AboutPage = () => {
                 </div>
               </div>
               {/* Image */}
-              <div className="aspect-[3/4] rounded-lg overflow-hidden">
+              <div className="aspect-[3/4] rounded-xl overflow-hidden">
                 <img
                   src={image2}
                   alt="Jasmijn Schrofer"

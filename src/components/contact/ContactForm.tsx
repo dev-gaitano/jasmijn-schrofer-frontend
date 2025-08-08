@@ -49,7 +49,7 @@ const ContactForm = () => {
         <div className="max-w-2xl mx-auto">
           <form
             onSubmit={handleSubmit}
-            className="glass-panel p-gap-sm md:p-8 rounded-3xl"
+            className="glass-panel p-gap-sm md:p-8 rounded-xl"
           >
             <div className="flex items-center gap-4 mb-8">
               <h2 className="text-3xl md:text-4xl font-playfair font-bold">
@@ -129,7 +129,7 @@ const ContactForm = () => {
                 required
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-foreground placeholder:text-foreground-more-muted focus:outline-none focus:ring-2 focus:ring-gold/50 resize-none"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-foreground placeholder:text-foreground-more-muted focus:outline-none focus:ring-2 focus:ring-gold/50 resize-none"
                 placeholder="Share details about your project..."
               />
             </div>
