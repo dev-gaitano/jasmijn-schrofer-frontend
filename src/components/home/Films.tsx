@@ -56,11 +56,11 @@ const Films = () => {
 
             if (index !== -1) {
               if (entry.isIntersecting) {
-                setIsOnScreen((prev) => new Set(prev.add(index))); // Add to the set when visible
+                setIsOnScreen((prev) => new Set(prev.add(index)));
               } else {
                 setIsOnScreen((prev) => {
                   const newSet = new Set(prev);
-                  newSet.delete(index); // Remove from the set when not visible
+                  newSet.delete(index);
                   return newSet;
                 });
               }
@@ -106,14 +106,14 @@ const Films = () => {
               onMouseEnter={() => setHoveredFilm(film.id)}
               onMouseLeave={() => setHoveredFilm(null)}
             >
-              <div className="relative aspect-[2/3] overflow-hidden rounded-lg shadow-2xl">
+              <div className="relative aspect-[2/3] overflow-hidden rounded-xl shadow-2xl">
                 <img
                   src={film.thumbnail}
                   alt={film.title}
                   className="w-full h-full object-cover"
                 />
                 {hoveredFilm === film.id && (
-                  <div className="absolute inset-0 bg-background-more-muted backdrop-blur-lg animate-fadeIn duration-500">
+                  <div className="absolute inset-0 bg-background-more-muted backdrop-blur-lg animate-fadeIn transition-all duration-500">
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-gap-md space-y-gap-xs">
                       <button className="flex items-center gap-gap-xxs rounded-full glass-panel hover-lift px-gap-sm py-gap-xxs hover:bg-opacity-10 transition-all duration-500">
                         <Play className="w-4 h-4" />

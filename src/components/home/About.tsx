@@ -17,7 +17,7 @@ const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-gap-lg items-center">
           {/* Image */}
-          <div className="aspect-[3/4] rounded-lg overflow-hidden">
+          <div className="aspect-[3/4] rounded-xl overflow-hidden">
             <img
               src={aboutImage}
               alt="Jasmijn Schrofer"
@@ -65,7 +65,7 @@ const About = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-gap-sm">
-              <div className="flex flex-col justify-center items-center gap-gap-xxs text-center glass-panel p-gap-sm hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500">
+              <div className="flex flex-col justify-center items-center gap-gap-xxs text-center glass-panel p-gap-sm hover-lift hover:shadow-lg rounded-xl transition-all ease-in-out duration-500">
                 <div className="text-2xl font-bold">
                   <CountUp
                     from={0}
@@ -80,7 +80,7 @@ const About = () => {
                   Films Directed
                 </div>
               </div>
-              <div className="flex flex-col justify-center items-center gap-gap-xxs text-center glass-panel p-gap-sm hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500">
+              <div className="flex flex-col justify-center items-center gap-gap-xxs text-center glass-panel p-gap-sm hover-lift hover:shadow-lg rounded-xl transition-all ease-in-out duration-500">
                 <div className="text-2xl font-bold">
                   <CountUp
                     from={0}
@@ -95,7 +95,7 @@ const About = () => {
                   Awards Won
                 </div>
               </div>
-              <div className="flex flex-col justify-center items-center gap-gap-xxs text-center glass-panel p-gap-sm hover-lift hover:shadow-lg rounded-lg transition-all ease-in-out duration-500">
+              <div className="flex flex-col justify-center items-center gap-gap-xxs text-center glass-panel p-gap-sm hover-lift hover:shadow-lg rounded-xl transition-all ease-in-out duration-500">
                 <div className="text-2xl font-bold flex items-center justify-center gap-1">
                   <CountUp
                     from={0}
