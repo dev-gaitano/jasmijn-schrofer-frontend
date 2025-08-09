@@ -10,11 +10,11 @@ export interface WorkHeroItem {
 
 export interface WorkHeroProps {
   // Single item (kept for backwards compatibility)
-  title: string;
-  category: string;
-  description: string;
-  imagePath: string;
-  videoPath: string;
+  title?: string;
+  category?: string;
+  description?: string;
+  imagePath?: string;
+  videoPath?: string;
 
   // Optional playlist: if provided, the hero will cycle through the top 3 most recent items
   playlist?: WorkHeroItem[];
