@@ -2,7 +2,7 @@ import { AudioLines } from "lucide-react";
 import { WorkHeroProps } from "@/types/WorkHero";
 import BlurText from "@/components/BlurText";
 import { useIsOnScreen } from "@/hooks/useOnScreen";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 
 const WorkHero: React.FC<WorkHeroProps> = ({
   title,
@@ -10,10 +10,23 @@ const WorkHero: React.FC<WorkHeroProps> = ({
   description,
   imagePath,
   videoPath,
+  playlist,
 }) => {
   const { isOnScreen } = useIsOnScreen();
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Compute the top 3 most recent items with valid video paths
+  const topThree = useMemo(() => {
+    if (!playlist || playlist.length === 0) return undefined;
+    return [...playlist]
+      .filter((item) => !!item.videoPath)
+      .sort((a, b) => b.year - a.year)
+      .slice(0, 3);
+  }, [playlist]);
+
+  const active = topThree && topThree.length > 0 ? topThree[currentIndex] : undefined;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -36,6 +49,32 @@ const WorkHero: React.FC<WorkHeroProps> = ({
       video.pause();
     }
   }, [isOnScreen]);
+
+  // Advance to next trailer when current ends
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const onEnded = () => {
+      if (topThree && topThree.length > 1) {
+        setCurrentIndex((i) => (i + 1) % topThree.length);
+      }
+    };
+    video.addEventListener("ended", onEnded);
+    return () => {
+      video.removeEventListener("ended", onEnded);
+    };
+  }, [topThree]);
+
+  // Reload and play when active video changes
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.load();
+    if (isOnScreen) {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    }
+  }, [active?.videoPath, isOnScreen]);
 
   const toggleMute = () => {
     const video = videoRef.current;
@@ -61,10 +100,10 @@ const WorkHero: React.FC<WorkHeroProps> = ({
       <div className="absolute inset-0 w-full h-full">
         <video
           ref={videoRef}
-          src={videoPath}
-          poster={imagePath}
+          src={active?.videoPath ?? videoPath}
+          poster={active?.imagePath ?? imagePath}
           preload="metadata"
-          loop
+          loop={!(topThree && topThree.length > 1)}
           playsInline
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover transition-opacity duration-300"
         />
@@ -81,7 +120,7 @@ const WorkHero: React.FC<WorkHeroProps> = ({
         <div className="text-left w-full flex flex-col items-start gap-gap-xxs md:gap-gap-xs">
           <h1>
             <BlurText
-              text={title}
+              text={active?.title ?? title}
               delay={300}
               animateBy="words"
               direction="top"
@@ -91,24 +130,24 @@ const WorkHero: React.FC<WorkHeroProps> = ({
           <p
             className={`font-serif italic text-xl md:text-2xl text-foreground-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
           >
-            {category}
+            {active?.category ?? category}
           </p>
           <p
             className={`hidden md:block max-w-2xl max-md:text-sm md:text-lg text-foreground-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
           >
-            {description}
+            {active?.description ?? description}
           </p>
 
           <p
             className={`md:hidden max-md:text-sm md:text-lg text-foreground-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
           >
-            {description}
+            {active?.description ?? description}
           </p>
         </div>
 
         <div className="mt-gap-sm md:mt-gap-md w-full flex items-center justify-between">
           <a
-            href="/work/birth-of-light"
+            href={active?.link ?? "/work/birth-of-light"}
             className="inline-block button-primary hover-lift animate-fadeIn"
             style={{ animationDelay: "1.4s" }}
           >

@@ -14,6 +14,19 @@ const WorkPage = () => {
         description="Examines how life is influenced by the increasing use of artificial light and the question to what extent mankind has progressed"
         imagePath="/birth-of-light-still-comp.jpg"
         videoPath="birth-of-light-trailer-lrg.mp4"
+        playlist={[
+          {
+            title: "Birth of Light",
+            category: "Globalization and cultures",
+            description:
+              "Examines how life is influenced by the increasing use of artificial light and the question to what extent mankind has progressed",
+            imagePath: "/birth-of-light-still-comp.jpg",
+            videoPath: "birth-of-light-trailer-lrg.mp4",
+            year: 2024,
+            link: "/work/birth-of-light",
+          },
+          // Add more items here with valid videoPath to enable cycling through top 3 most recent
+        ]}
       />
       <FilmGrid />
       <PodcastCarousel />
