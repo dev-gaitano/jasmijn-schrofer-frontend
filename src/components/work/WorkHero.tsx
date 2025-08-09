@@ -1,5 +1,5 @@
 import { AudioLines } from "lucide-react";
-import { WorkHeroProps } from "@/types/WorkHero";
+import { WorkHeroProps, WorkHeroItem } from "@/types/WorkHero";
 import BlurText from "@/components/BlurText";
 import { useIsOnScreen } from "@/hooks/useOnScreen";
 import { useRef, useEffect, useState, useMemo } from "react";
@@ -17,14 +17,42 @@ const WorkHero: React.FC<WorkHeroProps> = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Resolve items: prefer provided playlist, else construct from single props, else use defaults
+  const items: WorkHeroItem[] = useMemo(() => {
+    if (playlist && playlist.length > 0) return playlist;
+    if (title && category && description && imagePath && videoPath) {
+      return [
+        {
+          title,
+          category,
+          description,
+          imagePath,
+          videoPath,
+          year: 0,
+        },
+      ];
+    }
+    return [
+      {
+        title: "Birth of Light",
+        category: "Globalization and cultures",
+        description:
+          "Examines how life is influenced by the increasing use of artificial light and the question to what extent mankind has progressed",
+        imagePath: "/birth-of-light-still-comp.jpg",
+        videoPath: "birth-of-light-trailer-lrg.mp4",
+        year: 2024,
+        link: "/work/birth-of-light",
+      },
+    ];
+  }, [playlist, title, category, description, imagePath, videoPath]);
+
   // Compute the top 3 most recent items with valid video paths
   const topThree = useMemo(() => {
-    if (!playlist || playlist.length === 0) return undefined;
-    return [...playlist]
+    return [...items]
       .filter((item) => !!item.videoPath)
       .sort((a, b) => b.year - a.year)
       .slice(0, 3);
-  }, [playlist]);
+  }, [items]);
 
   const active = topThree && topThree.length > 0 ? topThree[currentIndex] : undefined;
 
