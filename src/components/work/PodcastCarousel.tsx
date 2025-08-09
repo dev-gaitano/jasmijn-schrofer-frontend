@@ -1,17 +1,8 @@
 import { useState } from "react";
 import { Play, Pause } from "lucide-react";
+import { PodcastEpisodeProps } from "@/types/PodcastEpisode";
 
-interface PodcastEpisode {
-  id: number;
-  title: string;
-  description: string;
-  duration: string;
-  date: string;
-  thumbnail: string;
-  category: string;
-}
-
-const podcastEpisodes: PodcastEpisode[] = [
+const podcastEpisodes: PodcastEpisodeProps[] = [
   {
     id: 1,
     title: "The Art of Documentary Storytelling",
@@ -20,7 +11,7 @@ const podcastEpisodes: PodcastEpisode[] = [
     duration: "45:32",
     date: "Nov 15, 2024",
     thumbnail:
-      "https://i.pinimg.com/736x/35/59/13/355913f1001dc86ed958bc0cc47f0a74.jpg",
+      "https://i.pinimg.com/1200x/7b/dd/9d/7bdd9df3ee33da354e6a61014e199ca7.jpg",
     category: "Filmmaking",
   },
   {
@@ -31,7 +22,7 @@ const podcastEpisodes: PodcastEpisode[] = [
     duration: "38:15",
     date: "Nov 8, 2024",
     thumbnail:
-      "https://i.pinimg.com/736x/35/59/13/355913f1001dc86ed958bc0cc47f0a74.jpg",
+      "https://i.pinimg.com/1200x/7b/dd/9d/7bdd9df3ee33da354e6a61014e199ca7.jpg",
     category: "Culture",
   },
   {
@@ -42,7 +33,7 @@ const podcastEpisodes: PodcastEpisode[] = [
     duration: "52:18",
     date: "Nov 1, 2024",
     thumbnail:
-      "https://i.pinimg.com/736x/35/59/13/355913f1001dc86ed958bc0cc47f0a74.jpg",
+      "https://i.pinimg.com/1200x/7b/dd/9d/7bdd9df3ee33da354e6a61014e199ca7.jpg",
     category: "Documentary",
   },
   {
@@ -53,7 +44,7 @@ const podcastEpisodes: PodcastEpisode[] = [
     duration: "41:27",
     date: "Oct 25, 2024",
     thumbnail:
-      "https://i.pinimg.com/736x/35/59/13/355913f1001dc86ed958bc0cc47f0a74.jpg",
+      "https://i.pinimg.com/1200x/7b/dd/9d/7bdd9df3ee33da354e6a61014e199ca7.jpg",
     category: "Industry",
   },
   {
@@ -64,7 +55,7 @@ const podcastEpisodes: PodcastEpisode[] = [
     duration: "36:44",
     date: "Oct 18, 2024",
     thumbnail:
-      "https://i.pinimg.com/736x/35/59/13/355913f1001dc86ed958bc0cc47f0a74.jpg",
+      "https://i.pinimg.com/1200x/7b/dd/9d/7bdd9df3ee33da354e6a61014e199ca7.jpg",
     category: "Technique",
   },
   {
@@ -75,7 +66,7 @@ const podcastEpisodes: PodcastEpisode[] = [
     duration: "49:13",
     date: "Oct 11, 2024",
     thumbnail:
-      "https://i.pinimg.com/736x/35/59/13/355913f1001dc86ed958bc0cc47f0a74.jpg",
+      "https://i.pinimg.com/1200x/7b/dd/9d/7bdd9df3ee33da354e6a61014e199ca7.jpg",
     category: "Industry",
   },
 ];
@@ -127,7 +118,7 @@ const PodcastCarousel = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
           <div
-            className={`flex gap-gap-md ${!isHovered ? "animate-smooth-scroll" : "animate-smooth-scroll-paused"}`}
+            className={`flex gap-gap-xxl md:gap-gap-md ${!isHovered ? "animate-smooth-scroll" : "animate-smooth-scroll-paused"}`}
             style={{
               width: `${(podcastEpisodes.length * 2 * 100) / 3}%`, // Double the episodes for seamless loop
             }}
@@ -136,26 +127,25 @@ const PodcastCarousel = () => {
             {podcastEpisodes.map((episode) => (
               <div
                 key={`first-${episode.id}`}
-                className="flex-shrink-0"
                 style={{ width: `${100 / (podcastEpisodes.length * 2)}%` }}
               >
-                <div className="h-52 md:h-36 glass-panel hover-lift group relative flex items-center justify-center gap-gap-sm bg-background/50 backdrop-blur-sm rounded-xl py-gap-md pr-gap-md transition-all duration-500">
+                <div className="h-52 md:h-36 md:glass-panel hover-lift group relative flex items-end md:items-center justify-center gap-gap-sm rounded-xl md:py-gap-sm md:pr-gap-sm transition-all duration-500">
                   {/* Episode Thumbnail */}
-                  <div className="absolute md:relative w-52 md:w-36 h-52 md:h-36 overflow-hidden rounded-lg shrink-0">
+                  <div className="absolute md:relative w-52 md:w-36 h-52 md:h-36 overflow-hidden rounded-xl shrink-0">
                     <img
                       src={episode.thumbnail}
                       alt={episode.title}
-                      className="w-full h-full object-cover md:[mask-image:linear-gradient(to_right,black,transparent)]"
+                      className="w-full h-full object-cover [mask-image:linear-gradient(to_bottom,background,transparent)] md:[mask-image:linear-gradient(to_right,background,transparent)]"
                     />
                   </div>
 
                   {/* Episode Info */}
-                  <div className="space-y-gap-xs">
-                    <h3 className="font-serif italic text-md group-hover:text-primary transition-colors line-clamp-2">
+                  <div className="z-10 mb-gap-xs md:mb-0 px-gap-xs md:px-0 flex flex-col justify-between gap-gap-xxs md:h-[96px] w-52 md:w-[540px]">
+                    <h3 className="w-[176px] md:w-full font-serif italic text-md group-hover:text-primary transition-colors line-clamp-2">
                       {episode.title}
                     </h3>
 
-                    <p className="text-xs text-foreground-muted line-clamp-3">
+                    <p className="hidden md:block text-xs text-foreground-muted line-clamp-3">
                       {episode.description}
                     </p>
 
@@ -172,30 +162,29 @@ const PodcastCarousel = () => {
             {podcastEpisodes.map((episode) => (
               <div
                 key={`first-${episode.id}`}
-                className="flex-shrink-0"
                 style={{ width: `${100 / (podcastEpisodes.length * 2)}%` }}
               >
-                <div className="h-52 md:h-36 glass-panel hover-lift group relative flex items-center justify-center gap-gap-sm bg-background/50 backdrop-blur-sm rounded-xl py-gap-md pr-gap-md transition-all duration-500">
+                <div className="h-52 md:h-36 md:glass-panel hover-lift group relative flex items-end md:items-center justify-center gap-gap-sm bg-background/50 backdrop-blur-sm rounded-xl md:py-gap-sm md:pr-gap-sm transition-all duration-500">
                   {/* Episode Thumbnail */}
-                  <div className="absolute md:relative w-52 md:w-36 h-52 md:h-36 overflow-hidden rounded-lg shrink-0">
+                  <div className="absolute md:relative w-52 md:w-36 h-52 md:h-36 overflow-hidden rounded-xl shrink-0">
                     <img
                       src={episode.thumbnail}
                       alt={episode.title}
-                      className="w-full h-full object-cover [mask-image:linear-gradient(to_right,black,transparent)]"
+                      className="w-full h-full object-cover [mask-image:linear-gradient(to_bottom,background,transparent)] md:[mask-image:linear-gradient(to_right,background,transparent)]"
                     />
                   </div>
 
                   {/* Episode Info */}
-                  <div className="space-y-gap-xs">
-                    <h3 className="font-medium text-sm group-hover:text-primary transition-colors line-clamp-2">
+                  <div className="z-10 mb-gap-xs md:mb-0 px-gap-xs md:px-0 flex flex-col justify-between gap-gap-xxs md:h-[96px] w-52 md:w-[540px]">
+                    <h3 className="w-[176px] md:w-full font-serif italic text-md group-hover:text-primary transition-colors line-clamp-2">
                       {episode.title}
                     </h3>
 
-                    <p className="text-xs text-foreground-muted line-clamp-3">
+                    <p className="hidden md:block text-xs text-foreground-muted line-clamp-3">
                       {episode.description}
                     </p>
 
-                    <div className="flex items-center justify-between text-xs text-foreground-more-muted">
+                    <div className="flex items-center justify-between text-xs text-foreground-muted">
                       <span>{episode.date}</span>
                       <span>{episode.duration}</span>
                     </div>
