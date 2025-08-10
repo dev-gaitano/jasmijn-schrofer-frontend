@@ -144,7 +144,7 @@ const Navbar = () => {
             href="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            CONATCT
+            CONTACT
           </MobileNavLink>
         </div>
       </div>
