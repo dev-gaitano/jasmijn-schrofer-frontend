@@ -26,6 +26,26 @@ export default defineConfig(({ mode }) => ({
   base: "./",
   build: {
     outDir: "dist",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          ui: ['@radix-ui/react-dialog', '@radix-ui/react-toast', '@radix-ui/react-tooltip'],
+          firebase: ['firebase/app', 'firebase/firestore', 'firebase/analytics'],
+          motion: ['framer-motion', '@react-spring/web'],
+          routing: ['react-router-dom'],
+        },
+      },
+    },
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
+      },
+    },
+    sourcemap: mode !== 'production',
+    chunkSizeWarningLimit: 1000,
   },
   resolve: {
     alias: {

@@ -1,6 +1,10 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar.tsx";
 import Footer from "@/components/Footer.tsx";
 import { useIsOnScreen } from "@/hooks/useOnScreen";
+
+// Lazy load CountUp component
+const CountUp = lazy(() => import("@/components/CountUp"));
 
 const AboutPage = () => {
   const { isOnScreen } = useIsOnScreen();
@@ -27,6 +31,7 @@ const AboutPage = () => {
                   src={image1}
                   alt="Jasmijn Schrofer"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
 
@@ -174,6 +179,7 @@ const AboutPage = () => {
                   src={image2}
                   alt="Jasmijn Schrofer"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>

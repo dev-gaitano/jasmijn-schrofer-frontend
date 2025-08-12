@@ -1,8 +1,12 @@
+import { lazy, Suspense } from "react";
 import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { FilmProjectProps } from "@/types/FilmProject";
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import { db } from "@/lib/firebase-config";
+
+// Lazy load heavy components
+const LazyFilmCard = lazy(() => import("./FilmCard"));
 
 const useIsOnScreen = (threshold = 0.2) => {
   const [isOnScreen, setIsOnScreen] = useState<Set<number>>(new Set());
@@ -78,53 +82,19 @@ const Films = () => {
         <h2 className="hidden md:block text-3xl md:text-4xl">Featured Films</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-md">
-          {films.map((film, index) => (
+          <Suspense fallback={<div className="animate-pulse bg-gray-200 aspect-[2/3] rounded-xl"></div>}>
+              <LazyFilmCard
             <div
-              key={film.id}
-              ref={setRef(index)}
-              className={`relative group hover-lift space-y-gap-xs ${
-                isOnScreen.has(index) ? "md:on-screen" : "md:off-screen-right"
-              }`}
-              style={{ animationDelay: `${index * 200}ms` }}
-              onMouseEnter={() => setHoveredFilm(film.id)}
-              onMouseLeave={() => setHoveredFilm(null)}
-            >
-              <div className="relative aspect-[2/3] overflow-hidden rounded-xl shadow-2xl">
-                <img
-                  src={film.poster}
-                  alt={film.title}
-                  className="w-full h-full object-cover"
-                />
-                {hoveredFilm === film.id && (
-                  <div className="absolute inset-0 bg-background-more-muted backdrop-blur-lg animate-fadeIn transition-all duration-500">
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-gap-md space-y-gap-xs">
-                      <button className="flex items-center gap-gap-xxs rounded-full glass-panel hover-lift px-gap-sm py-gap-xxs hover:bg-opacity-10 transition-all duration-500">
-                        <Play className="w-4 h-4" />
-                        Watch Trailer
-                      </button>
-                      <h3 className="text-xl">{film.title}</h3>
-                      <p className="text-sm text-foreground-muted">
-                        {film.description}
-                      </p>
-                      {film.awards && (
-                        <div className="flex items-center gap-gap-xxs font-serif italic text-gold">
-                          <span className="text-sm">{film.awards[0]}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </div>
-              <div className="flex flex-col gap-gap-xxs text-right md:text-left">
-                <h3 className="font-serif italic text-lg">{film.title}</h3>
-                <div className="flex items-center justify-end md:justify-start gap-gap-xxs text-sm text-foreground-muted">
-                  <span>{film.year}</span>
-                  <span>•</span>
-                  <span>{film.runtime}</span>
-                </div>
-              </div>
+                film={film}
+                index={index}
+                isOnScreen={isOnScreen.has(index)}
+                setRef={setRef(index)}
+                hoveredFilm={hoveredFilm}
+                setHoveredFilm={setHoveredFilm}
+              />
             </div>
           ))}
+          </Suspense>
         </div>
       </div>
     </section>

@@ -1,5 +1,8 @@
+import { lazy, Suspense } from "react";
 import { useIsOnScreen } from "@/hooks/useOnScreen";
-import CountUp from "@/components/CountUp";
+
+// Lazy load CountUp component
+const CountUp = lazy(() => import("@/components/CountUp"));
 
 const About = () => {
   const { isOnScreen } = useIsOnScreen();
@@ -22,6 +25,7 @@ const About = () => {
               src={aboutImage}
               alt="Jasmijn Schrofer"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
 
@@ -65,6 +69,7 @@ const About = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-gap-sm">
+              <Suspense fallback={<div className="animate-pulse bg-gray-200 h-20 rounded-xl"></div>}>
               <div className="flex flex-col justify-center items-center gap-gap-xxs text-center glass-panel p-gap-sm hover-lift hover:shadow-lg rounded-xl transition-all ease-in-out duration-500">
                 <div className="text-2xl font-bold">
                   <CountUp
@@ -111,6 +116,7 @@ const About = () => {
                   Years Experience
                 </div>
               </div>
+              </Suspense>
             </div>
 
             {/* Expertise */}

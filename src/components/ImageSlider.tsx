@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 
-const ImageSlider = ({ images }) => {
+interface ImageSliderProps {
+  images: string[];
+}
+
+const ImageSlider = ({ images }: ImageSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -21,7 +25,7 @@ const ImageSlider = ({ images }) => {
           className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
-          loading="lazy"
+          loading={index === 0 ? "eager" : "lazy"}
         />
       ))}
     </div>
