@@ -55,7 +55,7 @@ const WorkHero: React.FC<WorkHeroProps> = ({
         imagePath: film.thumbnail,
         videoPath: film.trailer,
         year: parseInt(film.year),
-        link: `/work/${film.id}`,
+        film: film.film,
       }));
     }
     if (title && category && description && imagePath && videoPath) {
@@ -67,7 +67,7 @@ const WorkHero: React.FC<WorkHeroProps> = ({
           imagePath,
           videoPath,
           year: 0,
-          link: "/",
+          film: "/",
         },
       ];
     }
@@ -238,7 +238,8 @@ const WorkHero: React.FC<WorkHeroProps> = ({
 
         <div className="mt-gap-sm md:mt-gap-md w-full flex items-center justify-between">
           <a
-            href={activeItem?.link ?? "/work/birth-of-light"}
+            href={activeItem?.film ?? "https://vimeo.com/jasmijnschrofer"}
+            target="_blank"
             className="inline-block button-primary hover-lift animate-fadeIn"
             style={{ animationDelay: "1.4s" }}
           >
