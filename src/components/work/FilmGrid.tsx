@@ -2,7 +2,7 @@ import { Play, Clock } from "lucide-react";
 import { FilmProjectProps } from "@/types/FilmProject";
 import { useEffect, useState, useMemo } from "react";
 import FilmSearchAndFilter from "./FilmSearchAndFilter";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "@/lib/firebase-config";
 
 const FilmGrid = () => {
@@ -17,7 +17,9 @@ const FilmGrid = () => {
 
   useEffect(() => {
     const fetchFilms = async () => {
-      const querySnapshot = await getDocs(collection(db, "films"));
+      const filmsCollection = collection(db, "films");
+      const fetchQuery = query(filmsCollection, orderBy("year", "desc"));
+      const querySnapshot = await getDocs(fetchQuery);
       const filmList = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
