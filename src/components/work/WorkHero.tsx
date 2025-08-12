@@ -2,7 +2,11 @@ import { AudioLines } from "lucide-react";
 import { WorkHeroProps, WorkHeroItem } from "@/types/WorkHero";
 import BlurText from "@/components/BlurText";
 import { useIsOnScreen } from "@/hooks/useOnScreen";
-import { useRef, useEffect, useState, useMemo } from "react";
+import { useRef, useEffect, useState, useMemo, useCallback } from "react";
+
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { db } from "@/lib/firebase-config";
+import { FilmProjectProps } from "@/types/FilmProject";
 
 const WorkHero: React.FC<WorkHeroProps> = ({
   title,
@@ -10,16 +14,50 @@ const WorkHero: React.FC<WorkHeroProps> = ({
   description,
   imagePath,
   videoPath,
-  playlist,
 }) => {
   const { isOnScreen } = useIsOnScreen();
   const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoElementRef = useRef<HTMLVideoElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [films, setFilms] = useState<FilmProjectProps[]>([]);
 
-  // Resolve items: prefer provided playlist, else construct from single props, else use defaults
+  // Fetch films from Firestore
+  useEffect(() => {
+    const fetchFilmsFromFirestore = async () => {
+      try {
+        const filmsQuery = query(
+          collection(db, "films"),
+          orderBy("year", "desc"),
+        );
+        const querySnapshot = await getDocs(filmsQuery);
+        const fetchedFilms = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...(doc.data() as FilmProjectProps),
+        }));
+
+        setFilms(fetchedFilms.filter((film) => film.trailer).slice(0, 3));
+      } catch (err) {
+        console.error("Error fetching films:", err);
+      }
+    };
+    fetchFilmsFromFirestore();
+  }, []);
+
+  // Build items list from fetched films or fallback props
   const items: WorkHeroItem[] = useMemo(() => {
-    if (playlist && playlist.length > 0) return playlist;
+    if (films.length > 0) {
+      return films.map((film) => ({
+        title: film.title,
+        category: Array.isArray(film.category)
+          ? film.category.join(", ")
+          : film.category,
+        description: film.description,
+        imagePath: film.thumbnail,
+        videoPath: film.trailer,
+        year: parseInt(film.year),
+        link: `/work/${film.id}`,
+      }));
+    }
     if (title && category && description && imagePath && videoPath) {
       return [
         {
@@ -29,93 +67,117 @@ const WorkHero: React.FC<WorkHeroProps> = ({
           imagePath,
           videoPath,
           year: 0,
+          link: "/",
         },
       ];
     }
-    return [
-      {
-        title: "Birth of Light",
-        category: "Globalization and cultures",
-        description:
-          "Examines how life is influenced by the increasing use of artificial light and the question to what extent mankind has progressed",
-        imagePath: "/birth-of-light-still-comp.jpg",
-        videoPath: "birth-of-light-trailer-lrg.mp4",
-        year: 2024,
-        link: "/work/birth-of-light",
-      },
-    ];
-  }, [playlist, title, category, description, imagePath, videoPath]);
+    return [];
+  }, [films, title, category, description, imagePath, videoPath]);
 
-  // Compute the top 3 most recent items with valid video paths
-  const topThree = useMemo(() => {
-    return [...items]
-      .filter((item) => !!item.videoPath)
-      .sort((a, b) => b.year - a.year)
-      .slice(0, 3);
-  }, [items]);
+  const topThreeItems = items.slice(0, 3);
+  const activeItem =
+    topThreeItems.length > 0 ? topThreeItems[currentIndex] : undefined;
 
-  const active = topThree && topThree.length > 0 ? topThree[currentIndex] : undefined;
+  // Ref callback to apply autoplay-friendly attributes
+  const handleVideoRef = useCallback(
+    (element: HTMLVideoElement | null) => {
+      videoElementRef.current = element;
+      if (!element) return;
 
+      element.muted = isMuted;
+      element.autoplay = true;
+      element.playsInline = true;
+      element.crossOrigin = "anonymous";
+      try {
+        element.setAttribute("webkit-playsinline", "true");
+      } catch {
+        /* no-op */
+      }
+    },
+    [isMuted],
+  );
+
+  const attemptToPlayVideo = useCallback(
+    async (videoElement: HTMLVideoElement | null) => {
+      if (!videoElement) return false;
+      try {
+        await videoElement.play();
+        return true;
+      } catch (error) {
+        console.warn("Video playback failed", error);
+        return false;
+      }
+    },
+    [],
+  );
+
+  // Play or pause video depending on visibility
   useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      video.muted = true;
-
-      setIsMuted(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    const video = videoRef.current;
-
-    if (!video) return;
+    const videoElement = videoElementRef.current;
+    if (!videoElement) return;
 
     if (isOnScreen) {
-      video.currentTime = 0;
-      video.play().catch(() => {}); // handle autoplay restrictions silently
+      videoElement.muted = isMuted;
+      videoElement.currentTime = 0;
+      void attemptToPlayVideo(videoElement);
     } else {
-      video.pause();
+      videoElement.pause();
     }
-  }, [isOnScreen]);
+  }, [isOnScreen, attemptToPlayVideo, isMuted]);
 
-  // Advance to next trailer when current ends
+  // Reload and play video when source changes
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const onEnded = () => {
-      if (topThree && topThree.length > 1) {
-        setCurrentIndex((i) => (i + 1) % topThree.length);
-      }
-    };
-    video.addEventListener("ended", onEnded);
-    return () => {
-      video.removeEventListener("ended", onEnded);
-    };
-  }, [topThree]);
+    const videoElement = videoElementRef.current;
+    if (!videoElement) return;
 
-  // Reload and play when active video changes
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.load();
+    videoElement.load();
     if (isOnScreen) {
-      video.currentTime = 0;
-      video.play().catch(() => {});
+      videoElement.currentTime = 0;
+      const timeoutId = window.setTimeout(
+        () => void attemptToPlayVideo(videoElement),
+        50,
+      );
+      return () => clearTimeout(timeoutId);
     }
-  }, [active?.videoPath, isOnScreen]);
+  }, [activeItem?.videoPath, isOnScreen, attemptToPlayVideo]);
 
-  const toggleMute = () => {
-    const video = videoRef.current;
+  // Handle video end event for cycling
+  useEffect(() => {
+    const videoElement = videoElementRef.current;
+    if (!videoElement) return;
 
-    if (video) {
-      video.muted = !video.muted;
-      setIsMuted(video.muted);
-
-      if (!video.muted) {
-        video.play().catch((err) => {
-          console.warn("Playback failed after unmuting", err);
-        });
+    const handleEnded = () => {
+      if (topThreeItems.length > 1) {
+        setCurrentIndex((index) => (index + 1) % topThreeItems.length);
       }
+    };
+
+    videoElement.addEventListener("ended", handleEnded);
+    return () => {
+      videoElement.removeEventListener("ended", handleEnded);
+    };
+  }, [topThreeItems]);
+
+  const handleCanPlay = () => {
+    const videoElement = videoElementRef.current;
+    if (!videoElement) return;
+    if (isOnScreen) {
+      void attemptToPlayVideo(videoElement);
+    }
+  };
+
+  const toggleMute = async () => {
+    const videoElement = videoElementRef.current;
+    if (!videoElement) return;
+
+    const newMuteState = !videoElement.muted;
+    videoElement.muted = newMuteState;
+    setIsMuted(newMuteState);
+
+    try {
+      await videoElement.play();
+    } catch (error) {
+      console.warn("Playback failed after toggling mute", error);
     }
   };
 
@@ -127,12 +189,15 @@ const WorkHero: React.FC<WorkHeroProps> = ({
       {/* Background */}
       <div className="absolute inset-0 w-full h-full">
         <video
-          ref={videoRef}
-          src={active?.videoPath ?? videoPath}
-          poster={active?.imagePath ?? imagePath}
-          preload="metadata"
-          loop={!(topThree && topThree.length > 1)}
+          ref={handleVideoRef}
+          src={activeItem?.videoPath ?? videoPath}
+          poster={activeItem?.imagePath ?? imagePath}
+          preload="auto"
+          loop={!(topThreeItems.length > 1)}
           playsInline
+          muted={isMuted}
+          autoPlay
+          onCanPlay={handleCanPlay}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover transition-opacity duration-300"
         />
       </div>
@@ -148,7 +213,7 @@ const WorkHero: React.FC<WorkHeroProps> = ({
         <div className="text-left w-full flex flex-col items-start gap-gap-xxs md:gap-gap-xs">
           <h1>
             <BlurText
-              text={active?.title ?? title}
+              text={activeItem?.title ?? title}
               delay={300}
               animateBy="words"
               direction="top"
@@ -156,26 +221,24 @@ const WorkHero: React.FC<WorkHeroProps> = ({
             />
           </h1>
           <p
-            className={`font-serif italic text-xl md:text-2xl text-foreground-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-300`}
+            className={`font-serif italic text-xl md:text-2xl text-foreground-muted observed ${
+              isOnScreen ? "on-screen" : "off-screen-right"
+            } delay-300`}
           >
-            {active?.category ?? category}
+            {activeItem?.category ?? category}
           </p>
           <p
-            className={`hidden md:block max-w-2xl max-md:text-sm md:text-lg text-foreground-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
+            className={`max-w-2xl max-md:text-sm md:text-lg text-foreground-more-muted observed ${
+              isOnScreen ? "on-screen" : "off-screen-right"
+            } delay-500`}
           >
-            {active?.description ?? description}
-          </p>
-
-          <p
-            className={`md:hidden max-md:text-sm md:text-lg text-foreground-more-muted observed ${isOnScreen ? "on-screen" : "off-screen-right"} delay-500`}
-          >
-            {active?.description ?? description}
+            {activeItem?.description ?? description}
           </p>
         </div>
 
         <div className="mt-gap-sm md:mt-gap-md w-full flex items-center justify-between">
           <a
-            href={active?.link ?? "/work/birth-of-light"}
+            href={activeItem?.link ?? "/work/birth-of-light"}
             className="inline-block button-primary hover-lift animate-fadeIn"
             style={{ animationDelay: "1.4s" }}
           >
@@ -183,8 +246,12 @@ const WorkHero: React.FC<WorkHeroProps> = ({
           </a>
           {/* Audio Control */}
           <button
-            className={`cursor-pointer ${isMuted ? "text-foreground-more-muted" : "text-primary-muted"} hover:text-primary-muted transition-all duration-500`}
+            className={`cursor-pointer ${
+              isMuted ? "text-foreground-more-muted" : "text-primary-muted"
+            } hover:text-primary-muted transition-all duration-500`}
             onClick={toggleMute}
+            aria-pressed={!isMuted}
+            aria-label={isMuted ? "Unmute trailer" : "Mute trailer"}
           >
             <AudioLines />
           </button>

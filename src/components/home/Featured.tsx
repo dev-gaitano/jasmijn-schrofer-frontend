@@ -1,40 +1,60 @@
+import { useEffect, useState } from "react";
 import { Play, ArrowRight } from "lucide-react";
-import { useIsOnScreen } from "@/hooks/useOnScreen";
+import { FilmProjectProps } from "@/types/FilmProject";
+import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
+import { db } from "@/lib/firebase-config";
 
 const FeaturedFilm = () => {
-  const { isOnScreen } = useIsOnScreen();
-  const featuredFilm =
-    "https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:eco/v1/schrofer/birth-of-light-still-comp?_a=BAMAK+Go0";
+  const [film, setFilm] = useState<FilmProjectProps | null>(null);
+
+  useEffect(() => {
+    const fetchLatestFilm = async () => {
+      try {
+        const q = query(
+          collection(db, "films"),
+          orderBy("year", "desc"),
+          limit(1),
+        );
+        const snapshot = await getDocs(q);
+
+        if (!snapshot.empty) {
+          const doc = snapshot.docs[0];
+          setFilm({
+            id: doc.id,
+            ...(doc.data() as Omit<FilmProjectProps, "id">),
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching latest film:", error);
+      }
+    };
+
+    fetchLatestFilm();
+  }, []);
+
+  if (!film) return null;
 
   return (
     <section
       className="w-full h-[50vh] md:h-screen bg-center bg-cover flex flex-col justify-center md:justify-end items-center relative p-gap-md md:p-gap-xxl"
-      style={{ backgroundImage: `url(${featuredFilm})` }}
+      style={{ backgroundImage: `url(${film.thumbnail})` }}
     >
       <div className="absolute inset-0 bg-gradient-to-t from-background-muted via-transparent via-50% to-transparent pointer-events-none"></div>
       {/* Content */}
       <div className="flex flex-col items-center text-center w-full md:w-[60%] space-y-gap-sm md:space-y-gap-md">
         <div className="space-y-gap-xxs md:space-y-gap-md">
-          <h2
-            className={`text-3xl md:text-4xl lg:text-5xl flex flex-col observed ${isOnScreen ? "on-screen" : "off-screen-down"} delay-100`}
-          >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl flex flex-col observed delay-100">
             <span className="md:hidden">Latest Project:</span>
             <span className="hidden md:block">Discover My Latest Project:</span>
-            <span>Birth of Light</span>
+            <span>{film.title}</span>{" "}
           </h2>
 
-          <p
-            className={`text-foreground-muted max-md:text-sm md:text-lg observed ${isOnScreen ? "on-screen" : "off-screen-down"} delay-300`}
-          >
-            So far, the sun and moon dictated the rhythm of the Samburu,
-            herdsmen in northern Kenya. Now, they are connected to the power
-            network. Poetic impression of life at a point of big changes.
+          <p className="text-foreground-muted max-md:text-sm md:text-lg observed delay-300">
+            {film.description}{" "}
           </p>
         </div>
 
-        <div
-          className={`flex flex-wrap gap-[4px] md:gap-gap-xs  observed ${isOnScreen ? "on-screen" : "off-screen-down"} delay-500`}
-        >
+        <div className="flex flex-wrap gap-[4px] md:gap-gap-xs observed delay-500">
           <a
             href="https://vimeo.com/jasmijnschrofer"
             target="_blank"
@@ -58,4 +78,7 @@ const FeaturedFilm = () => {
   );
 };
 
+{
+  /*className={`text-3xl md:text-4xl lg:text-5xl flex flex-col observed ${isOnScreen ? "on-screen" : "off-screen-down"} delay-100`}*/
+}
 export default FeaturedFilm;

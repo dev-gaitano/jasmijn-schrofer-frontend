@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./public/readme-banner.png" alt="banner_img">
+    <img src="https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:eco/v1755008609/readme-banner_kxgrai.png" alt="banner_img">
 </div>
 
 <a id="readme-top"></a>
@@ -64,7 +64,6 @@ Project Link:
 
 Documentation:
 [Jasmijn Schrofer Docs](https://jasmijn-docs.vercel.app/)
-
 
 ### Project Structure
 
@@ -151,7 +150,6 @@ Distributed under the MIT license. See `LICENSE` for more information.
 ## Contact
 
 Eugene Gaitano - dev.gaitano@gmail.com
-
 
 <br />
 <br />

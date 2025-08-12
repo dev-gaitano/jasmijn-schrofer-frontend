@@ -15,7 +15,4 @@ export interface WorkHeroProps {
   description?: string;
   imagePath?: string;
   videoPath?: string;
-
-  // Optional playlist: if provided, the hero will cycle through the top 3 most recent items
-  playlist?: WorkHeroItem[];
 }

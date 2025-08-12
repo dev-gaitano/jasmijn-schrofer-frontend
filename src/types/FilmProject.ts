@@ -1,10 +1,13 @@
 export interface FilmProjectProps {
-  id: number;
+  id: string;
   title: string;
   year: string;
-  category: string[];
   runtime: string;
-  thumbnail: string;
+  category: string[];
   description: string;
   awards?: string[];
+  poster: string;
+  thumbnail: string;
+  trailer: string;
+  film: string;
 }

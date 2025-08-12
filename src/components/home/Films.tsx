@@ -1,90 +1,71 @@
 import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { FilmProjectProps } from "@/types/FilmProject";
+import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
+import { db } from "@/lib/firebase-config";
 
-const films: FilmProjectProps[] = [
-  {
-    id: 1,
-    title: "Birth of Light",
-    year: "2024",
-    category: ["Documentary Film"],
-    runtime: "23mins",
-    thumbnail:
-      "https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:eco/v1/schrofer/birth-of-light-poster?_a=BAMAK+Go0",
-    description:
-      "A haunting exploration of memory and loss through the eyes of a young artist.",
-    awards: ["Best Short Film - Amsterdam Film Festival"],
-  },
-  {
-    id: 2,
-    title: "Tarikat",
-    year: "2015",
-    category: ["Documentary Film"],
-    runtime: "17mins",
-    thumbnail:
-      "https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:low/v1/schrofer/tarikat-poster-comp?_a=BAMAK+Go0",
-    description:
-      "A poetic journey into the rituals of a mystical order, blending reality and surrealism.",
-    awards: ["Special Jury Prize - Rotterdam International Film Festival"],
-  },
-  {
-    id: 3,
-    title: "Unfold",
-    year: "2014",
-    category: ["Dance Film"],
-    runtime: "7mins",
-    thumbnail:
-      "https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:eco/v1/schrofer/unfold-poster?_a=BAMAK+Go0",
-    description:
-      "An intimate portrayal of transformation and self-discovery through movement and light.",
-    awards: ["Best Experimental Film - Berlin Short Film Awards 2021"],
-  },
-];
+const useIsOnScreen = (threshold = 0.2) => {
+  const [isOnScreen, setIsOnScreen] = useState<Set<number>>(new Set());
+  const observer = useRef<IntersectionObserver | null>(null);
 
-const Films = () => {
-  const [hoveredFilm, setHoveredFilm] = useState<number | null>(null);
-  const useIsOnScreen = (threshold = 0.2) => {
-    const [isOnScreen, setIsOnScreen] = useState<Set<number>>(new Set());
-    const observedElements = useRef<(HTMLDivElement | null)[]>([]);
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            const target = entry.target as HTMLDivElement;
-            const index = observedElements.current.indexOf(target);
-
-            if (index !== -1) {
-              if (entry.isIntersecting) {
-                setIsOnScreen((prev) => new Set(prev.add(index)));
-              } else {
-                setIsOnScreen((prev) => {
-                  const newSet = new Set(prev);
-                  newSet.delete(index);
-                  return newSet;
-                });
-              }
+  useEffect(() => {
+    observer.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = Number((entry.target as HTMLDivElement).dataset.index);
+          setIsOnScreen((prev) => {
+            const newSet = new Set(prev);
+            if (entry.isIntersecting) {
+              newSet.add(index);
+            } else {
+              newSet.delete(index);
             }
+            return newSet;
           });
-        },
-        { threshold },
-      );
-
-      observedElements.current.forEach((el) => {
-        if (el) observer.observe(el);
-      });
-
-      return () => {
-        observedElements.current.forEach((el) => {
-          if (el) observer.unobserve(el);
         });
-      };
-    }, [threshold]);
+      },
+      { threshold },
+    );
+    return () => observer.current?.disconnect();
+  }, [threshold]);
 
-    return { isOnScreen, observedElements };
+  const setRef = (index: number) => (el: HTMLDivElement | null) => {
+    if (el) {
+      el.dataset.index = String(index);
+      observer.current?.observe(el);
+    }
   };
 
-  const { isOnScreen, observedElements } = useIsOnScreen();
+  return { isOnScreen, setRef };
+};
+
+const Films = () => {
+  const [films, setFilms] = useState<FilmProjectProps[]>([]);
+  const [hoveredFilm, setHoveredFilm] = useState<string | null>(null);
+  const { isOnScreen, setRef } = useIsOnScreen();
+
+  useEffect(() => {
+    const fetchFilms = async () => {
+      try {
+        const q = query(
+          collection(db, "films"),
+          orderBy("year", "desc"),
+          limit(3),
+        );
+        const snapshot = await getDocs(q);
+        const fetchedFilms = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...(doc.data() as Omit<FilmProjectProps, "id">),
+        }));
+
+        setFilms(fetchedFilms);
+      } catch (error) {
+        console.error("Error fetching films:", error);
+      }
+    };
+
+    fetchFilms();
+  }, []);
 
   return (
     <section id="films" className="relative p-gap-md md:p-gap-xxl w-full">
@@ -99,16 +80,18 @@ const Films = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gap-md">
           {films.map((film, index) => (
             <div
-              key={index}
-              ref={(el) => (observedElements.current[index] = el)}
-              className={`relative group hover-lift space-y-gap-xs ${isOnScreen.has(index) ? "md:on-screen" : "md:off-screen-right"}`}
+              key={film.id}
+              ref={setRef(index)}
+              className={`relative group hover-lift space-y-gap-xs ${
+                isOnScreen.has(index) ? "md:on-screen" : "md:off-screen-right"
+              }`}
               style={{ animationDelay: `${index * 200}ms` }}
               onMouseEnter={() => setHoveredFilm(film.id)}
               onMouseLeave={() => setHoveredFilm(null)}
             >
               <div className="relative aspect-[2/3] overflow-hidden rounded-xl shadow-2xl">
                 <img
-                  src={film.thumbnail}
+                  src={film.poster}
                   alt={film.title}
                   className="w-full h-full object-cover"
                 />
@@ -123,8 +106,6 @@ const Films = () => {
                       <p className="text-sm text-foreground-muted">
                         {film.description}
                       </p>
-
-                      {/*TODO: Cleanup*/}
                       {film.awards && (
                         <div className="flex items-center gap-gap-xxs font-serif italic text-gold">
                           <span className="text-sm">{film.awards[0]}</span>
