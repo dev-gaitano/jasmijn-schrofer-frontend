@@ -35,3 +35,6 @@ dist/
 build/
 stats.html
 .vercel
+
+# Secrets
+jasmijn-schrofer-firebase-adminsdk-fbsvc-a726799439.json
