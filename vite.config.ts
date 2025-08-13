@@ -26,6 +26,17 @@ export default defineConfig(({ mode }) => ({
   base: "./",
   build: {
     outDir: "dist",
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          ui: ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+          animations: ['framer-motion', '@react-spring/web'],
+          firebase: ['firebase/firestore', 'firebase/app'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
   },
   resolve: {
     alias: {

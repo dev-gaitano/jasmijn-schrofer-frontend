@@ -3,7 +3,6 @@ import { WorkHeroProps, WorkHeroItem } from "@/types/WorkHero";
 import BlurText from "@/components/BlurText";
 import { useIsOnScreen } from "@/hooks/useOnScreen";
 import { useRef, useEffect, useState, useMemo, useCallback } from "react";
-
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "@/lib/firebase-config";
 import { FilmProjectProps } from "@/types/FilmProject";
@@ -23,6 +22,7 @@ const WorkHero: React.FC<WorkHeroProps> = ({
 
   // Fetch films from Firestore
   useEffect(() => {
+    let mounted = true;
     const fetchFilmsFromFirestore = async () => {
       try {
         const filmsQuery = query(
@@ -30,6 +30,8 @@ const WorkHero: React.FC<WorkHeroProps> = ({
           orderBy("year", "desc"),
         );
         const querySnapshot = await getDocs(filmsQuery);
+        if (!mounted) return;
+        
         const fetchedFilms = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...(doc.data() as FilmProjectProps),
@@ -37,10 +39,11 @@ const WorkHero: React.FC<WorkHeroProps> = ({
 
         setFilms(fetchedFilms.filter((film) => film.trailer).slice(0, 3));
       } catch (err) {
-        console.error("Error fetching films:", err);
+        if (mounted) console.error("Error fetching films:", err);
       }
     };
     fetchFilmsFromFirestore();
+    return () => { mounted = false; };
   }, []);
 
   // Build items list from fetched films or fallback props
