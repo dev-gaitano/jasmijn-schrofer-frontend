@@ -59,27 +59,27 @@
 
 @layer components {
   .off-screen-right {
-    @apply opacity-0 blur-lg translate-x-full;
+    @apply opacity-0 blur-lg translate-x-8;
     transition: all 0.3s ease-in-out;
   }
 
   .off-screen-left {
-    @apply opacity-0 blur-lg -translate-x-full;
+    @apply opacity-0 blur-lg -translate-x-8;
     transition: all 0.3s ease-in-out;
   }
 
   .off-screen-up {
-    @apply opacity-0 blur-lg -translate-y-full;
+    @apply opacity-0 blur-lg -translate-y-8;
     transition: all 0.3s ease-in-out;
   }
 
   .off-screen-down {
-    @apply opacity-0 blur-lg translate-y-full;
+    @apply opacity-0 blur-lg translate-y-8;
     transition: all 0.3s ease-in-out;
   }
 
   .on-screen {
-    @apply opacity-100 blur-0 translate-x-0;
+    @apply opacity-100 blur-0 translate-x-0 translate-y-0;
     transition: all 0.7s ease-in-out;
   }
 
