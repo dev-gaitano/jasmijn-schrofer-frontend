@@ -3,6 +3,7 @@ import { StrictMode } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
+import { ClerkProvider } from "@clerk/clerk-react";
 
 // Components and Pages
 import Index from "./pages/Index.tsx";
@@ -14,6 +15,14 @@ import ContactPage from "./pages/Contact.tsx";
 import AdminPage from "./pages/Admin.tsx";
 
 import "./index.css";
+
+const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+if (!clerkPubKey) {
+  throw new Error(
+    "Missing VITE_CLERK_PUBLISHABLE_KEY in environment variables",
+  );
+}
 
 const router = createBrowserRouter([
   {
@@ -45,8 +54,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
-    <SpeedInsights />
-    <Analytics />
+    <ClerkProvider publishableKey={clerkPubKey}>
+      <RouterProvider router={router} />
+      <SpeedInsights />
+      <Analytics />
+    </ClerkProvider>
   </StrictMode>,
 );

@@ -124,7 +124,7 @@ const Navbar = () => {
           isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-col items-center p-gap-xs pt-0">
+        <div className="flex flex-col items-start p-gap-xs pt-0">
           <MobileNavLink href="/" onClick={() => setIsMobileMenuOpen(false)}>
             HOME
           </MobileNavLink>

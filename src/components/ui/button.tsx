@@ -9,8 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-background-muted text-primary-foreground hover:bg-background",
+        default: "button-primary transition-all duration-500",
         destructive:
           "bg-accent-more-muted text-primary-foreground hover:bg-accent",
         outline:
