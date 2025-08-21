@@ -12,7 +12,7 @@ const Hero = () => {
       {/* Background */}
       <div className="absolute inset-0 w-full h-full">
         <img
-          src="https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:eco/v1/schrofer/jas-hero?_a=BAMAK+Go0"
+          src="https://res.cloudinary.com/diwkfbsgv/image/upload/c_auto,f_auto,g_auto,q_auto:eco/v1755774116/jasmijn-unmask-2025-crop-min_cekt3y.png"
           alt="hero-image"
           className="absolute top-0 left-0 h-full object-cover max-md:object-[-22rem]"
         />
