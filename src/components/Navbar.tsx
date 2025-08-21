@@ -36,13 +36,12 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed max-w-7xl top-0 z-[999] w-[calc(100%-var(--gap-md)*2)] mx-gap-md md:w-[1262px] transition-all duration-500 overflow-hidden ${
-        isMobileMenuOpen
+      className={`fixed max-w-7xl top-0 z-[999] w-[calc(100%-var(--gap-md)*2)] mx-gap-md md:w-[1262px] transition-all duration-500 overflow-hidden ${isMobileMenuOpen
           ? "rounded-3xl glass-panel top-2"
           : isScrolled
             ? "rounded-full glass-panel top-2"
             : "rouded-3xl md:rounded-full"
-      }`}
+        }`}
     >
       <div className="w-full flex items-center justify-between p-gap-xs">
         <a
@@ -70,26 +69,23 @@ const Navbar = () => {
           </a>
           <a
             href="/work"
-            className={`nav-link hover-lift transition-all duration-500 ${
-              currentPath === "/work" ? "text-primary font-bold" : ""
-            }`}
+            className={`nav-link hover-lift transition-all duration-500 ${currentPath === "/work" ? "text-primary font-bold" : ""
+              }`}
           >
             Work
           </a>
           <a
             href="/about"
-            className={`nav-link hover-lift transition-all duration-500 ${
-              currentPath === "/about" ? "text-primary font-bold" : ""
-            }`}
+            className={`nav-link hover-lift transition-all duration-500 ${currentPath === "/about" ? "text-primary font-bold" : ""
+              }`}
           >
             About
           </a>
           {isScrolled ? (
             <a
               href="/contact"
-              className={`inline-block button-primary hover-lift animate-fadeIn ${
-                currentPath === "/contact" ? "text-primary font-bold" : ""
-              }`}
+              className={`inline-block button-primary hover-lift animate-fadeIn ${currentPath === "/contact" ? "text-primary font-bold" : ""
+                }`}
               style={{ animationDelay: "0.6s" }}
             >
               Contact
@@ -120,11 +116,10 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden transition-all duration-500 overflow-hidden ${
-          isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden transition-all duration-500 overflow-hidden ${isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
-        <div className="flex flex-col items-start p-gap-xs pt-0">
+        <div className="flex flex-col items-start ml-2 p-gap-xs pt-0">
           <MobileNavLink href="/" onClick={() => setIsMobileMenuOpen(false)}>
             HOME
           </MobileNavLink>
